@@ -58,7 +58,7 @@ class World():
                     self.actions[action['name']] = [subtask_name]
 
         # Load the Jinja2 template specified in the config
-        template_path = config.get("llm", {}).get("prompt_template_path")
+        template_path = config.get("world", {}).get("prompt_template_path")
         if template_path:
             with open(template_path, "r") as file:
                 self.prompt_template = Template(file.read())
@@ -98,10 +98,12 @@ class World():
 
         # Render the template with the current state, actions, and history
         return self.prompt_template.render(
-            task_prompt=self.config.get("llm", {}).get("task_prompt", ""),
+            task_prompt=self.config.get("world", {}).get("task_prompt", ""),
             state=self.state_dict,
             actions=list(self.actions.keys()),
-            history=history
+            history=history,
+            num_turns=self.time_horizon,
+            current_turn=len(history)
         )
 
     def get_state(self):

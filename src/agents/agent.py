@@ -16,11 +16,10 @@ class Agent(ABC):
     @classmethod
     def from_config(cls, config: Dict[str, Any]) -> "Agent":
         """
-        Default constructor: expects config to have 'params' dict.
+        Default constructor
         Subclasses can override to implement custom parsing/validation.
         """
-        params = config.get("params", {})
-        return cls(**params)  
+        return cls(config)  
     
     @classmethod
     def get_class(cls, key: str) -> Type["Agent"]:

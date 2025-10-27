@@ -34,7 +34,7 @@ class GameDriver:
         # Dynamically get the Agent class and call its from_config method
         from src.agents.agent import Agent
         AgentClass = Agent.get_class(agent_type)  # Assuming Agent has a registry
-        return AgentClass.from_config(agent_config)
+        return AgentClass.from_config(config)
 
     def __init__(self, config, run_name=None):
         # Create the world and agent from the config

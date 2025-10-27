@@ -1,10 +1,16 @@
 ##### v1_w_hist.jinja2 #####
 
-# Print main instruction
-{{ task_prompt }}
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all {{ num_turns }} steps. We are on step {{ current_turn }}
 
-# Print state
+Task Assignment:
+---
+{{ task_prompt }}
+---
+
 Current State:
+---
 {% if state %}
 {% for key, value in state.items() %}
 - {{ key }}: {{ value }}
@@ -12,17 +18,25 @@ Current State:
 {% else %}
 State is empty.
 {% endif %}
+---
 
-# Print action options
 Available Actions:
+---
 {% for action in actions %}
 - {{ action }}
 {% endfor %}
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
 
-# Print history, if passed
-{% if history %}
 History:
+---
+{% if history %}
 {% for entry in history %}
 - {{ entry }}
 {% endfor %}
+{% else %}
+This is the first turn. There is no history.
 {% endif %}
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
