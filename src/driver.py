@@ -1,11 +1,14 @@
 # Custom libraries
 from src.agents.agent import Agent
+from src.agents.human_agent import HumanAgent
 from src.world import World
 
 # System related imports
 import logging
 import os
 import datetime
+import json
+import jsonlines
 
 '''
 Driver runs the experiments. It contains the World and the Agent
@@ -13,9 +16,30 @@ Driver runs the experiments. It contains the World and the Agent
 
 class GameDriver:
     # Initialize agent and world
-    def __init__(self, agent, world, config, run_name=None):
-        self.agent = agent
-        self.world = world
+    @staticmethod
+    def create_world_from_config(config):
+        """
+        Create a World instance from the configuration.
+        """
+        return World(config)
+
+    @staticmethod
+    def create_agent_from_config(config):
+        """
+        Create an Agent instance from the configuration using the class method.
+        """
+        agent_config = config.get("agent", {})
+        agent_type = agent_config.get("type", "human")
+
+        # Dynamically get the Agent class and call its from_config method
+        from src.agents.agent import Agent
+        AgentClass = Agent.get_class(agent_type)  # Assuming Agent has a registry
+        return AgentClass.from_config(agent_config)
+
+    def __init__(self, config, run_name=None):
+        # Create the world and agent from the config
+        self.world = self.create_world_from_config(config)
+        self.agent = self.create_agent_from_config(config)
         self.config = config
 
 
@@ -46,6 +70,10 @@ class GameDriver:
 
         # Add the handler to the logger
         self.logger.addHandler(file_handler)
+        
+        # Generate a unique JSONL file for logging outputs
+        jsonl_log_filename = os.path.join(self.experiment_logs_dir, f"{self.run_name}.jsonl")
+        self.json_logger = jsonlines.open(jsonl_log_filename, mode='w')
 
         ####### END OF LOGGING SETUP ########
 
@@ -53,7 +81,8 @@ class GameDriver:
     def play(self):
         # This will be a list of dicts. Each list element corresponds to a time step.
         # Each dict will contain "state", "action", "reward"
-        logging_structure = []
+        history = []
+        total_reward = 0.0
 
         # Main game loop
         for turn_num in range (0, self.world.time_horizon):
@@ -71,14 +100,25 @@ class GameDriver:
 
             # Pass action to world (receive reward)
             # For now action is a single string. Once we get to subtasks, it should be a tuple or list of strings
-            reward = self.world.take_action(action)
+            action_taken, new_state, reward = self.world.take_action(action)
 
             # Log relevant info (state, action, reward)
             logging_dict = {
-                "state": state,
-                "action": action,
+                "state": new_state,
+                "action_selected": action,
+                "action_taken": action_taken,
                 "reward": reward
             }
+            self.json_logger.write(logging_dict)
+            history.append(logging_dict)
+
+            total_reward += reward
+
+        print("Final Reward:", total_reward)
+
+
+
+
 
 
 

@@ -1,0 +1,28 @@
+##### v1_w_hist.jinja2 #####
+
+# Print main instruction
+{{ task_prompt }}
+
+# Print state
+Current State:
+{% if state %}
+{% for key, value in state.items() %}
+- {{ key }}: {{ value }}
+{% endfor %}
+{% else %}
+State is empty.
+{% endif %}
+
+# Print action options
+Available Actions:
+{% for action in actions %}
+- {{ action }}
+{% endfor %}
+
+# Print history, if passed
+{% if history %}
+History:
+{% for entry in history %}
+- {{ entry }}
+{% endfor %}
+{% endif %}

@@ -37,6 +37,7 @@ class BanditTask(Task):
         return {}
     
     # Take action receives the state and the action, returns reward and new state
+    # We assume that actions MUST be valid, based on how World is set up
     def take_action(self, state, action):
         arm_info = self.actions.get(action, None)
 
