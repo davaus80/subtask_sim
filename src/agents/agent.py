@@ -6,9 +6,9 @@ class Agent(ABC):
     _registry: Dict[str, Type["Agent"]] = {}
 
     @classmethod
-    def register(cls, key: str):
+    def _register(cls, key: str):
         def _decorator(subclass: Type["Agent"]):
-            cls._register[key] = subclass
+            cls._registry[key] = subclass
             subclass._task_type = key
             return subclass
         return _decorator
@@ -21,3 +21,7 @@ class Agent(ABC):
         """
         params = config.get("params", {})
         return cls(**params)  
+    
+    @classmethod
+    def get_class(cls, key: str) -> Type["Agent"]:
+        return cls._registry[key]

@@ -6,9 +6,9 @@ class Task(ABC):
     _registry: Dict[str, Type["Task"]] = {}
 
     @classmethod
-    def register(cls, key: str):
+    def _register(cls, key: str):
         def _decorator(subclass: Type["Task"]):
-            cls._register[key] = subclass
+            cls._registry[key] = subclass
             subclass._task_type = key
             return subclass
         return _decorator

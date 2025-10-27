@@ -3,7 +3,7 @@ from src.tasks.task import Task
 import random
 import numpy as np
 
-@Task.register("bandit")
+@Task._register("bandit")
 class BanditTask(Task):
     '''
     We initialize the bandit task assuming the following types
@@ -13,12 +13,9 @@ class BanditTask(Task):
             - "mean": float
             - "variance": float
             We assume normal distributions
-    - task_prompt: str
-        A string which describes the overall task. NOTE: I think this will have to be moved to the outside once the task structure is hidden
     '''
-    def __init__(self, actions, task_prompt):
+    def __init__(self, actions):
         self.actions = {arm['name']: {k: v for k, v in arm.items() if k != 'name'} for arm in actions}
-        self.task_prompt = task_prompt
 
 
 
@@ -27,10 +24,9 @@ class BanditTask(Task):
         # custom parsing/validation for this subclass
         # We will only get passed the section of the config relative to this subtask
         params = config.get("params", {})
-        prompt = params['prompt']
         actions = params['actions']
         
-        return cls(actions=actions, task_prompt=prompt)
+        return cls(actions=actions)
     
     # There is no initial state in bandits unless it's a contextual bandit
     def initial_state(self):

@@ -3,6 +3,7 @@ from src.agents.agent import Agent
 '''
 This file defines a human agent
 '''
+@Agent._register("human")
 class HumanAgent(Agent):
 
     def __init__(self):

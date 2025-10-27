@@ -6,7 +6,7 @@ from src.world import World
 # System related imports
 import logging
 import os
-import datetime
+from datetime import datetime
 import json
 import jsonlines
 
@@ -90,7 +90,7 @@ class GameDriver:
             state = self.world.get_state()
 
             # Get prompt from world
-            prompt = self.world.get_prompt()
+            prompt = self.world.get_prompt(history)
 
             # Get action from agent (until it matches a valid choice)
             # For now, let's just have the world check validity and choose a random action
