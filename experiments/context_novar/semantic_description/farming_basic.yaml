@@ -1,0 +1,55 @@
+subtasks: 
+  - name: ContextualFarmBandit
+    type: contextual_bandit
+    params:
+      state_vars:
+        - name: "Expected Rainfall"
+          values: 
+            - "drought"
+            - "normal"
+            - "flood_risk"
+      actions:
+        - name: "Field_1"
+          description: "Plains. Average water retention and drainage."
+          distn:
+            drought:
+              mean: 100
+              std_dev: 0
+            normal:
+              mean: 150
+              std_dev: 0
+            flood_risk:
+              mean: 100
+              std_dev: 0
+        - name: "Field_2"
+          description: "Terraced hills. Low water retention, high drainage."
+          distn:
+            drought:
+              mean: 50
+              std_dev: 0
+            normal:
+              mean: 100
+              std_dev: 0
+            flood_risk:
+              mean: 200
+              std_dev: 0
+        - name: "Field_3"
+          description: "Flood plains. High water retention, poor drainage."
+          distn:
+            drought:
+              mean: 200
+              std_dev: 0
+            normal:
+              mean: 100
+              std_dev: 0
+            flood_risk:
+              mean: 50
+              std_dev: 0
+agent: 
+  type: mono_llm
+  model_name: "Qwen/Qwen3-8B"
+world:
+  prompt_template_path: src/templates/v1_w_hist.jinja2
+  task_prompt: "You are a farmer who owns 3 fields and wants to maximize his crop yield. Each field has a specified crop yield that it will return. Your goal is to select a field at each turn to plant in to maximize your cumulative crop yield."
+experiment:
+  time_horizon: 10
