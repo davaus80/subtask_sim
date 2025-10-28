@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # OPTION 1: SUBMIT ALL YAMLS INSIDE A FOLDER, RECURSIVELY
-CONFIG_DIR="experiments/basic_novar/name_shuffles"
+CONFIG_DIR="experiments/basic_novar/name_shuffles/semantic_error"
 echo "Searching for configs in $CONFIG_DIR"
 # Find all YAML files recursively
 CONFIG_FILES=($(find "$CONFIG_DIR" -type f -name "*.yaml" | sort))
