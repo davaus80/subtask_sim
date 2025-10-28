@@ -1,35 +1,35 @@
-Final Reward: 700.0
+Final Reward: 2000.0
 
 ======== GPU REPORT ========
 
 ==============NVSMI LOG==============
 
-Timestamp                                 : Tue Oct 28 16:55:08 2025
-Driver Version                            : 580.65.06
+Timestamp                                 : Tue Oct 28 17:02:36 2025
+Driver Version                            : 580.82.07
 CUDA Version                              : 13.0
 
 Attached GPUs                             : 1
-GPU 00000000:89:00.0
+GPU 00000000:C4:00.0
     Accounting Mode                       : Enabled
     Accounting Mode Buffer Size           : 4000
     Accounted Processes
-        Process ID                        : 133975
-            GPU Utilization               : 89 %
-            Memory Utilization            : 90 %
-            Max memory usage              : 19872 MiB
-            Time                          : 702404 ms
+        Process ID                        : 2176310
+            GPU Utilization               : 88 %
+            Memory Utilization            : 89 %
+            Max memory usage              : 17136 MiB
+            Time                          : 540065 ms
             Is Running                    : 0
 
-Tue Oct 28 16:55:08 2025       
+Tue Oct 28 17:02:36 2025       
 +-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     |
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
 +-----------------------------------------+------------------------+----------------------+
 | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
 | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
 |                                         |                        |               MIG M. |
 |=========================================+========================+======================|
-|   0  Quadro RTX 8000                On  |   00000000:89:00.0 Off |                    0 |
-| 34%   52C    P2            113W /  260W |       1MiB /  46080MiB |     58%      Default |
+|   0  Quadro RTX 8000                On  |   00000000:C4:00.0 Off |                    0 |
+| 34%   52C    P2             98W /  260W |       1MiB /  46080MiB |     45%      Default |
 |                                         |                        |                  N/A |
 +-----------------------------------------+------------------------+----------------------+
 
