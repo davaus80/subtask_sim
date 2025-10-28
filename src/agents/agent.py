@@ -24,3 +24,6 @@ class Agent(ABC):
     @classmethod
     def get_class(cls, key: str) -> Type["Agent"]:
         return cls._registry[key]
+    
+    def reset(self):
+        pass

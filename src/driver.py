@@ -8,6 +8,7 @@ import logging
 import os
 from datetime import datetime
 import json
+import yaml
 import jsonlines
 
 '''
@@ -35,14 +36,20 @@ class GameDriver:
         from src.agents.agent import Agent
         AgentClass = Agent.get_class(agent_type)  # Assuming Agent has a registry
         return AgentClass.from_config(config)
-
-    def __init__(self, config, run_name=None):
-        # Create the world and agent from the config
+    
+    '''
+    This is basically the constructor, but we separate it out since we use it for reset too.
+    '''
+    def _setup_from_config_path(self, config_path, run_name=None):
+        # Load the YAML config file into a dictionary
+        with open(config_path, "r") as config_file:
+            config = yaml.safe_load(config_file)
+        
         self.world = self.create_world_from_config(config)
         self.agent = self.create_agent_from_config(config)
         self.config = config
-
-
+        self.experiment_dir = os.path.dirname(config_path) # This is where we'll log everything
+        
         ############ LOGGING SETUP #############
 
         # Configure logger to log to a unique file for each run
@@ -50,17 +57,16 @@ class GameDriver:
         self.logger.setLevel(logging.INFO)
 
         # Create logs directory if it doesn't exist
-        logs_dir = "logs/experiments"
+        logs_dir = self.experiment_dir
         os.makedirs(logs_dir, exist_ok=True)
 
         self.run_name = run_name if run_name else f"run_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
         # Make a sub folder for this experiment
-        self.experiment_logs_dir = f"logs/experiments/{self.run_name}"
-        os.makedirs(self.experiment_logs_dir, exist_ok=True)
+        os.makedirs(self.experiment_dir, exist_ok=True)
 
         # Generate a unique log file name using timestamp
-        log_filename = os.path.join(self.experiment_logs_dir, f"{self.run_name}.log")
+        log_filename = os.path.join(self.experiment_dir, f"{self.run_name}.log")
         file_handler = logging.FileHandler(log_filename)
         file_handler.setLevel(logging.INFO)
 
@@ -72,10 +78,14 @@ class GameDriver:
         self.logger.addHandler(file_handler)
         
         # Generate a unique JSONL file for logging outputs
-        jsonl_log_filename = os.path.join(self.experiment_logs_dir, f"{self.run_name}.jsonl")
+        jsonl_log_filename = os.path.join(self.experiment_dir, f"{self.run_name}.jsonl")
         self.json_logger = jsonlines.open(jsonl_log_filename, mode='w')
 
         ####### END OF LOGGING SETUP ########
+
+    def __init__(self, config_path, run_name=None):
+        # Create the world and agent from the config
+        self._setup_from_config_path(config_path, run_name)
 
 
     def play(self):
@@ -115,7 +125,15 @@ class GameDriver:
             total_reward += reward
 
         print("Final Reward:", total_reward)
-
+        
+        
+    '''
+    NOTE: Reset creates an entirely new world BUT just resets the agent. This is to save loading overhead for the LLM. We may need to change this later,
+    but for now, we only have one agent anyway. This is kinda a useless method since it just calls a single other method lol 
+    TODO: Merge this with setupfromconfig
+    '''
+    def reset(self, config_path):
+        self._setup_from_config_path(config_path, None)
 
 
 

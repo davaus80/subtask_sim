@@ -3,6 +3,8 @@ from src.driver import GameDriver
 from argparse import ArgumentParser
 import logging
 import yaml
+import glob
+
 
 def get_args(args):
     parser = ArgumentParser()
@@ -16,14 +18,9 @@ if __name__ == "__main__":
 
     import sys
     args = get_args(sys.argv[1:])
-
-    config_path = args.config_path
-
-    # Load the YAML config file into a dictionary
-    with open(config_path, "r") as config_file:
-        config = yaml.safe_load(config_file)
-
-    driver = GameDriver(config)
-
+    
+    if not args.config_path:
+        raise ValueError("Please specify the --config_path argument.")
+    
+    driver = GameDriver(args.config_path)
     driver.play()
-
