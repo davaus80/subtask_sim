@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #SBATCH --job-name=sky
-#SBATCH --output=%x_%j.out
-#SBATCH --error=%x_%j.err
+#SBATCH --output=slurm_outputs/%x_%j.out
+#SBATCH --error=slurm_outputs/%x_%j.err
 #SBATCH --partition=main
 #SBATCH --gres=gpu:1
 #SBATCH --ntasks=1

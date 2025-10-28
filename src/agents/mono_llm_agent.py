@@ -14,5 +14,6 @@ class MonoLLMAgent(Agent):
 
     def get_action(self, prompt):
         llm_outputs = self.llm.generate(prompt)
+        import pdb; pdb.set_trace()
         
         return llm_outputs['content']
