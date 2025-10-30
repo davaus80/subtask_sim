@@ -1,0 +1,87 @@
+Final Reward: 1850.0
+
+======== GPU REPORT ========
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Thu Oct 30 12:54:52 2025
+Driver Version                            : 580.65.06
+CUDA Version                              : 13.0
+
+Attached GPUs                             : 4
+GPU 00000000:15:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 2566794
+            GPU Utilization               : 9 %
+            Memory Utilization            : 4 %
+            Max memory usage              : 15246 MiB
+            Time                          : 96311 ms
+            Is Running                    : 0
+
+GPU 00000000:3A:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 2566794
+            GPU Utilization               : 12 %
+            Memory Utilization            : 6 %
+            Max memory usage              : 17448 MiB
+            Time                          : 96310 ms
+            Is Running                    : 0
+
+GPU 00000000:89:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 2566794
+            GPU Utilization               : 12 %
+            Memory Utilization            : 6 %
+            Max memory usage              : 17448 MiB
+            Time                          : 96309 ms
+            Is Running                    : 0
+
+GPU 00000000:B1:00.0
+    Accounting Mode                       : Enabled
+    Accounting Mode Buffer Size           : 4000
+    Accounted Processes
+        Process ID                        : 2566794
+            GPU Utilization               : 10 %
+            Memory Utilization            : 5 %
+            Max memory usage              : 15216 MiB
+            Time                          : 96307 ms
+            Is Running                    : 0
+
+Thu Oct 30 12:54:52 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.65.06              Driver Version: 580.65.06      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Quadro RTX 8000                On  |   00000000:15:00.0 Off |                    0 |
+| 33%   37C    P2             75W /  260W |       1MiB /  46080MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  Quadro RTX 8000                On  |   00000000:3A:00.0 Off |                    0 |
+| 33%   38C    P2             71W /  260W |       1MiB /  46080MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   2  Quadro RTX 8000                On  |   00000000:89:00.0 Off |                    0 |
+| 34%   38C    P2             76W /  260W |       1MiB /  46080MiB |     41%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   3  Quadro RTX 8000                On  |   00000000:B1:00.0 Off |                    0 |
+| 33%   35C    P2             93W /  260W |       1MiB /  46080MiB |    100%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+

@@ -1,17 +1,0 @@
-[=== Module python/3.10 loaded ===]
-`torch_dtype` is deprecated! Use `dtype` instead!
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:40, 10.15s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:12<00:16,  5.55s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:14<00:08,  4.06s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:23<00:05,  5.81s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:24<00:00,  4.04s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:24<00:00,  4.83s/it]
-Traceback (most recent call last):
-  File "/home/mila/a/austind/code/subtask_sim/experiment_manager.py", line 26, in <module>
-    driver.play()
-  File "/home/mila/a/austind/code/subtask_sim/src/driver.py", line 108, in play
-    action = self.agent.get_action(prompt)
-  File "/home/mila/a/austind/code/subtask_sim/src/agents/mono_llm_agent.py", line 19, in get_action
-    return llm_outputs['content']
-  File "/home/mila/a/austind/code/subtask_sim/src/agents/mono_llm_agent.py", line 19, in get_action
-    return llm_outputs['content']
-  File "/cvmfs/ai.mila.quebec/apps/arch/distro/python/3.10/lib/python3.10/bdb.py", line 90, in trace_dispatch
-    return self.dispatch_line(frame)
-  File "/cvmfs/ai.mila.quebec/apps/arch/distro/python/3.10/lib/python3.10/bdb.py", line 115, in dispatch_line
-    if self.quitting: raise BdbQuit
-bdb.BdbQuit

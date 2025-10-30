@@ -1,38 +1,0 @@
-[=== Module python/3.10 loaded ===]
-`torch_dtype` is deprecated! Use `dtype` instead!
-/home/mila/a/austind/skyfall310/lib/python3.10/site-packages/torch/cuda/__init__.py:283: UserWarning: 
-    Found GPU0 Tesla V100-SXM2-32GB which is of cuda capability 7.0.
-    Minimum and Maximum cuda capability supported by this version of PyTorch is
-    (7.5) - (12.0)
-    
-  warnings.warn(
-/home/mila/a/austind/skyfall310/lib/python3.10/site-packages/torch/cuda/__init__.py:304: UserWarning: 
-    Please install PyTorch with a following CUDA
-    configurations:  12.6 12.8 following instructions at
-    https://pytorch.org/get-started/locally/
-    
-  warnings.warn(matched_cuda_warn.format(matched_arches))
-Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:10<00:42, 10.57s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:13<00:17,  5.98s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:16<00:09,  4.50s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:24<00:05,  5.96s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:25<00:00,  4.21s/it]Loading checkpoint shards: 100%|██████████| 5/5 [00:25<00:00,  5.08s/it]
-Traceback (most recent call last):
-  File "/home/mila/a/austind/code/subtask_sim/experiment_manager.py", line 26, in <module>
-    driver.play()
-  File "/home/mila/a/austind/code/subtask_sim/src/driver.py", line 108, in play
-    action = self.agent.get_action(prompt)
-  File "/home/mila/a/austind/code/subtask_sim/src/agents/mono_llm_agent.py", line 16, in get_action
-    llm_outputs = self.llm.generate(prompt)
-  File "/home/mila/a/austind/code/subtask_sim/src/utils/hf_llm.py", line 71, in generate
-    generated_ids = self.model.generate(
-  File "/home/mila/a/austind/skyfall310/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 120, in decorate_context
-    return func(*args, **kwargs)
-  File "/home/mila/a/austind/skyfall310/lib/python3.10/site-packages/transformers/generation/utils.py", line 2431, in generate
-    self._prepare_special_tokens(generation_config, kwargs_has_attention_mask, device=device)
-  File "/home/mila/a/austind/skyfall310/lib/python3.10/site-packages/transformers/generation/utils.py", line 2111, in _prepare_special_tokens
-    and isin_mps_friendly(elements=eos_token_tensor, test_elements=pad_token_tensor).any()
-  File "/home/mila/a/austind/skyfall310/lib/python3.10/site-packages/transformers/pytorch_utils.py", line 345, in isin_mps_friendly
-    return torch.isin(elements, test_elements)
-torch.AcceleratorError: CUDA error: no kernel image is available for execution on the device
-Search for `cudaErrorNoKernelImageForDevice' in https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__TYPES.html for more information.
-CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
-For debugging consider passing CUDA_LAUNCH_BLOCKING=1
-Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
-
