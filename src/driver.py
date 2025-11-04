@@ -108,7 +108,6 @@ class GameDriver:
             # if its invalid. Eventually, it'd be nice to give a few tries.
             action = self.agent.get_action(prompt)
 
-
             # Pass action to world (receive reward)
             # For now action is a single string. Once we get to subtasks, it should be a tuple or list of strings
             action_id, action_taken, new_state, reward = self.world.take_action(action)
