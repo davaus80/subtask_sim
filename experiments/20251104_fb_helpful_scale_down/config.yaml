@@ -1,0 +1,35 @@
+actions:
+- id: 0
+  name: Rocky Hills
+- id: 1
+  name: Desert
+- id: 2
+  name: Productive Grassland
+agent:
+  model_name: Qwen/Qwen2.5-32B-Instruct
+  type: mono_llm
+experiment:
+  time_horizon: 10
+paths:
+  eval_results_master_path: experiments/20251104_fb_helpful_scale_down/eval_results.csv
+  experiment_dir: experiments/20251104_fb_helpful_scale_down
+subtasks:
+- id: 0
+  name: DeterministicFarmBandit
+  params:
+    actions:
+    - id: 0
+      mean: 1
+      std_dev: 0
+    - id: 1
+      mean: 0.5
+      std_dev: 0
+    - id: 2
+      mean: 2
+      std_dev: 0
+  type: bandit
+world:
+  prompt_template_path: src/templates/v1_w_hist.jinja2
+  task_prompt: You are a farmer who owns 3 fields. Each field has a specified reward
+    that it will return. Your goal is to select which field to plant in in order to
+    maximize your reward across all of your turns.

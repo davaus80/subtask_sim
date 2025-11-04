@@ -1,0 +1,35 @@
+actions:
+- id: 0
+  name: John's Field
+- id: 2
+  name: Mark's Field
+- id: 1
+  name: Dave's Field
+agent:
+  model_name: Qwen/Qwen2.5-32B-Instruct
+  type: mono_llm
+experiment:
+  time_horizon: 10
+paths:
+  experiment_dir: base_configs/farming_basic
+  log_file: experiments/20251104_fb_erroneous/model_name_Qwen2.5-32B-Instruct_agent_MonoLLM_time_horizon_10/model_name_Qwen2.5-32B-Instruct_agent_MonoLLM_time_horizon_10_order4/output.log
+subtasks:
+- id: 0
+  name: DeterministicFarmBandit
+  params:
+    actions:
+    - id: 0
+      mean: 100
+      std_dev: 0
+    - id: 1
+      mean: 50
+      std_dev: 0
+    - id: 2
+      mean: 200
+      std_dev: 0
+  type: bandit
+world:
+  prompt_template_path: src/templates/v1_w_hist.jinja2
+  task_prompt: You are a farmer who owns 3 fields. Each field has a specified reward
+    that it will return. Your goal is to select which field to plant in in order to
+    maximize your reward across all of your turns.

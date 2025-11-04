@@ -101,10 +101,7 @@ class GameDriver:
 
             # Get prompt from world
             prompt = self.world.get_prompt(history)
-            
-            # Get optimal action and reward from the world (this is for calculating expected regret)
-            # We assume for now that we can easily calculate optimal action and reward
-            # optimal_action, optimal_reward = self.world.get_optimal()
+            self.logger.info(prompt)
 
             # Get action from agent (until it matches a valid choice)
             # For now, let's just have the world check validity and choose a random action
@@ -113,11 +110,10 @@ class GameDriver:
 
             # Pass action to world (receive reward)
             # For now action is a single string. Once we get to subtasks, it should be a tuple or list of strings
-            action_taken, new_state, reward = self.world.take_action(action)
-            
-            history_dict = {
+            action_id, action_taken, new_state, reward = self.world.take_action(action)
+
+            history_chunk = {
                 "state": new_state,
-                # "action_selected": action, # Let's omit the action selected for now, since it may confuse the model
                 "action_taken": action_taken,
                 "reward": reward
             }
@@ -127,10 +123,11 @@ class GameDriver:
                 "state": new_state,
                 "action_selected": action,
                 "action_taken": action_taken,
+                "action_id": action_id,
                 "reward": reward
             }
             self.json_logger.write(logging_dict)
-            history.append(logging_dict)
+            history.append(history_chunk)
 
             total_reward += reward
 
