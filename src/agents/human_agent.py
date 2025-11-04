@@ -6,7 +6,7 @@ This file defines a human agent
 @Agent._register("human")
 class HumanAgent(Agent):
 
-    def __init__(self):
+    def __init__(self, config):
         pass
 
     def get_action(self, prompt):

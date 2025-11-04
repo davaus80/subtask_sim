@@ -101,6 +101,7 @@ class GameDriver:
 
             # Get prompt from world
             prompt = self.world.get_prompt(history)
+            self.logger.info(prompt)
 
             # Get action from agent (until it matches a valid choice)
             # For now, let's just have the world check validity and choose a random action
@@ -110,17 +111,24 @@ class GameDriver:
 
             # Pass action to world (receive reward)
             # For now action is a single string. Once we get to subtasks, it should be a tuple or list of strings
-            action_taken, new_state, reward = self.world.take_action(action)
+            action_id, action_taken, new_state, reward = self.world.take_action(action)
+
+            history_chunk = {
+                "state": new_state,
+                "action_taken": action_taken,
+                "reward": reward
+            }
 
             # Log relevant info (state, action, reward)
             logging_dict = {
                 "state": new_state,
                 "action_selected": action,
                 "action_taken": action_taken,
+                "action_id": action_id,
                 "reward": reward
             }
             self.json_logger.write(logging_dict)
-            history.append(logging_dict)
+            history.append(history_chunk)
 
             total_reward += reward
 

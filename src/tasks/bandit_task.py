@@ -15,7 +15,7 @@ class BanditTask(Task):
             We assume normal distributions
     '''
     def __init__(self, actions):
-        self.actions = {arm['name']: {k: v for k, v in arm.items() if k != 'name'} for arm in actions}
+        self.actions = {arm['id']: {k: v for k, v in arm.items() if k != 'id'} for arm in actions}
 
 
 
@@ -65,7 +65,7 @@ class ContextualBanditTask(Task):
             We assume normal distributions
     '''
     def __init__(self, actions, state_vars):
-        self.actions = {arm['name']: {k: v for k, v in arm.items() if k != 'name'} for arm in actions}
+        self.actions = {arm['id']: {k: v for k, v in arm.items() if k != 'id'} for arm in actions}
         self.state_vars = None # Fix this later
         # This is in progress
 
