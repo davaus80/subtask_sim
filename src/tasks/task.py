@@ -46,3 +46,6 @@ class Task(ABC):
     '''
     def take_action(self, action_spec: str): 
         pass
+    
+    def get_optimal_action(self):
+        pass
