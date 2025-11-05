@@ -1,4 +1,4 @@
-2025-11-05 10:30:51,966 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-05 11:21:21,289 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -19,25 +19,11 @@ State is empty.
 Available Actions:
 ---
 
-- Field_9
+- Productive Grassland
 
-- Field_6
+- Desert
 
-- Field_2
-
-- Field_1
-
-- Field_10
-
-- Field_3
-
-- Field_5
-
-- Field_7
-
-- Field_4
-
-- Field_8
+- Rocky Hills
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -51,7 +37,7 @@ This is the first turn. There is no history.
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-05 11:28:43,913 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-05 11:21:25,434 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -72,25 +58,11 @@ State is empty.
 Available Actions:
 ---
 
-- Field_9
+- Productive Grassland
 
-- Field_6
+- Desert
 
-- Field_2
-
-- Field_1
-
-- Field_10
-
-- Field_3
-
-- Field_5
-
-- Field_7
-
-- Field_4
-
-- Field_8
+- Rocky Hills
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -99,14 +71,14 @@ History:
 ---
 
 
-- {'state': {}, 'action_taken': 'Field_10', 'reward': 100.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
 
 ---
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-05 11:45:35,473 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-05 11:21:29,122 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -127,25 +99,11 @@ State is empty.
 Available Actions:
 ---
 
-- Field_9
+- Productive Grassland
 
-- Field_6
+- Desert
 
-- Field_2
-
-- Field_1
-
-- Field_10
-
-- Field_3
-
-- Field_5
-
-- Field_7
-
-- Field_4
-
-- Field_8
+- Rocky Hills
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -154,16 +112,16 @@ History:
 ---
 
 
-- {'state': {}, 'action_taken': 'Field_10', 'reward': 100.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Rocky Hills', 'reward': -100.0}
 
 
 ---
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-05 12:02:30,471 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-05 11:21:44,473 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -184,25 +142,11 @@ State is empty.
 Available Actions:
 ---
 
-- Field_9
+- Productive Grassland
 
-- Field_6
+- Desert
 
-- Field_2
-
-- Field_1
-
-- Field_10
-
-- Field_3
-
-- Field_5
-
-- Field_7
-
-- Field_4
-
-- Field_8
+- Rocky Hills
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -211,18 +155,18 @@ History:
 ---
 
 
-- {'state': {}, 'action_taken': 'Field_10', 'reward': 100.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Rocky Hills', 'reward': -100.0}
 
-- {'state': {}, 'action_taken': 'Field_6', 'reward': 150.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
 
 ---
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-05 12:20:09,890 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-05 11:21:48,502 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -243,25 +187,11 @@ State is empty.
 Available Actions:
 ---
 
-- Field_9
+- Productive Grassland
 
-- Field_6
+- Desert
 
-- Field_2
-
-- Field_1
-
-- Field_10
-
-- Field_3
-
-- Field_5
-
-- Field_7
-
-- Field_4
-
-- Field_8
+- Rocky Hills
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -270,20 +200,20 @@ History:
 ---
 
 
-- {'state': {}, 'action_taken': 'Field_10', 'reward': 100.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Rocky Hills', 'reward': -100.0}
 
-- {'state': {}, 'action_taken': 'Field_6', 'reward': 150.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Desert', 'reward': -50.0}
 
 
 ---
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-05 12:38:55,641 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-05 11:21:52,709 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -304,25 +234,11 @@ State is empty.
 Available Actions:
 ---
 
-- Field_9
+- Productive Grassland
 
-- Field_6
+- Desert
 
-- Field_2
-
-- Field_1
-
-- Field_10
-
-- Field_3
-
-- Field_5
-
-- Field_7
-
-- Field_4
-
-- Field_8
+- Rocky Hills
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -331,22 +247,22 @@ History:
 ---
 
 
-- {'state': {}, 'action_taken': 'Field_10', 'reward': 100.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Rocky Hills', 'reward': -100.0}
 
-- {'state': {}, 'action_taken': 'Field_6', 'reward': 150.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Desert', 'reward': -50.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Rocky Hills', 'reward': -100.0}
 
 
 ---
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-05 12:58:18,135 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-05 11:22:02,955 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -367,25 +283,11 @@ State is empty.
 Available Actions:
 ---
 
-- Field_9
+- Productive Grassland
 
-- Field_6
+- Desert
 
-- Field_2
-
-- Field_1
-
-- Field_10
-
-- Field_3
-
-- Field_5
-
-- Field_7
-
-- Field_4
-
-- Field_8
+- Rocky Hills
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -394,17 +296,17 @@ History:
 ---
 
 
-- {'state': {}, 'action_taken': 'Field_10', 'reward': 100.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Rocky Hills', 'reward': -100.0}
 
-- {'state': {}, 'action_taken': 'Field_6', 'reward': 150.0}
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -200.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Desert', 'reward': -50.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Rocky Hills', 'reward': -100.0}
 
-- {'state': {}, 'action_taken': 'Field_9', 'reward': 250.0}
+- {'state': {}, 'action_taken': 'Desert', 'reward': -50.0}
 
 
 ---
