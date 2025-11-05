@@ -98,6 +98,7 @@ class World():
         # Take a random action if action is invalid
         if not relevant_task_ids:
             action_id = random.choice(list(self.actions.keys()))
+            action_name = self.actions[action_id]['name']
             relevant_task_ids = self.actions[action_id]['subtasks']
 
         total_reward = 0.0
