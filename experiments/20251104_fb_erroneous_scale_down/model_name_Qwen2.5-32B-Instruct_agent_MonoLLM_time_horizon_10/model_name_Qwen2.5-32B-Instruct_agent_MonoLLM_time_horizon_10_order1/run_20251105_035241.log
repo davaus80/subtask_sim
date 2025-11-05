@@ -1,0 +1,2400 @@
+2025-11-05 03:52:41,555 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+This is the first turn. There is no history.
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:52:45,574 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:52:49,539 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:52:53,534 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:52:57,558 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:53:02,056 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:53:06,547 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:53:11,084 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:53:16,054 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:53:21,076 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Dave's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:53:44,095 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+This is the first turn. There is no history.
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:54:13,491 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:54:42,463 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 03:55:11,583 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:01:48,456 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:02:18,005 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:02:47,656 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:03:17,255 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:03:47,374 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:04:17,536 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Mark's Field
+
+- John's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:04:48,669 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+This is the first turn. There is no history.
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:13:53,061 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:23:19,740 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:33:24,834 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:44:11,380 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 04:55:40,683 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 05:07:44,519 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 05:20:22,360 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 05:33:40,180 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 05:47:38,125 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- John's Field
+
+- Mark's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 06:02:22,675 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+This is the first turn. There is no history.
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 06:11:28,446 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 06:20:56,521 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 06:31:01,392 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 06:41:45,496 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 06:53:05,779 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:05:05,459 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:17:39,960 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:30:51,269 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:44:38,015 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- John's Field
+
+- Mark's Field
+
+- Dave's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:59:30,487 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+This is the first turn. There is no history.
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:59:34,523 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:59:38,357 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:59:42,218 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:59:46,100 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:59:50,431 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:59:54,808 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 07:59:59,218 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 08:00:04,305 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 08:00:09,178 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Dave's Field
+
+- Mark's Field
+
+- John's Field
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': "Dave's Field", 'reward': 0.5}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "John's Field", 'reward': 1.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+- {'state': {}, 'action_taken': "Mark's Field", 'reward': 2.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
