@@ -1273,3 +1273,56 @@ History:
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-05 13:07:39,562 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+
+You will be assigned a task. 
+You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
+---
+
+Current State:
+---
+
+State is empty.
+
+---
+
+Available Actions:
+---
+
+- Desert
+
+- Rocky Hills
+
+- Productive Grassland
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+History:
+---
+
+
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -50.0}
+
+- {'state': {}, 'action_taken': 'Rocky Hills', 'reward': -100.0}
+
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -50.0}
+
+- {'state': {}, 'action_taken': 'Desert', 'reward': -200.0}
+
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -50.0}
+
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -50.0}
+
+- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': -50.0}
+
+
+---
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
