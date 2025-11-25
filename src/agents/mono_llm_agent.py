@@ -1,5 +1,6 @@
 from src.agents.agent import Agent
 from src.utils.hf_llm import HuggingFaceLLM
+import logging
 
 from typing import Dict, Any
 import re
@@ -12,6 +13,7 @@ class MonoLLMAgent(Agent):
 
     def __init__(self, config):
         self.llm = HuggingFaceLLM(config)
+        self.logger = logging.getLogger(__name__)
 
     def get_action(self, prompt):
         llm_outputs = self.llm.generate(prompt)
@@ -22,5 +24,7 @@ class MonoLLMAgent(Agent):
         # extract first match - if I end up wanting all matches, use findall()
         m = re.search(r"<action>(.*?)</action>", content, re.DOTALL)
         action = m.group(1).strip() if m else None
+        
+        self.logger.info(f"GENERATED CONTENT: {content} \n PARSED ACTION: {action}")
         
         return action
