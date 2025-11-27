@@ -1,4 +1,4 @@
-2025-11-25 13:59:17,567 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-25 14:30:03,747 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -21,9 +21,9 @@ Available Actions:
 
 - Desert
 
-- Productive Grassland
-
 - Rocky Hills
+
+- Productive Grassland
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -37,7 +37,9 @@ This is the first turn. There is no history.
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-25 13:59:45,930 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-25 14:30:17,686 - src.driver - INFO - GENERATED CONTENT: <action> Productive Grassland </action> 
+ PARSED ACTION: Productive Grassland
+2025-11-25 14:30:17,686 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -60,9 +62,9 @@ Available Actions:
 
 - Desert
 
-- Productive Grassland
-
 - Rocky Hills
+
+- Productive Grassland
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -78,7 +80,9 @@ History:
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-25 14:01:17,834 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-25 14:31:32,316 - src.driver - INFO - GENERATED CONTENT: <action> Productive Grassland </action> 
+ PARSED ACTION: Productive Grassland
+2025-11-25 14:31:32,316 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -101,9 +105,9 @@ Available Actions:
 
 - Desert
 
-- Productive Grassland
-
 - Rocky Hills
+
+- Productive Grassland
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -121,7 +125,9 @@ History:
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-25 14:03:55,563 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-25 14:32:30,290 - src.driver - INFO - GENERATED CONTENT: <action>Productive Grassland</action> 
+ PARSED ACTION: Productive Grassland
+2025-11-25 14:32:30,290 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -144,9 +150,9 @@ Available Actions:
 
 - Desert
 
-- Productive Grassland
-
 - Rocky Hills
+
+- Productive Grassland
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -166,7 +172,9 @@ History:
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-25 14:05:18,632 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
+2025-11-25 14:33:26,971 - src.driver - INFO - GENERATED CONTENT: <action> Productive Grassland </action> 
+ PARSED ACTION: Productive Grassland
+2025-11-25 14:33:26,972 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -189,9 +197,9 @@ Available Actions:
 
 - Desert
 
-- Productive Grassland
-
 - Rocky Hills
+
+- Productive Grassland
 
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
@@ -213,126 +221,5 @@ History:
 
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-25 14:06:52,593 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
-
-You will be assigned a task. 
-You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
-Your goal is to maximize the total reward across all 5 steps. We are on step 0. 
-
-Task Assignment:
----
-You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
----
-
-Current State:
----
-
-State is empty.
-
----
-
-Available Actions:
----
-
-- Rocky Hills
-
-- Productive Grassland
-
-- Desert
-
----
-When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
-
-History:
----
-
-This is the first turn. There is no history.
-
----
-
-Please select an action from the list of action options in order to maximize the reward for your task.
-When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-25 14:07:31,298 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
-
-You will be assigned a task. 
-You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
-Your goal is to maximize the total reward across all 5 steps. We are on step 1. 
-
-Task Assignment:
----
-You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
----
-
-Current State:
----
-
-State is empty.
-
----
-
-Available Actions:
----
-
-- Rocky Hills
-
-- Productive Grassland
-
-- Desert
-
----
-When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
-
-History:
----
-
-
-- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': 50.0}
-
-
----
-
-Please select an action from the list of action options in order to maximize the reward for your task.
-When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
-2025-11-25 14:08:49,282 - src.driver - INFO - ##### v1_w_hist.jinja2 #####
-
-You will be assigned a task. 
-You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
-Your goal is to maximize the total reward across all 5 steps. We are on step 2. 
-
-Task Assignment:
----
-You are a farmer who owns 3 fields. Each field has a specified reward that it will return. Your goal is to select which field to plant in in order to maximize your reward across all of your turns.
----
-
-Current State:
----
-
-State is empty.
-
----
-
-Available Actions:
----
-
-- Rocky Hills
-
-- Productive Grassland
-
-- Desert
-
----
-When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
-
-History:
----
-
-
-- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': 50.0}
-
-- {'state': {}, 'action_taken': 'Productive Grassland', 'reward': 50.0}
-
-
----
-
-Please select an action from the list of action options in order to maximize the reward for your task.
-When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+2025-11-25 14:34:21,339 - src.driver - INFO - GENERATED CONTENT: <action>Productive Grassland</action> 
+ PARSED ACTION: Productive Grassland
