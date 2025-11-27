@@ -44,5 +44,5 @@ if __name__ == "__main__":
             driver = GameDriver(cfg_path)
             driver.play()
     else:
-        raise ValueError("Please specify the --config_path or --config_folder argument. Folder will run all configs in subdirectories (but not in main directory)")
+        raise ValueError("Please specify the --config_path or --config_folder argument. config_folder will run all configs in subdirectories (but not in main directory) so it handles shuffle subdirs")
 
