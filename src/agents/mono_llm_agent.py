@@ -25,6 +25,4 @@ class MonoLLMAgent(Agent):
         m = re.search(r"<action>(.*?)</action>", content, re.DOTALL)
         action = m.group(1).strip() if m else None
         
-        self.logger.info(f"GENERATED CONTENT: {content} \n PARSED ACTION: {action}")
-        
-        return action
+        return {"action": action, "content": content}

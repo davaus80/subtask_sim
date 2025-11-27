@@ -106,7 +106,10 @@ class GameDriver:
             # Get action from agent (until it matches a valid choice)
             # For now, let's just have the world check validity and choose a random action
             # if its invalid. Eventually, it'd be nice to give a few tries.
-            action_selected_name = self.agent.get_action(prompt)
+            action_dict = self.agent.get_action(prompt)
+            action_selected_name = action_dict['action']
+            full_content = action_dict['content']
+            self.logger.info(f"GENERATED CONTENT: {full_content} \n PARSED ACTION: {action_selected_name}")
 
             # Pass action to world (receive reward)
             # For now action is a single string. Once we get to subtasks, it should be a tuple or list of strings
@@ -121,6 +124,7 @@ class GameDriver:
             # Log relevant info (state, action, reward)
             logging_dict = {
                 "state": new_state,
+                "full_action_content": full_content,
                 "action_selected_name": action_selected_name,
                 "action_taken_name": action_taken_name,
                 "action_taken_id": action_taken_id,
