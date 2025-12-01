@@ -103,7 +103,7 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         # Each element will be a list of length min_rows
         per_shuffle_cum_rewards = []
         per_shuffle_step_rewards = []
-        per_shuffle_regrets = []
+        per_shuffle_step_regrets = []
         per_shuffle_optimal_props = []
 
         for sdir in shuffle_dirs:
@@ -154,12 +154,12 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
             # compute regrets and optimal-action counts if we have optimal_mean
             if optimal_mean is not None:
                 regrets = [optimal_mean - rw for rw in rewards]
-                per_shuffle_regrets.append(regrets)
+                per_shuffle_step_regrets.append(regrets)
                 optimal_counts = sum(1 for rdict in results_trim if rdict.get('action_taken_id') == optimal_id)
                 per_shuffle_optimal_props.append(optimal_counts / float(min_rows))
             else:
                 # mark with None so lengths match when aggregating
-                per_shuffle_regrets.append([np.nan] * min_rows)
+                per_shuffle_step_regrets.append([np.nan] * min_rows)
                 per_shuffle_optimal_props.append(np.nan)
 
             valid_shuffles += 1
@@ -171,20 +171,27 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         # Aggregate per-step metrics across shuffles
         cum_arr = np.array(per_shuffle_cum_rewards, dtype=float)  # shape (n_shuffles, min_rows)
         step_arr = np.array(per_shuffle_step_rewards, dtype=float)
-        regret_arr = np.array(per_shuffle_regrets, dtype=float)
+        step_regret_arr = np.array(per_shuffle_step_regrets, dtype=float)
+
+        # Calculate cumulative regret
+        cum_regret_arr = np.cumsum(step_regret_arr, axis=1)
 
         row = {'subfolder': subname, 'n_shuffles': valid_shuffles}
 
         # cumulative and step-wise reward stats
         for t in range(min_rows):
-            row[f'total_reward_{t}_mean'] = float(np.mean(cum_arr[:, t]))
-            row[f'total_reward_{t}_std'] = float(np.std(cum_arr[:, t], ddof=0))
-            row[f'reward_{t}_mean'] = float(np.mean(step_arr[:, t]))
-            row[f'reward_{t}_std'] = float(np.std(step_arr[:, t], ddof=0))
+            row[f'cum_reward_{t}_mean'] = float(np.mean(cum_arr[:, t]))
+            row[f'cum_reward_{t}_std'] = float(np.std(cum_arr[:, t], ddof=0))
+            row[f'step_reward_{t}_mean'] = float(np.mean(step_arr[:, t]))
+            row[f'step_reward_{t}_std'] = float(np.std(step_arr[:, t], ddof=0))
 
             # regrets may contain nan if optimal not available for some shuffles
-            row[f'regret_{t}_mean'] = float(np.nanmean(regret_arr[:, t]))
-            row[f'regret_{t}_std'] = float(np.nanstd(regret_arr[:, t], ddof=0))
+            row[f'step_regret_{t}_mean'] = float(np.nanmean(step_regret_arr[:, t]))
+            row[f'step_regret_{t}_std'] = float(np.nanstd(step_regret_arr[:, t], ddof=0))
+
+            # cumulative regret stats
+            row[f'cum_regret_{t}_mean'] = float(np.nanmean(cum_regret_arr[:, t]))
+            row[f'cum_regret_{t}_std'] = float(np.nanstd(cum_regret_arr[:, t], ddof=0))
 
         # percent optimal action overall (mean/std across shuffles)
         prop_arr = np.array(per_shuffle_optimal_props, dtype=float)
