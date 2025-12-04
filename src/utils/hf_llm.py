@@ -53,12 +53,17 @@ class HuggingFaceLLM:
             device_map="auto"
         )
 
+        if config.get("agent", None) and config['agent'].get("max_new_tokens", None):
+            self.max_new_tokens = config['agent']['max_new_tokens']
+        else:
+            self.max_new_tokens = 32768
 
-    # TODO: Connect max_new_tokens to actually be used
-    def generate(self, prompt: str, max_new_tokens: Optional[int] = 128, **kwargs) -> str:
+
+    def generate(self, prompt: str, **kwargs) -> str:
         messages = [
             {"role": "user", "content": prompt}
         ]
+
         text = self.tokenizer.apply_chat_template(
             messages,
             tokenize=False,
@@ -70,7 +75,7 @@ class HuggingFaceLLM:
         # conduct text completion
         generated_ids = self.model.generate(
             **model_inputs,
-            max_new_tokens=32768
+            max_new_tokens=self.max_new_tokens
         )
         output_ids = generated_ids[0][len(model_inputs.input_ids[0]):].tolist() 
 

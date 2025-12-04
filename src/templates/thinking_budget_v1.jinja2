@@ -1,4 +1,4 @@
-##### v1_w_hist.jinja2 #####
+##### thinking_budget_v1.jinja2 #####
 
 You will be assigned a task. 
 You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
@@ -42,5 +42,5 @@ This is the first turn. There is no history.
 Please select an action from the list of action options in order to maximize the reward for your task.
 When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
 
-If you cannot answer within 5 reasoning steps, output the best answer you have so far.
-Never extend your chain-of-thought beyond 5 steps.
+Your thinking budget is {{ thinking_budget }} tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is {{ new_token_budget }} tokens.

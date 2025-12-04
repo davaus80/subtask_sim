@@ -122,7 +122,9 @@ class World():
             actions=list(self.action_name_to_id_map.keys()),
             history=history,
             num_turns=self.time_horizon,
-            current_turn=len(history)
+            current_turn=len(history),
+            thinking_budget=self.config.get("agent", {}).get("thinking_budget", "Not specified"),
+            new_token_budget=self.config.get("agent", {}).get("max_new_tokens", "Not specified")
         )
 
     def get_state(self):

@@ -20,3 +20,9 @@ Current plan:
 - These are ABLATIONS - they help me to justify the design decisions and experimental choices.
 
 I am now running the 8B and 14B versions. The focus now is on developing the evaluation code so that I can easily get metrics from the runs instead of having to manually copy everything all the time. I will also set up the ablations so I can justify the design of the larger runs. For the report, I can start to write from the conclusions of these results, but keep running the larger experiments in the background.
+
+### December 4
+I spent a while this morning trying to figure out how to get CoT working best for Qwen3. I think what I want to do is this:
+- Generate a response with thinking. Max character limit is the thinking budget (say 100 tokens)
+- If generation hits the character limit, then append the "out of thinking tokens, must generate an answer" think with thinking off(?)
+- Return the final generation - the thinking content should also be returned.
