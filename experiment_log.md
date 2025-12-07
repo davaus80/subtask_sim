@@ -28,3 +28,6 @@ I spent a while this morning trying to figure out how to get CoT working best fo
 - Return the final generation - the thinking content should also be returned.
 Ok, I was frustrated, but I came back to it and managed to get a version which I think should work! I'm running it now on slurm. 
 I think this afternoon, I'd like to inspect the logs, and run a 4B version locally to view exactly how the prompts render and what the generation/thinking behaviour is. I want to confirm thinking traces are being recorded correctly. I want to see what happens if the budget is hit.
+
+### Dec 7
+Today I added the abstract bandit domain. I also modified the arm names in farm and abstract bandit to specify that they correspond to fields and arms. This was because the thinking in Qwen3 seemed to indicate that there was confusion about what they represented.
