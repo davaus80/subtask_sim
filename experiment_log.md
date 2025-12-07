@@ -26,3 +26,5 @@ I spent a while this morning trying to figure out how to get CoT working best fo
 - Generate a response with thinking. Max character limit is the thinking budget (say 100 tokens)
 - If generation hits the character limit, then append the "out of thinking tokens, must generate an answer" think with thinking off(?)
 - Return the final generation - the thinking content should also be returned.
+Ok, I was frustrated, but I came back to it and managed to get a version which I think should work! I'm running it now on slurm. 
+I think this afternoon, I'd like to inspect the logs, and run a 4B version locally to view exactly how the prompts render and what the generation/thinking behaviour is. I want to confirm thinking traces are being recorded correctly. I want to see what happens if the budget is hit.

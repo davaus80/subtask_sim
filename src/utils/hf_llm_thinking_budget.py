@@ -70,13 +70,12 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
 
         # If we hit the budget, then we need to generate a response given the prior thinking content
         
-        if content is None:
-            # reasoning content is too long
-            reasoning_content = (
+        # reasoning content is too long
+        reasoning_content = (
                 f"{reasoning_content}"
                 "\n\nConsidering the limited time by the user, "
-                "I have to give the solution based on the thinking directly now."
-            )
+                "I have exhausting the thinking budget and must give the solution based on the thinking directly now."
+        )
         reasoning_tokens_len = len(self.tokenizer.encode(reasoning_content, add_special_tokens=False))
         remaining_tokens = self.max_new_tokens - reasoning_tokens_len
         assert remaining_tokens > 0, f"remaining tokens must be positive. Given {remaining_tokens=}. Increase the max_tokens or lower the thinking_budget."
