@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Specify the directory containing subfolders
-CONFIG_DIR="experiments/20251204_prompt_testing/model_name_Qwen3-14B_time_horizon_8_prompt_think_budget_100_150"
+CONFIG_DIR="experiments/20251207_prompt_testing/model_name_Qwen3-8B_time_horizon_8_think_budget_think_budget_150_200_prompt_fullhist"
 echo "Searching for subfolders in $CONFIG_DIR"
 # Find all subfolders (non-recursively)
 mapfile -t SUBFOLDERS < <(find "$CONFIG_DIR" -mindepth 1 -maxdepth 1 -type d | sort)

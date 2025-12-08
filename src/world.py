@@ -132,6 +132,7 @@ class World():
             }
             
             per_action_summarized_history[action_name] = summarized_history
+            
 
         # Render the template with the current state, actions, and history
         return self.prompt_template.render(

@@ -1,21 +1,10 @@
 You will be assigned a task. 
-You will receive the current state of the environment, the actions you have available, followed by the action taken and their respective reward. 
+You will receive the actions you have available, followed by the action history. 
 Your goal is to maximize the total reward across all {{ num_turns }} steps. We are on step {{ current_turn }}. 
 
 Task Assignment:
 ---
 {{ task_prompt }}
----
-
-Current State:
----
-{% if state %}
-{% for key, value in state.items() %}
-- {{ key }}: {{ value }}
-{% endfor %}
-{% else %}
-State is empty.
-{% endif %}
 ---
 
 Available Actions:
