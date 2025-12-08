@@ -1,5 +1,6 @@
 from src.agents.agent import Agent
 from src.utils.hf_llm import HuggingFaceLLM
+from src.utils.hf_llm_thinking_budget import HFLLM_Thinking_Budget
 import logging
 
 from typing import Dict, Any
@@ -12,7 +13,10 @@ This file defines a human agent
 class MonoLLMAgent(Agent):
 
     def __init__(self, config):
-        self.llm = HuggingFaceLLM(config)
+        if config.get('agent', None) and config.get('agent', {}).get('thinking_budget', None):
+            self.llm = HFLLM_Thinking_Budget(config)
+        else:
+            self.llm = HuggingFaceLLM(config)
         self.logger = logging.getLogger(__name__)
 
     def get_action(self, prompt):

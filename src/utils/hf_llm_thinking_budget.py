@@ -18,7 +18,7 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
 
     def __init__(self, config: Dict[str, Any]):
         # prefer config['agent']['model_name'] per project convention
-        super.__init__(config)
+        super().__init__(config)
         if config.get("agent", None) and config['agent'].get("thinking_budget", None):
             self.thinking_budget = config['agent']['thinking_budget']
         else:
@@ -54,7 +54,10 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
             # rindex finding 151668 (</think>)
             index = len(output_ids) - output_ids[::-1].index(151668)
         except ValueError:
-            index = 0
+            if 151667 in output_ids: # Thinking was opened but not closed
+                index = len(output_ids)
+            else:
+                index = 0
             
         thinking_content = self.tokenizer.decode(output_ids[:index], skip_special_tokens=True).strip("\n")
         content = self.tokenizer.decode(output_ids[index:], skip_special_tokens=True).strip("\n")
@@ -71,16 +74,18 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
         # If we hit the budget, then we need to generate a response given the prior thinking content
         
         # reasoning content is too long
-        reasoning_content = (
-                f"{reasoning_content}"
-                "\n\nConsidering the limited time by the user, "
-                "I have exhausting the thinking budget and must give the solution based on the thinking directly now."
+        prior_content = (
+                f"{thinking_content}\n</think>"
+                "\n\nThe thinking budget is exhausted, and I must give the solution based on the thinking directly now. You are very knowledgeable. An expert. Think and respond with confidence. <action>"
         )
-        reasoning_tokens_len = len(self.tokenizer.encode(reasoning_content, add_special_tokens=False))
-        remaining_tokens = self.max_new_tokens - reasoning_tokens_len
+        prior_tokens_len = len(self.tokenizer.encode(prior_content, add_special_tokens=False))
+        remaining_tokens = self.max_new_tokens - prior_tokens_len
         assert remaining_tokens > 0, f"remaining tokens must be positive. Given {remaining_tokens=}. Increase the max_tokens or lower the thinking_budget."
 
+        import pdb; pdb.set_trace()
+        
         # 2. append reasoning content to messages and call completion
+        messages.append({"role": "assistant", "content": f"{prior_content}"})
         messages.append({"role": "assistant", "content": f"<think>\n{reasoning_content}\n</think>\n\n"})
         messages.append({"role": "system", "content": f"/no_think"})
         messages.append({"role": "user", "content": f"Which action do you select?"})
@@ -103,8 +108,8 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
         content = self.tokenizer.decode(output_ids, skip_special_tokens=True).strip("\n")
 
         response_data = {
-            "thinking_content": reasoning_content,
-            "content": content,
+            "thinking_content": prior_content,
+            "content": "<action> {content}",
             'rendered_prompt': prompt
         }
         return response_data
