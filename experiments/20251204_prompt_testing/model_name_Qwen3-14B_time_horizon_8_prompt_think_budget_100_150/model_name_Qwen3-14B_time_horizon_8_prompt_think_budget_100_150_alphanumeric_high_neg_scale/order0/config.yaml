@@ -6,9 +6,9 @@ actions:
 - id: 0
   name: Q4FXEYMC6L
 agent:
-  max_new_tokens: 150
+  max_new_tokens: 250
   model_name: Qwen/Qwen3-14B
-  thinking_budget: 100
+  thinking_budget: 200
   type: mono_llm
 experiment:
   time_horizon: 8
@@ -34,4 +34,4 @@ world:
   prompt_template_path: src/templates/thinking_budget_v1.jinja2
   task_prompt: You are a farmer who owns 3 fields. Each field has a specified reward
     that it will return. Your goal is to select which field to plant in in order to
-    maximize your reward across all of your turns.
+    maximize your reward across all of your turns. Each action corresponds to a different field.

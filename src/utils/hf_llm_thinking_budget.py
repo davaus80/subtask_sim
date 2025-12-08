@@ -76,21 +76,18 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
         # reasoning content is too long
         prior_content = (
                 f"{thinking_content}\n</think>"
-                "\n\nThe thinking budget is exhausted, and I must give the solution based on the thinking directly now. You are very knowledgeable. An expert. Think and respond with confidence. <action>"
+                "\n\nThe thinking budget is exhausted, and I must give the solution based on the thinking directly now."
         )
         prior_tokens_len = len(self.tokenizer.encode(prior_content, add_special_tokens=False))
         remaining_tokens = self.max_new_tokens - prior_tokens_len
         assert remaining_tokens > 0, f"remaining tokens must be positive. Given {remaining_tokens=}. Increase the max_tokens or lower the thinking_budget."
-
-        import pdb; pdb.set_trace()
         
         # 2. append reasoning content to messages and call completion
-        messages.append({"role": "assistant", "content": f"{prior_content}"})
-        messages.append({"role": "assistant", "content": f"<think>\n{reasoning_content}\n</think>\n\n"})
-        messages.append({"role": "system", "content": f"/no_think"})
-        messages.append({"role": "user", "content": f"Which action do you select?"})
-        messages.append({"role": "assistant", "content": f"<think>\n\n</think>"})
-        prompt = self.tokenizer.apply_chat_template(
+        messages.append({"role": "assistant", "content": f"{prior_content} <action>"})
+        # messages.append({"role": "system", "content": f"/no_think"})
+        # messages.append({"role": "user", "content": f"Which action do you select?"})
+        # messages.append({"role": "assistant", "content": f"<action>"})
+        text = self.tokenizer.apply_chat_template(
             messages,
             tokenize=False,
             continue_final_message=True,
@@ -106,10 +103,10 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
         output_ids = generated_ids[0][len(model_inputs.input_ids[0]):].tolist()
 
         content = self.tokenizer.decode(output_ids, skip_special_tokens=True).strip("\n")
-
+        
         response_data = {
             "thinking_content": prior_content,
-            "content": "<action> {content}",
-            'rendered_prompt': prompt
+            "content": f"<action> {content}",
+            'rendered_prompt': text
         }
         return response_data
