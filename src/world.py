@@ -63,7 +63,6 @@ class World():
             self.state_dict.update(task.initial_state())
 
             # Update map from action name to subtasks.
-            # import pdb; pdb.set_trace()
             subtask_actions = subtask_cfg.get('params', {}).get('actions',{}) # Expect a list of dicts, each containing "name"
             for action in subtask_actions:
                 # If action isn't listed then there's an error in the config
@@ -114,6 +113,25 @@ class World():
     def get_prompt(self, history):
         if not self.prompt_template:
             raise ValueError("Prompt template is not loaded.")
+        
+        # Process the action history as well for easier history passing
+        # Map from action name to list of observed rewards
+        per_action_history = {action_name: [] for action_name in self.action_name_to_id_map}
+        for hist_entry in history:
+            if not hist_entry['action_taken'] in per_action_history:
+                per_action_history[hist_entry['action_taken']] = []
+            per_action_history[hist_entry['action_taken']].append(hist_entry['reward'])
+            
+        per_action_summarized_history = {}
+        for action_name, action_history in per_action_history.items():
+            count = len(action_history)
+            obs_mean = sum(action_history) / count if count > 0 else "Unknown"
+            summarized_history = {
+                'obs_mean': obs_mean,
+                'count': count
+            }
+            
+            per_action_summarized_history[action_name] = summarized_history
 
         # Render the template with the current state, actions, and history
         return self.prompt_template.render(
@@ -124,7 +142,9 @@ class World():
             num_turns=self.time_horizon,
             current_turn=len(history),
             thinking_budget=self.config.get("agent", {}).get("thinking_budget", "Not specified"),
-            new_token_budget=self.config.get("agent", {}).get("max_new_tokens", "Not specified")
+            new_token_budget=self.config.get("agent", {}).get("max_new_tokens", "Not specified"),
+            per_action_history=per_action_history,
+            per_action_summarized_history=per_action_summarized_history
         )
 
     def get_state(self):
