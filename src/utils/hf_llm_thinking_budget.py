@@ -82,6 +82,9 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
 
         # 2. append reasoning content to messages and call completion
         messages.append({"role": "assistant", "content": f"<think>\n{reasoning_content}\n</think>\n\n"})
+        messages.append({"role": "system", "content": f"/no_think"})
+        messages.append({"role": "user", "content": f"Which action do you select?"})
+        messages.append({"role": "assistant", "content": f"<think>\n\n</think>"})
         prompt = self.tokenizer.apply_chat_template(
             messages,
             tokenize=False,
