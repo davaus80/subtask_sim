@@ -1,0 +1,39 @@
+actions:
+- id: 2
+  name: Dementia Elimination Pathetic Field
+- id: 1
+  name: Decimal Glasses Sailing Field
+- id: 0
+  name: Forte Tribute Anchorage Field
+agent:
+  max_new_tokens: 200
+  model_name: Qwen/Qwen3-8B
+  thinking_budget: 150
+  type: mono_llm
+experiment:
+  time_horizon: 8
+paths:
+  experiment_dir: base_configs/farming_basic
+  log_file: experiments/20251209_farm_sentiment/model_name_Qwen3-8B_time_horizon_8_think_budget_think_budget_150_200_prompt_summhist/model_name_Qwen3-8B_time_horizon_8_think_budget_think_budget_150_200_prompt_summhist_sent_helpful_high_scale/order0/output.log
+subtasks:
+- id: 0
+  name: DeterministicFarmBandit
+  params:
+    actions:
+    - id: 0
+      mean: 200
+      std_dev: 0
+    - id: 1
+      mean: 100
+      std_dev: 0
+    - id: 2
+      mean: 50
+      std_dev: 0
+  type: bandit
+world:
+  prompt_template_path: src/templates/budget_summhist_v1.jinja2
+  task_prompt: You are a farmer who owns 3 fields. Each action corresponds to planting
+    in a specific field. Each field is associated with a Gaussian distribution with
+    a fixed but unknown mean. At each time step, you will select a field and receive
+    a reward drawn from the associated distribution. Your goal is to select which
+    field to plant in in order to maximize your reward across all of your turns.
