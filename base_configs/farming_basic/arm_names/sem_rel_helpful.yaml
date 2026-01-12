@@ -1,7 +1,7 @@
 actions:
   - id: 0
-    name: "Productive Grassland Field"
+    names_path: "base_configs/action_name_lists/semantic/farm/sem_bandit_good.json"
   - id: 1
-    name: "Rocky Hills Field"
+    names_path: "base_configs/action_name_lists/semantic/farm/sem_bandit_neutral.json"
   - id: 2
-    name: "Arid Desert Field"
+    names_path: "base_configs/action_name_lists/semantic/farm/sem_bandit_bad.json"

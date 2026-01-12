@@ -1,7 +1,7 @@
 actions:
   - id: 0
-    name: "Dementia Elimination Pathetic Field"
+    names_path: "base_configs/action_name_lists/sentiment/negative.json"
   - id: 1
-    name: "Decimal Glasses Sailing Field"
+    names_path: "base_configs/action_name_lists/sentiment/neutral.json"
   - id: 2
-    name: "Forte Tribute Anchorage Field"
+    names_path: "base_configs/action_name_lists/sentiment/positive.json"
