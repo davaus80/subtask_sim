@@ -10,5 +10,6 @@ class HumanAgent(Agent):
         pass
 
     def get_action(self, prompt):
-        action = input(prompt)
-        return action
+        print(prompt)
+        action = input("Enter your action:")
+        return {"action": action, "content": action}

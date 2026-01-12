@@ -10,7 +10,7 @@ Task Assignment:
 Available Actions:
 ---
 {% for action in actions %}
-- {{ action }} : Previously observed rewards: [{% for reward in per_action_history[action] %} {{ reward }} {% endfor %}]
+- {{ action }} {{action_suffix }}: Previously observed rewards: [{% for reward in per_action_history[action] %} {{ reward }} {% endfor %}]
 {% endfor %}
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.

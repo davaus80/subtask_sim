@@ -121,8 +121,20 @@ class World():
     - reward: int
     '''
     def take_action(self, action_name):
-        # Get the tasks affected by this action
+        
+        # Check if action name is valid
         action_id = self.action_name_to_id_map.get(action_name, None)
+        
+        # As a fallback, check if the action name CONTAINS any valid action names (e.g. action_name + action_suffix)
+        if not action_id:
+            matches = [key for key in self.action_name_to_id_map if key.lower() in action_name.lower()]
+            if matches:
+                # Return the longest matching key (most specific)
+                action_name = max(matches, key=len)
+                action_id = self.action_name_to_id_map.get(action_name, None)
+            
+        
+        # Get the tasks affected by this action
         relevant_task_ids = self.actions.get(action_id, {}).get('subtasks', None) # This is a list of strings corresponding to the names of tasks affected by this action
 
         # Take a random action if action is invalid
@@ -170,6 +182,7 @@ class World():
             task_prompt=self.config.get("world", {}).get("task_prompt", ""),
             state=self.state_dict,
             actions=list(self.action_name_to_id_map.keys()),
+            action_suffix=self.config.get("world", {}).get("action_suffix", ""),
             history=history,
             num_turns=self.time_horizon,
             current_turn=len(history),

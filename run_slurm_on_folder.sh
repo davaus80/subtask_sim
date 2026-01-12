@@ -12,7 +12,6 @@ CONFIG_DIR=$1
 
 module load python/3.10
 source ~/skyfall310/bin/activate
-
 export HF_HOME=$SCRATCH/hf_cache
 
 python experiment_manager.py --config_dir $CONFIG_DIR
