@@ -1,7 +1,7 @@
 actions:
   - id: 0
-    name: "Unlucky Impoverished Arm"
+    names_path: "base_configs/action_name_lists/semantic/abandit/sem_bandit_bad.json"
   - id: 1
-    name: "Neutral Arm"
+    names_path: "base_configs/action_name_lists/semantic/abandit/sem_bandit_neutral.json"
   - id: 2
-    name: "Lucky Wealthy Arm"
+    names_path: "base_configs/action_name_lists/semantic/abandit/sem_bandit_good.json"

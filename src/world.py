@@ -2,6 +2,7 @@ from src.tasks.task import Task
 from jinja2 import Template
 
 import random
+import json
 
 '''
 world.py is the overall environment manager for this simulation. It keeps track of the subtasks and the state.
@@ -34,10 +35,40 @@ class World():
 
         action_list = config['actions']
         for action in action_list:
+
+            # If the action has a names_path field, then load it in and randomly sample a name until you get one that doesn't
+            # match one of the existing actions. 
+            names_path = action.get("names_path", None)
+            if names_path:
+                # Load the list of strings from a JSON file
+                with open(names_path, 'r') as f: # TODO: Add exception handling for bad path? I think better to raise the error than fail silently for now
+                    string_list = json.load(f)
+
+                while len(string_list) > 0:
+                    sampled_name = random.choice(string_list)
+                    # Check if sampled_name matches any existing action name
+                    if sampled_name not in [a['name'] for a in self.actions.values()]:
+                        # Found a unique name
+                        action['name'] = sampled_name
+                        break
+                    else:
+                        # Remove the sampled name to avoid re-sampling it
+                        string_list.remove(sampled_name)
+                else:
+                    # If we exit the loop without breaking, no unique name was found
+                    raise ValueError("No unique action name available in names_path.")
+            
+
             self.actions[action['id']] = {
                 'name': action['name'],
                 'subtasks': [] # This is for the list of relevant subtasks
             }
+
+        # Check all names at the end and raise an exception if there are multiple with the same name.
+        action_names = [action['name'] for action in self.actions.values()]
+        duplicates = set([name for name in action_names if action_names.count(name) > 1])
+        if duplicates:
+            raise ValueError(f"Duplicate action names found: {duplicates}")
 
         # We create a reverse map from action_names to action_IDs
         self.action_name_to_id_map = {}

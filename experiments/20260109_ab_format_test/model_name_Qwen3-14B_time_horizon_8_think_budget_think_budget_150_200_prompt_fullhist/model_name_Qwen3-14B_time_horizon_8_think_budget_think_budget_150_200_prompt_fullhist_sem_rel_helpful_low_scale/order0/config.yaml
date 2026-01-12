@@ -1,0 +1,43 @@
+actions:
+- id: 2
+  name: Field_3
+  names_path: base_configs/action_name_lists/semantic/abandit/sem_bandit_bad.json
+- id: 1
+  name: Field_2
+  names_path: base_configs/action_name_lists/semantic/abandit/sem_bandit_neutral.json
+- id: 0
+  name: Field_1
+  names_path: base_configs/action_name_lists/semantic/abandit/sem_bandit_good.json
+agent:
+  max_new_tokens: 200
+  model_name: Qwen/Qwen3-14B
+  thinking_budget: 150
+  type: mono_llm
+experiment:
+  time_horizon: 8
+paths:
+  experiment_dir: base_configs/farming_basic
+  log_file: experiments/20260109_ab_format_test/model_name_Qwen3-14B_time_horizon_8_think_budget_think_budget_150_200_prompt_fullhist/model_name_Qwen3-14B_time_horizon_8_think_budget_think_budget_150_200_prompt_fullhist_sem_rel_helpful_low_scale/order0/output.log
+subtasks:
+- id: 0
+  name: DeterministicAbstractBandit
+  params:
+    actions:
+    - id: 0
+      mean: 2
+      std_dev: 0
+    - id: 1
+      mean: 1
+      std_dev: 0
+    - id: 2
+      mean: 0.5
+      std_dev: 0
+  type: bandit
+world:
+  action_suffix: Arm
+  prompt_template_path: src/templates/budget_fullhist_v1.jinja2
+  task_prompt: You are faced with a 3-armed bandit problem.  Each action corresponds
+    to pulling a specific arm. Each arm is associated with a Gaussian distribution
+    with a fixed but unknown mean. At each time step, you will select a field and
+    receive a reward drawn from the associated distribution. Your goal is to select
+    which arm to pull in order to maximize your reward across all of your turns.
