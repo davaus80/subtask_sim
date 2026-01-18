@@ -10,7 +10,7 @@ Task Assignment:
 Available Actions:
 ---
 {% for action in actions %}
-- {{ action }} {{ action_suffix }} : This action has been selected {{ per_action_summarized_history[action]['count'] }} time(s) for an observed mean of {{ per_action_summarized_history[action]['obs_mean'] }}
+- {{ action_suffix }} Name: {{ action }} - This action has been selected {{ per_action_summarized_history[action]['count'] }} time(s) for an observed mean of {{ per_action_summarized_history[action]['obs_mean'] }}
 {% endfor %}
 ---
 When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
