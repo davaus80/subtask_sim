@@ -39,16 +39,21 @@ class GameDriver:
     
     '''
     This is basically the constructor, but we separate it out since we use it for reset too.
+    The reset flag indicates if its a reset
     '''
-    def _setup_from_config_path(self, config_path, run_name=None):
+    def _setup_from_config_path(self, config_path, run_name=None, reset=False, exp_folder=None):
         # Load the YAML config file into a dictionary
         with open(config_path, "r") as config_file:
             config = yaml.safe_load(config_file)
         
         self.world = self.create_world_from_config(config)
-        self.agent = self.create_agent_from_config(config)
+        if not reset: # Only create an agent on the first shuffle - otherwise adds a lot of overhead from LLM loading
+            self.agent = self.create_agent_from_config(config)
         self.config = config
         self.experiment_dir = os.path.dirname(config_path) # This is where we'll log everything
+
+        if exp_folder: # We allow overwriting the experiment folder to have the shuffle logic work.
+            self.experiment_dir = exp_folder
         
         ############ LOGGING SETUP #############
 
@@ -83,9 +88,16 @@ class GameDriver:
 
         ####### END OF LOGGING SETUP ########
 
-    def __init__(self, config_path, run_name=None):
+    '''
+    The purpose of the reset function is to allow us to re-use fields which are expensive to load (especially LLMs)
+    across runs. Reset everything to the config path
+    '''
+    def reset(self, config_path, run_name=None, exp_folder=None):
+        self._setup_from_config_path(config_path, run_name, reset=True, exp_folder=exp_folder)
+
+    def __init__(self, config_path, run_name=None, exp_folder=None):
         # Create the world and agent from the config
-        self._setup_from_config_path(config_path, run_name)
+        self._setup_from_config_path(config_path, run_name, exp_folder=exp_folder)
 
 
     def play(self):
@@ -136,15 +148,6 @@ class GameDriver:
             total_reward += reward
 
         print("Final Reward:", total_reward)
-        
-        
-    '''
-    NOTE: Reset creates an entirely new world BUT just resets the agent. This is to save loading overhead for the LLM. We may need to change this later,
-    but for now, we only have one agent anyway. This is kinda a useless method since it just calls a single other method lol 
-    TODO: Merge this with setupfromconfig
-    '''
-    def reset(self, config_path):
-        self._setup_from_config_path(config_path, None)
 
 
 

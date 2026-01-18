@@ -5,12 +5,46 @@ import os
 import logging
 import yaml
 import glob
+import random
 
+
+'''
+Experiment_manager.py is where we manage the execution of experiments. 
+We expect the following structure:
+----------------------------------------------------------------------
+top_level_experiment folder/
+|- superfolder_0/
+|  |- semantic_variation_0/
+|  |  |- config.yaml
+|  |  |- shuffles/
+|  |  |  |- shuffle_0
+|  |  |  |  |- run_YYYYMMDD_HHMMSS.log
+|  |  |  |  |- run_YYYYMMDD_HHMMSS.jsonl
+|  |  |  |- ...
+|  |  |  |- shuffle_(N-1)
+|  |- semantic_variation_1/
+|  |- ...
+|  |- semantic_variation_(K-1)/
+|- superfolder_1/
+|- ...
+|- superfolder_(M-1)/
+----------------------------------------------------------------------
+
+There are two ways to run the experiment manager.
+1) --config_dir top_level_experiment/superfolder_i/semantic__variation_j
+This option will run N replicates of a semantic variation folder. 
+
+2) --config_path top_level_experiment/superfolder_i/semantic_variation_j/config.yaml
+This option will run a single execution semantic variation folder. It will run it for N replicates (specified in the config)
+
+In both cases, we create the shuffles folder and subfolders if they doesn't exist.
+'''
 
 def get_args(args):
     parser = ArgumentParser()
     parser.add_argument("--config_path", default=None) 
     parser.add_argument("--config_dir", default=None) 
+    parser.add_argument("--n_runs", default=10)
     return parser.parse_args(args)
 
 if __name__ == "__main__":
@@ -25,23 +59,24 @@ if __name__ == "__main__":
         driver = GameDriver(args.config_path)
         driver.play()
     elif args.config_dir:
-        # Get all configs in subdirectories (skip files in the top-level folder).
-        config_paths = []
+        # Set random seed
+        seed = 42
+        random.seed(seed)
+        
+        # Get the config
         root_abs = os.path.abspath(args.config_dir)
-        for root, dirs, files in os.walk(root_abs):
-            if os.path.abspath(root) == root_abs:
-                # skip files in the root folder itself
-                continue
-            if "config.yaml" in files:
-                config_paths.append(os.path.join(root, "config.yaml"))
+        config_path = os.path.join(root_abs, "config.yaml")
 
-        if not config_paths:
-            logging.warning("No config.yaml files found in subdirectories of %s", args.config_dir)
+        driver = GameDriver(config_path)
 
-        # Run all found configs
-        for cfg_path in sorted(config_paths):
-            logging.info("Running config: %s", cfg_path)
-            driver = GameDriver(cfg_path)
+        # Set up the replicate folders and run N replicates
+        n_runs = args.n_runs
+        for run_num in range(n_runs):
+            output_dir = os.path.join(root_abs, f"shuffles/shuffle_{run_num}")
+            os.makedirs(output_dir, exist_ok=True)
+
+            logging.info("Running config: %s", config_path)
+            driver.reset(config_path, exp_folder=output_dir)
             driver.play()
     else:
         raise ValueError("Please specify the --config_path or --config_folder argument. config_folder will run all configs in subdirectories (but not in main directory) so it handles shuffle subdirs")

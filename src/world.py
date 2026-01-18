@@ -33,7 +33,10 @@ class World():
         # actions maps from action ID to the name of the task and a list of subtask IDs
         self.actions = {}
 
+        # Load in the list of actions and randomly shuffle the order 
         action_list = config['actions']
+        random.shuffle(action_list)
+
         for action in action_list:
 
             # If the action has a names_path field, then load it in and randomly sample a name until you get one that doesn't
