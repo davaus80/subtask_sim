@@ -1,13 +1,13 @@
 actions:
 - id: 0
   name: Field_1
-  names_path: base_configs/action_name_lists/semantic/farm/sem_bandit_bad.json
+  names_path: base_configs/action_name_lists/semantic/farm/sem_farm_bad.json
 - id: 1
   name: Field_2
-  names_path: base_configs/action_name_lists/semantic/farm/sem_bandit_neutral.json
+  names_path: base_configs/action_name_lists/semantic/farm/sem_farm_neutral.json
 - id: 2
   name: Field_3
-  names_path: base_configs/action_name_lists/semantic/farm/sem_bandit_good.json
+  names_path: base_configs/action_name_lists/semantic/farm/sem_farm_good.json
 agent:
   max_new_tokens: 200
   model_name: Qwen/Qwen3-8B
