@@ -117,8 +117,6 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
     if not os.path.isdir(super_folder_path):
         raise ValueError(f"super_folder_path is not a directory: {super_folder_path}")
 
-    # import pdb; pdb.set_trace()
-
     # These should be the semantic_variation folders
     subfolders = [os.path.join(super_folder_path, d) for d in os.listdir(super_folder_path) if os.path.isdir(os.path.join(super_folder_path, d))]
     subfolders.sort()
@@ -127,6 +125,13 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
     for subpath in subfolders:
         # This is the folder name, saving for later
         subname = os.path.basename(subpath)
+
+        # Let's parse to get the scale and nomenclature
+        nomenclatures = ['alphanumeric', 'sem_rel_helpful', 'sem_rel_mislead', 'sent_helpful', 'sent_mislead']
+        scales = ['high_scale', 'low_scale', 'low_neg_scale', 'high_neg_scale']
+
+        nom_match = get_unique_substring_match(subname, nomenclatures)
+        scale_match = get_unique_substring_match(subname, scales)
 
         # Load the config for this semantic folder
         config_path = os.path.join(subpath, 'config.yaml')
@@ -156,8 +161,14 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         # Each element will be a list of length min_rows
         per_shuffle_cum_rewards = []
         per_shuffle_step_rewards = []
+
         per_shuffle_step_regrets = []
-        per_shuffle_optimal_props = []
+
+        # Optimal arm pulls per turn and overall proportion of optimal pulls
+        per_shuffle_step_optimal = []
+
+        # Semantically optimal arm pulls per turn and overall proportion of semantically optimal pulls
+        per_shuffle_step_sem_opt = []
 
         for sdir in shuffle_dirs:
             ###### FIRST WE LOOK FOR A VALID RESULTS FILE ######
@@ -187,10 +198,10 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
             per_shuffle_cum_rewards.append(cum_rewards)
             per_shuffle_step_rewards.append(rewards)
 
-            # load config.yaml from  to determine optimal arm mean
-             
+            # determine optimal arm mean from config
             optimal_mean = None
             optimal_id = None
+            semantic_best_id = None
             if cfg:
                 # Expect config to have subtasks -> list[0] -> params -> actions
                 subtasks = cfg.get('subtasks') if isinstance(cfg, dict) else None
@@ -199,19 +210,40 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
                     if actions_cfg:
                         # actions_cfg items have 'id' and 'mean'
                         best = max(actions_cfg, key=lambda a: float(a.get('mean', float('-inf'))))
+                        worst = max(actions_cfg, key=lambda a: float(a.get('mean', float('-inf'))))
                         optimal_mean = float(best.get('mean'))
                         optimal_id = best.get('id')
+                    if "mislead" in nom_match:
+                        # import pdb; pdb.set_trace()
+                        semantic_best_id = worst.get('id')
+                    elif "helpful" in nom_match:
+                        semantic_best_id = best.get('id')
                     
             # compute regrets and optimal-action counts if we have optimal_mean
-            if optimal_mean is not None:
+            if not (optimal_mean is None): # Compare with None since zero could be a mean:
+                # Regrets
                 regrets = [optimal_mean - rw for rw in rewards]
                 per_shuffle_step_regrets.append(regrets)
-                optimal_counts = sum(1 for rdict in results_trim if rdict.get('action_taken_id') == optimal_id)
-                per_shuffle_optimal_props.append(optimal_counts / float(min_rows))
+                
+                # Optimal pulls
+                optimal_actions = [1 if rdict.get('action_taken_id') == optimal_id else 0 for rdict in results_trim]  # per step
+                per_shuffle_step_optimal.append(optimal_actions)
             else:
                 # mark with None so lengths match when aggregating
                 per_shuffle_step_regrets.append([np.nan] * min_rows)
-                per_shuffle_optimal_props.append(np.nan)
+                per_shuffle_step_optimal.append([np.nan] * min_rows)
+
+            # TODO: Add greedy, optimal, and semantically greedy (for non-alphanumeric)
+            if not (semantic_best_id is None): # Compare with None since zero is a valid ID
+                # import pdb; pdb.set_trace()
+                semantic_best_actions = [1 if rdict.get('action_taken_id') == semantic_best_id else 0 for rdict in results_trim]  # per step
+                per_shuffle_step_sem_opt.append(semantic_best_actions)
+            else:
+                # mark with None so lengths match when aggregating
+                per_shuffle_step_sem_opt.append([np.nan] * min_rows)
+
+            # Greedy pulls (TODO)
+            
 
             valid_shuffles += 1
 
@@ -225,6 +257,8 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         cum_arr = np.array(per_shuffle_cum_rewards, dtype=float)  # shape (n_shuffles, min_rows)
         step_arr = np.array(per_shuffle_step_rewards, dtype=float)
         step_regret_arr = np.array(per_shuffle_step_regrets, dtype=float)
+        optimal_arr = np.array(per_shuffle_step_optimal, dtype=float)
+        sem_opt_arr = np.array(per_shuffle_step_sem_opt, dtype=float)
 
         # Calculate cumulative regret
         cum_regret_arr = np.cumsum(step_regret_arr, axis=1)
@@ -233,12 +267,7 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         row = {'subfolder': subname, 'n_shuffles': valid_shuffles}
 
         # Let's parse the details encoded in the folder names 
-        nomenclatures = ['alphanumeric', 'sem_rel_helpful', 'sem_rel_mislead', 'sent_helpful', 'sent_mislead']
-        scales = ['high_scale', 'low_scale', 'low_neg_scale', 'high_neg_scale']
-
-        nom_match = get_unique_substring_match(subname, nomenclatures)
         row['nomenclature'] = nom_match
-        scale_match = get_unique_substring_match(subname, scales)
         row['scale'] = scale_match
 
 
@@ -257,10 +286,13 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
             row[f'cum_regret_{t}_mean'] = float(np.nanmean(cum_regret_arr[:, t]))
             row[f'cum_regret_{t}_std'] = float(np.nanstd(cum_regret_arr[:, t], ddof=0))
 
-        # percent optimal action overall (mean/std across shuffles)
-        prop_arr = np.array(per_shuffle_optimal_props, dtype=float)
-        row['percent_optimal_mean'] = float(np.nanmean(prop_arr))
-        row['percent_optimal_std'] = float(np.nanstd(prop_arr, ddof=0))
+            # optimal action stats
+            row[f'reward_optimal_actions_{t}_mean'] = float(np.nanmean(optimal_arr[:, t]))
+            row[f'reward_optimal_actions_{t}_std'] = float(np.nanstd(optimal_arr[:, t], ddof=0))
+
+            # semantically optimal pulls stats
+            row[f'sem_optimal_actions_{t}_mean'] = float(np.nanmean(sem_opt_arr[:, t]))
+            row[f'sem_optimal_actions_{t}_std'] = float(np.nanstd(sem_opt_arr[:, t], ddof=0))
 
         full_results.append(row)
 
