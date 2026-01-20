@@ -3,8 +3,8 @@
 #SBATCH --job-name=sky
 #SBATCH --output=slurm_outputs/%x_%j.out
 #SBATCH --error=slurm_outputs/%x_%j.err
-#SBATCH --gres=gpu:rtx8000:4
-#SBATCH --time=0:45:00
+#SBATCH --gres=gpu:rtx8000:2
+#SBATCH --time=0:10:00
 #SBATCH --mem=30G
 
 # Pass config as an argument
