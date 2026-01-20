@@ -82,6 +82,43 @@ def select_results_file_from_dir(dir_path: str, min_rows: int = 10) -> Optional[
     return None
 
 '''
+Return a list of length num_turns with 1 if the action was greedy and 0 if the action was not greedy given the previous observations.
+Args:
+- results: list of dicts - see results.jsonl files in experiment shuffle folders for examples
+'''
+def get_greedy_per_turn(results):
+    # TODO: Need to change to observed means once I introduce variance
+
+    # Record the best observed action and reward
+    greedy_per_turn = [0]
+    best_obs_reward = results[0]['reward']
+    best_obs_id = results[0]['action_taken_id']
+    for turn in range(1, len(results)):
+        # If this action was greedy, add a 1, else add a 0
+        if results[turn]['action_taken_id'] == best_obs_id:
+            greedy_per_turn.append(1)
+        else:
+            greedy_per_turn.append(0)
+        # Check if we need to update what "greedy" is based on this observation
+        if results[turn]['reward'] > best_obs_reward:
+            best_obs_reward = results[turn]['reward']
+            best_obs_id = results[turn]['action_taken_id']
+    return greedy_per_turn
+
+'''
+Return a list of the number of actions explored at each turn. 
+'''
+def get_states_explored_per_turn(results):
+    states_explored = [] # This stores the states we've observed
+    explored_count_per_turn = [] # This stores the number of states we've explored at each turn - we return this
+    for turn in range(0, len(results)):
+        action_taken = results[turn]['action_taken_id']
+        if action_taken not in states_explored:
+            states_explored.append(action_taken)
+        explored_count_per_turn.append(len(states_explored))
+    return explored_count_per_turn
+
+'''
 Search main_str to see if it contains a subtring from substr_list. We expect exactly one match and raise an error otherwise.
 '''
 def get_unique_substring_match(main_str, substr_list):
@@ -157,6 +194,8 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         per_shuffle_means = []
         valid_shuffles = 0
 
+        ### TODO: Put this all in a big dictionary instead of separate variables since the duplication is a bit much
+
         # Collect per-shuffle per-step metrics into lists so we can aggregate across shuffles
         # Each element will be a list of length min_rows
         per_shuffle_cum_rewards = []
@@ -169,6 +208,10 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
 
         # Semantically optimal arm pulls per turn and overall proportion of semantically optimal pulls
         per_shuffle_step_sem_opt = []
+
+        # Greedy and exploration
+        per_shuffle_step_greedy = []
+        per_shuffle_step_explore_count = []
 
         for sdir in shuffle_dirs:
             ###### FIRST WE LOOK FOR A VALID RESULTS FILE ######
@@ -233,7 +276,7 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
                 per_shuffle_step_regrets.append([np.nan] * min_rows)
                 per_shuffle_step_optimal.append([np.nan] * min_rows)
 
-            # TODO: Add greedy, optimal, and semantically greedy (for non-alphanumeric)
+
             if not (semantic_best_id is None): # Compare with None since zero is a valid ID
                 # import pdb; pdb.set_trace()
                 semantic_best_actions = [1 if rdict.get('action_taken_id') == semantic_best_id else 0 for rdict in results_trim]  # per step
@@ -243,7 +286,12 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
                 per_shuffle_step_sem_opt.append([np.nan] * min_rows)
 
             # Greedy pulls (TODO)
-            
+            greedy_per_turn = get_greedy_per_turn(results)
+            per_shuffle_step_greedy.append(greedy_per_turn)
+
+            # Explored action count
+            explored_count = get_states_explored_per_turn(results)
+            per_shuffle_step_explore_count.append(explored_count)
 
             valid_shuffles += 1
 
@@ -259,6 +307,8 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         step_regret_arr = np.array(per_shuffle_step_regrets, dtype=float)
         optimal_arr = np.array(per_shuffle_step_optimal, dtype=float)
         sem_opt_arr = np.array(per_shuffle_step_sem_opt, dtype=float)
+        explored_count_arr = np.array(per_shuffle_step_explore_count, dtype=float)
+        greedy_arr = np.array(per_shuffle_step_greedy, dtype=float)
 
         # Calculate cumulative regret
         cum_regret_arr = np.cumsum(step_regret_arr, axis=1)
@@ -293,6 +343,14 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
             # semantically optimal pulls stats
             row[f'sem_optimal_actions_{t}_mean'] = float(np.nanmean(sem_opt_arr[:, t]))
             row[f'sem_optimal_actions_{t}_std'] = float(np.nanstd(sem_opt_arr[:, t], ddof=0))
+
+            # Greedy
+            row[f'greedy_probs_{t}_mean'] = float(np.nanmean(greedy_arr[:, t]))
+            row[f'greedy_probs_{t}_std'] = float(np.nanstd(greedy_arr[:, t], ddof=0))
+
+            # States explored
+            row[f'exploration_count_{t}_mean'] = float(np.nanmean(explored_count_arr[:, t]))
+            row[f'exploration_count_{t}_std'] = float(np.nanstd(explored_count_arr[:, t], ddof=0))
 
         full_results.append(row)
 
