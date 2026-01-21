@@ -44,7 +44,7 @@ def get_args(args):
     parser = ArgumentParser()
     parser.add_argument("--config_path", default=None) 
     parser.add_argument("--config_dir", default=None) 
-    parser.add_argument("--n_runs", default=10) # TODO: Change back to 10
+    parser.add_argument("--n_runs", default=5) # TODO: Change back to 10
     return parser.parse_args(args)
 
 if __name__ == "__main__":
