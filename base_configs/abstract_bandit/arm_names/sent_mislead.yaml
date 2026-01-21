@@ -1,7 +1,7 @@
 actions:
   - id: 0
-    name: "base_configs/action_name_lists/sentiment/negative.json"
+    names_path: "base_configs/action_name_lists/sentiment/negative.json"
   - id: 1
-    name: "base_configs/action_name_lists/sentiment/neutral.json"
+    names_path: "base_configs/action_name_lists/sentiment/neutral.json"
   - id: 2
-    name: "base_configs/action_name_lists/sentiment/positive.json"
+    names_path: "base_configs/action_name_lists/sentiment/positive.json"
