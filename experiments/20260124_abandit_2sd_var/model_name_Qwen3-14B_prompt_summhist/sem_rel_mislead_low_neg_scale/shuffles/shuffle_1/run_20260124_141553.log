@@ -1,0 +1,2520 @@
+2026-01-24 14:15:53,085 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:16:07,867 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:16:07,868 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:16:22,811 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:16:22,811 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6750627941941618
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:16:37,930 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:16:37,930 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6750627941941618
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.1359163416436504
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:16:53,265 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:16:53,266 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6750627941941618
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.13391157182885677
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:17:08,650 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:17:08,650 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6750627941941618
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.13722390896375372
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:17:24,018 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:17:24,019 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6750627941941618
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.18969301684414105
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:17:39,371 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:17:39,371 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6750627941941618
+
+- Arm Name: Lowest Reward - This action has been selected 5 time(s) for an observed mean of -0.21553740135721933
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:17:54,714 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:17:54,714 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6750627941941618
+
+- Arm Name: Lowest Reward - This action has been selected 6 time(s) for an observed mean of -0.24438677795965816
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:18:10,036 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:18:10,037 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6757612736564913
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6750627941941618
+
+- Arm Name: Lowest Reward - This action has been selected 7 time(s) for an observed mean of -0.2535937200841664
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:18:25,327 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:18:25,344 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:18:40,125 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:18:40,126 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:18:55,068 - src.driver - INFO - GENERATED CONTENT: <action>  Intermediate Reward </action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:18:55,068 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5789993141581115
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:19:10,172 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:19:10,173 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5789993141581115
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.34641622584340065
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:19:25,498 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:19:25,499 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5789993141581115
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.30761341749140253
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:19:40,822 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:19:40,823 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5789993141581115
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.26575811791591814
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:19:56,217 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:19:56,217 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5789993141581115
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.2368254776917108
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:20:11,581 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:20:11,581 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5789993141581115
+
+- Arm Name: Lowest Reward - This action has been selected 5 time(s) for an observed mean of -0.28130530966454453
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:20:26,825 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:20:26,825 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 2 time(s) for an observed mean of -0.5834658958351214
+
+- Arm Name: Lowest Reward - This action has been selected 5 time(s) for an observed mean of -0.28130530966454453
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:20:42,093 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:20:42,094 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 3 time(s) for an observed mean of -0.49987522166254683
+
+- Arm Name: Lowest Reward - This action has been selected 5 time(s) for an observed mean of -0.28130530966454453
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6890554573484075
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:20:57,362 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:20:57,379 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:21:12,167 - src.driver - INFO - GENERATED CONTENT: <action>  Lowest Reward </action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:21:12,167 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.09155790331065652
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:21:27,103 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:21:27,103 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.09155790331065652
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7265669290855701
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:21:42,176 - src.driver - INFO - GENERATED CONTENT: <action>  Intermediate Reward </action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:21:42,176 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.09155790331065652
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7265669290855701
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.7579907203806259
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:21:57,402 - src.driver - INFO - GENERATED CONTENT: <action>  Lowest Reward </action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:21:57,403 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.2500828839653603
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7265669290855701
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.7579907203806259
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:22:12,704 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:22:12,705 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.18210767616991305
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7265669290855701
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.7579907203806259
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:22:28,024 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:22:28,025 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.18660435824261182
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7265669290855701
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.7579907203806259
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:22:43,332 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:22:43,333 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 5 time(s) for an observed mean of -0.23864686910790925
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7265669290855701
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.7579907203806259
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:22:58,641 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:22:58,642 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 6 time(s) for an observed mean of -0.22192899645628214
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7265669290855701
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.7579907203806259
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:23:13,927 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:23:13,928 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 7 time(s) for an observed mean of -0.24386697356003745
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7265669290855701
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.7579907203806259
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:23:29,216 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:23:29,233 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:23:43,950 - src.driver - INFO - GENERATED CONTENT: <action>  Lowest Reward </action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:23:43,950 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.0012515691462715306
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:23:58,933 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:23:58,934 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.0012515691462715306
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6484630315198093
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:24:13,947 - src.driver - INFO - GENERATED CONTENT: <action>  Intermediate Reward </action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:24:13,948 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.0012515691462715306
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6484630315198093
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6557469358759267
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:24:29,300 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:24:29,301 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of 0.0002847969402288292
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6484630315198093
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6557469358759267
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:24:44,574 - src.driver - INFO - GENERATED CONTENT: <action>  Lowest Reward </action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:24:44,575 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.13975375445879268
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6484630315198093
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6557469358759267
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:24:59,933 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:24:59,934 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.15590132867790166
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6484630315198093
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6557469358759267
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:25:15,258 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:25:15,258 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 5 time(s) for an observed mean of -0.18518450977631593
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6484630315198093
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6557469358759267
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:25:30,637 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:25:30,637 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 6 time(s) for an observed mean of -0.20698915435956733
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6484630315198093
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6557469358759267
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:25:46,050 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:25:46,051 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 7 time(s) for an observed mean of -0.21593925804037167
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.6484630315198093
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.6557469358759267
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:26:01,407 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:26:01,423 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:26:16,178 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:26:16,179 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:26:31,165 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:26:31,166 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5105306254427684
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:26:46,219 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:26:46,220 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5105306254427684
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.16749396230228136
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:27:01,638 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:27:01,638 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5105306254427684
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.3766360486265754
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:27:16,898 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:27:16,898 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 2 time(s) for an observed mean of -0.5079760295797187
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.3766360486265754
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:27:32,184 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:27:32,184 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 3 time(s) for an observed mean of -0.5158594358490867
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.3766360486265754
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:27:47,465 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:27:47,466 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 4 time(s) for an observed mean of -0.5142827213695511
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.3766360486265754
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:28:02,811 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:28:02,811 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 4 time(s) for an observed mean of -0.5142827213695511
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.3522262903303524
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:28:18,091 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:28:18,092 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 5 time(s) for an observed mean of -0.4928840763593102
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7979416009042808
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.3522262903303524
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:28:33,382 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:28:33,398 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:28:48,190 - src.driver - INFO - GENERATED CONTENT: <action>  Lowest Reward </action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:28:48,190 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.07322905459893178
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:29:03,146 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:29:03,147 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.07322905459893178
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7004921969099633
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:29:18,159 - src.driver - INFO - GENERATED CONTENT: <action>  Intermediate Reward </action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:29:18,159 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.07322905459893178
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7004921969099633
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5967779989764919
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:29:33,515 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:29:33,516 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.05657275179330014
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7004921969099633
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5967779989764919
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:29:48,905 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:29:48,906 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.12409394575691868
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7004921969099633
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5967779989764919
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:30:04,276 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:30:04,277 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.17731905206111995
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7004921969099633
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5967779989764919
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:30:19,595 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:30:19,596 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 5 time(s) for an observed mean of -0.17351755568562355
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7004921969099633
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5967779989764919
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:30:34,976 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:30:34,977 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 6 time(s) for an observed mean of -0.16835291617833817
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7004921969099633
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5967779989764919
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:30:50,340 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:30:50,341 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Lowest Reward - This action has been selected 7 time(s) for an observed mean of -0.1691643723935341
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7004921969099633
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5967779989764919
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:31:05,682 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:31:05,699 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:31:20,461 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:31:20,462 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:31:35,417 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:31:35,418 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.8269088411315685
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:31:50,516 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:31:50,516 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.19420362834538077
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.8269088411315685
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:32:05,861 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:32:05,862 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.18131687512195577
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.8269088411315685
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:32:21,208 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:32:21,209 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.1667548269235122
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.8269088411315685
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:32:36,610 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:32:36,611 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.21909293798295745
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.8269088411315685
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:32:51,950 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:32:51,950 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 5 time(s) for an observed mean of -0.2282342694230839
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.8269088411315685
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:33:07,311 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:33:07,311 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 6 time(s) for an observed mean of -0.20651952567420137
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.8269088411315685
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:33:22,675 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:33:22,676 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.7887151139317308
+
+- Arm Name: Lowest Reward - This action has been selected 7 time(s) for an observed mean of -0.2191014668046775
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.8269088411315685
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:33:38,023 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:33:38,039 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:33:52,795 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:33:52,796 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:34:07,778 - src.driver - INFO - GENERATED CONTENT: <action>  Intermediate Reward </action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:34:07,779 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.4706342413175427
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:34:22,848 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:34:22,849 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.4706342413175427
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.06316269934836416
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:34:38,257 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:34:38,258 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.4706342413175427
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.08400495679607602
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:34:53,612 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:34:53,613 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.4706342413175427
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.19250537744160878
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:35:08,894 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:35:08,895 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 2 time(s) for an observed mean of -0.542268740399487
+
+- Arm Name: Lowest Reward - This action has been selected 3 time(s) for an observed mean of -0.19250537744160878
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:35:24,162 - src.driver - INFO - GENERATED CONTENT: <action>  Lowest Reward </action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:35:24,162 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 2 time(s) for an observed mean of -0.542268740399487
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.2405797184837276
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:35:39,439 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:35:39,440 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 3 time(s) for an observed mean of -0.5341097945972383
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.2405797184837276
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:35:54,719 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:35:54,719 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 4 time(s) for an observed mean of -0.523456980971635
+
+- Arm Name: Lowest Reward - This action has been selected 4 time(s) for an observed mean of -0.2405797184837276
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.8931195873026772
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:36:10,014 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:36:10,030 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 0. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:36:24,774 - src.driver - INFO - GENERATED CONTENT: <action>  Intermediate Reward </action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:36:24,774 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 1. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5347517415254556
+
+- Arm Name: Highest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:36:39,767 - src.driver - INFO - GENERATED CONTENT: <action>  Highest Reward </action> 
+ PARSED ACTION: Highest Reward
+2026-01-24 14:36:39,767 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 2. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5347517415254556
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.9284603688539564
+
+- Arm Name: Lowest Reward - This action has been selected 0 time(s) for an observed mean of Unknown
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:36:54,829 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:36:54,829 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 3. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 1 time(s) for an observed mean of -0.5347517415254556
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.9284603688539564
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.3789686236540807
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:37:10,116 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:37:10,117 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 4. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 2 time(s) for an observed mean of -0.5448007525400995
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.9284603688539564
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.3789686236540807
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:37:25,342 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:37:25,343 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 5. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 3 time(s) for an observed mean of -0.5682861409458361
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.9284603688539564
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.3789686236540807
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:37:40,613 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:37:40,614 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 6. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 4 time(s) for an observed mean of -0.5151218797192403
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.9284603688539564
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.3789686236540807
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:37:55,881 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:37:55,882 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 7. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 5 time(s) for an observed mean of -0.4990181872222726
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.9284603688539564
+
+- Arm Name: Lowest Reward - This action has been selected 1 time(s) for an observed mean of -0.3789686236540807
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:38:11,238 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
+2026-01-24 14:38:11,239 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 8. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 5 time(s) for an observed mean of -0.4990181872222726
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.9284603688539564
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.18235468552290396
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:38:26,499 - src.driver - INFO - GENERATED CONTENT: <action> Intermediate Reward</action> 
+ PARSED ACTION: Intermediate Reward
+2026-01-24 14:38:26,500 - src.driver - INFO - You will be assigned a task. 
+You will receive the actions you have available, followed by the action history. 
+Your goal is to maximize the total reward across all 10 steps. We are on step 9. 
+
+Task Assignment:
+---
+You are faced with a 3-armed bandit problem.  Each action corresponds to pulling a specific arm. Each arm is associated with a Gaussian distribution with a fixed but unknown mean. At each time step, you will select a field and receive a reward drawn from the associated distribution. Your goal is to select which arm to pull in order to maximize your reward across all of your turns.
+---
+
+Available Actions:
+---
+
+- Arm Name: Intermediate Reward - This action has been selected 6 time(s) for an observed mean of -0.5069237588449441
+
+- Arm Name: Highest Reward - This action has been selected 1 time(s) for an observed mean of -0.9284603688539564
+
+- Arm Name: Lowest Reward - This action has been selected 2 time(s) for an observed mean of -0.18235468552290396
+
+---
+When selecting an action, include only the name of the action. Do not include the dashes used to indicate the list here.
+
+Please select an action from the list of action options in order to maximize the reward for your task.
+When selecting an action, put the exact name of the action between action tags like: <action> action_name </action>.
+
+Your thinking budget is 150 tokens. If you exceed this limit, you will be forced to provide an immediate answer.
+Your overall generation limit is 200 tokens.
+2026-01-24 14:38:41,860 - src.driver - INFO - GENERATED CONTENT: <action> Lowest Reward</action> 
+ PARSED ACTION: Lowest Reward
