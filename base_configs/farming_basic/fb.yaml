@@ -23,6 +23,7 @@ actions:
 agent: 
   type: mono_llm
   model_name: "Qwen/Qwen3-8B"
+  temperature: 1.0
 world:
   action_suffix: "Field"
   prompt_template_path: src/templates/v1_w_hist.jinja2

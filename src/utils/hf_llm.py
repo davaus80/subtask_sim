@@ -20,6 +20,8 @@ class HuggingFaceLLM:
         model_name = config["agent"]["model_name"]
         self.model_name = model_name
 
+        self.temperature = config["agent"].get("temperature", 1.0)
+
         ########## Detect available device: prefer CUDA, then MPS (Apple), else CPU ###########
         cuda_available = torch.cuda.is_available()
         mps_available = False
@@ -75,7 +77,8 @@ class HuggingFaceLLM:
         # conduct text completion
         generated_ids = self.model.generate(
             **model_inputs,
-            max_new_tokens=self.max_new_tokens
+            max_new_tokens=self.max_new_tokens,
+            temperature=self.temperature
         )
         output_ids = generated_ids[0][len(model_inputs.input_ids[0]):].tolist() 
 
