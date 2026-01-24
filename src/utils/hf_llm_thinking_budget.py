@@ -99,7 +99,7 @@ class HFLLM_Thinking_Budget(HuggingFaceLLM):
         generated_ids = self.model.generate(
             **model_inputs,
             max_new_tokens=remaining_tokens,
-            temperature=self.temperature
+            # temperature=self.temperature
         )
         output_ids = generated_ids[0][len(model_inputs.input_ids[0]):].tolist()
 
