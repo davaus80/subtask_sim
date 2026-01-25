@@ -183,11 +183,11 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         # Find the shuffle folders in the shuffle superfolder
         shuffle_superfolder = os.path.join(subpath, "shuffles") # This is where the shuffles will be 
         if not os.path.isdir(shuffle_superfolder):
-            logging.info("No shuffle dirs found in %s -- skipping", subpath)
+            logging.info("Shuffle Superfolder not found at %s -- skipping", shuffle_superfolder)
             continue
         shuffle_dirs = [os.path.join(shuffle_superfolder, d) for d in os.listdir(shuffle_superfolder) if os.path.isdir(os.path.join(shuffle_superfolder, d))]
         if not shuffle_dirs:
-            logging.info("No shuffle dirs found in %s -- skipping", subpath)
+            logging.info("No shuffle dirs found in %s -- skipping", shuffle_superfolder)
             continue
 
         per_shuffle_totals = []
