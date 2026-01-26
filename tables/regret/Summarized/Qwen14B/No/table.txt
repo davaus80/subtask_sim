@@ -1,0 +1,27 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|ccc|ccc|ccc|ccc|}
+\hline
+\textbf{Domain} & \textbf{Nomenclature} & \multicolumn{3}{c|}{\textbf{high\_scale}} & \multicolumn{3}{c|}{\textbf{low\_scale}} & \multicolumn{3}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{3}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. \\
+\hline
+Bandit & alphanumeric & 15.00 & \textbf{0.00} & 82.50 & 0.15 & \textbf{0.00} & 0.75 & 0.15 & \textbf{0.00} & 0.78 & 15.00 & \textbf{0.00} & \textbf{75.00} \\
+Bandit & sem\_rel\_helpful & \textbf{12.50} & \textbf{0.00} & \textbf{32.50} & \textbf{0.05} & 0.07 & \textbf{0.47} & \textbf{0.10} & \textbf{0.00} & \textbf{0.75} & \textbf{7.50} & \textbf{0.00} & \textbf{75.00} \\
+Bandit & sem\_rel\_mislead & 32.50 & 15.00 & 247.50 & 0.33 & \textbf{0.00} & 1.45 & 0.30 & 0.15 & 1.48 & 30.00 & 7.50 & 97.50 \\
+Bandit & sent\_helpful & 15.00 & \textbf{0.00} & 90.00 & 0.15 & \textbf{0.00} & 0.82 & 0.15 & \textbf{0.00} & \textbf{0.75} & 15.00 & \textbf{0.00} & \textbf{75.00} \\
+Bandit & sent\_mislead & 15.00 & 5.00 & 125.00 & 0.15 & \textbf{0.00} & 0.80 & 0.15 & \textbf{0.00} & 0.78 & 15.00 & \textbf{0.00} & \textbf{75.00} \\
+\hline
+Farm & alphanumeric & 12.50 & \textbf{0.00} & 75.00 & 0.15 & \textbf{0.00} & 0.80 & 0.15 & \textbf{0.00} & 0.82 & 15.00 & \textbf{0.00} & \textbf{75.00} \\
+Farm & sem\_rel\_helpful & \textbf{7.50} & \textbf{0.00} & \textbf{50.00} & \textbf{0.07} & \textbf{0.00} & \textbf{0.55} & \textbf{0.05} & \textbf{0.00} & 0.78 & \textbf{10.00} & 2.50 & 80.00 \\
+Farm & sem\_rel\_mislead & 25.00 & 10.00 & 160.00 & 0.33 & 0.05 & 1.52 & 0.42 & 0.05 & 1.07 & 42.50 & 7.50 & 87.50 \\
+Farm & sent\_helpful & 15.00 & \textbf{0.00} & 80.00 & 0.15 & \textbf{0.00} & 0.72 & 0.15 & \textbf{0.00} & 0.78 & 12.50 & \textbf{0.00} & \textbf{75.00} \\
+Farm & sent\_mislead & 20.00 & 10.00 & 160.00 & 0.20 & \textbf{0.00} & 0.80 & 0.15 & \textbf{0.00} & \textbf{0.75} & 15.00 & \textbf{0.00} & \textbf{75.00} \\
+\hline
+\hline
+\end{tabular}}
+\caption{Mean regrets for Model=Qwen14B, History=Summarized, Variance=No}
+\label{tab:Qwen14B_Summarized_No}
+\end{table}

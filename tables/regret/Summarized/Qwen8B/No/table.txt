@@ -1,0 +1,21 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|ccc|ccc|ccc|ccc|}
+\hline
+\textbf{Domain} & \textbf{Nomenclature} & \multicolumn{3}{c|}{\textbf{high\_scale}} & \multicolumn{3}{c|}{\textbf{low\_scale}} & \multicolumn{3}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{3}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. \\
+\hline
+Farm & alphanumeric & 17.50 & 15.00 & 172.50 & 0.17 & 0.10 & 1.43 & 0.20 & \textbf{0.00} & 0.75 & 20.00 & \textbf{0.00} & \textbf{75.00} \\
+Farm & sem\_rel\_helpful & \textbf{2.50} & \textbf{0.00} & \textbf{2.50} & \textbf{0.03} & \textbf{0.00} & \textbf{0.10} & \textbf{0.00} & \textbf{0.00} & \textbf{0.70} & \textbf{2.50} & \textbf{0.00} & \textbf{75.00} \\
+Farm & sem\_rel\_mislead & 40.00 & 37.50 & 390.00 & 0.40 & 0.25 & 3.12 & 0.45 & 0.05 & 1.02 & 41.67 & \textbf{0.00} & \textbf{75.00} \\
+Farm & sent\_helpful & 10.00 & 10.00 & 100.00 & 0.23 & 0.23 & 2.25 & 0.10 & 0.07 & 1.10 & 20.00 & 5.00 & 117.50 \\
+Farm & sent\_mislead & 35.00 & 35.00 & 350.00 & 0.28 & 0.28 & 2.83 & 0.23 & 0.07 & 1.38 & 32.50 & \textbf{0.00} & 77.50 \\
+\hline
+\hline
+\end{tabular}}
+\caption{Mean regrets for Model=Qwen8B, History=Summarized, Variance=No}
+\label{tab:Qwen8B_Summarized_No}
+\end{table}

@@ -1,0 +1,27 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|ccc|ccc|ccc|ccc|}
+\hline
+\textbf{Domain} & \textbf{Nomenclature} & \multicolumn{3}{c|}{\textbf{high\_scale}} & \multicolumn{3}{c|}{\textbf{low\_scale}} & \multicolumn{3}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{3}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. \\
+\hline
+Bandit & alphanumeric & 31.25 & \textbf{0.00} & 106.25 & 0.19 & 0.06 & 1.44 & 0.22 & 0.06 & 1.44 & 25.00 & 3.57 & 139.29 \\
+Bandit & sem\_rel\_helpful & \textbf{0.00} & \textbf{0.00} & \textbf{3.12} & \textbf{0.00} & \textbf{0.00} & \textbf{0.31} & \textbf{0.00} & 0.07 & 1.21 & \textbf{0.00} & \textbf{0.00} & \textbf{134.38} \\
+Bandit & sem\_rel\_mislead & 50.00 & 50.00 & 500.00 & 0.50 & 0.34 & 3.22 & 0.50 & 0.06 & 1.94 & 50.00 & \textbf{0.00} & 196.88 \\
+Bandit & sent\_helpful & 12.50 & 6.25 & 115.62 & 0.03 & 0.03 & 0.88 & 0.09 & 0.16 & 1.72 & 3.12 & 25.00 & 240.62 \\
+Bandit & sent\_mislead & 28.12 & 12.50 & 215.62 & 0.34 & 0.06 & 1.25 & 0.38 & \textbf{0.03} & \textbf{1.19} & 31.25 & 15.62 & 171.88 \\
+\hline
+Farm & alphanumeric & 22.50 & 7.50 & 140.00 & 0.28 & 0.12 & 1.65 & 0.28 & 0.12 & 1.93 & 25.00 & 12.50 & \textbf{192.50} \\
+Farm & sem\_rel\_helpful & \textbf{0.00} & 2.50 & \textbf{120.00} & \textbf{0.00} & \textbf{0.00} & \textbf{1.15} & \textbf{0.00} & 0.20 & \textbf{1.75} & \textbf{0.00} & 20.00 & 200.00 \\
+Farm & sem\_rel\_mislead & 50.00 & \textbf{0.00} & 185.00 & 0.50 & 0.03 & 1.75 & 0.50 & 0.25 & 2.12 & 50.00 & 8.33 & 220.83 \\
+Farm & sent\_helpful & 12.50 & \textbf{0.00} & 140.00 & 0.10 & \textbf{0.00} & 1.45 & 0.10 & 0.23 & 2.15 & 10.00 & \textbf{0.00} & 212.50 \\
+Farm & sent\_mislead & 25.00 & 10.00 & 167.50 & 0.35 & \textbf{0.00} & 1.88 & 0.30 & \textbf{0.07} & 2.08 & 32.50 & 15.00 & 215.00 \\
+\hline
+\hline
+\end{tabular}}
+\caption{Mean regrets for Model=Qwen8B, History=Full, Variance=No}
+\label{tab:Qwen8B_Full_No}
+\end{table}

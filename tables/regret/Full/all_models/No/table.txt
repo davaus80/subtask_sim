@@ -1,0 +1,53 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|ccc|ccc|ccc|ccc|}
+\hline
+\textbf{Domain} & \textbf{Model} & \textbf{Nomenclature} & \multicolumn{3}{c|}{\textbf{high\_scale}} & \multicolumn{3}{c|}{\textbf{low\_scale}} & \multicolumn{3}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{3}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. \\
+\hline
+Bandit & Qwen8B & alphanumeric & 31.25 & \textbf{0.00} & 106.25 & 0.19 & 0.06 & 1.44 & 0.22 & 0.06 & 1.44 & 25.00 & 3.57 & 139.29 \\
+Bandit & Qwen8B & sem\_rel\_helpful & \textbf{0.00} & \textbf{0.00} & \textbf{3.12} & \textbf{0.00} & \textbf{0.00} & 0.31 & \textbf{0.00} & 0.07 & 1.21 & \textbf{0.00} & \textbf{0.00} & 134.38 \\
+Bandit & Qwen8B & sem\_rel\_mislead & 50.00 & 50.00 & 500.00 & 0.50 & 0.34 & 3.22 & 0.50 & 0.06 & 1.94 & 50.00 & \textbf{0.00} & 196.88 \\
+Bandit & Qwen8B & sent\_helpful & 12.50 & 6.25 & 115.62 & 0.03 & 0.03 & 0.88 & 0.09 & 0.16 & 1.72 & 3.12 & 25.00 & 240.62 \\
+Bandit & Qwen8B & sent\_mislead & 28.12 & 12.50 & 215.62 & 0.34 & 0.06 & 1.25 & 0.38 & 0.03 & 1.19 & 31.25 & 15.62 & 171.88 \\
+\hline
+Bandit & Qwen14B & alphanumeric & 15.00 & 5.00 & 115.00 & 0.15 & \textbf{0.00} & 0.75 & 0.15 & \textbf{0.00} & 1.35 & 15.00 & 7.50 & 142.50 \\
+Bandit & Qwen14B & sem\_rel\_helpful & 17.50 & \textbf{0.00} & 20.00 & 0.12 & \textbf{0.00} & 0.23 & 0.10 & 0.17 & 1.15 & 2.50 & 7.50 & 122.50 \\
+Bandit & Qwen14B & sem\_rel\_mislead & 40.00 & 32.50 & 342.50 & 0.40 & 0.38 & 3.05 & 0.30 & 0.23 & 2.65 & 30.00 & 27.50 & 220.00 \\
+Bandit & Qwen14B & sent\_helpful & 12.50 & 2.50 & 62.50 & 0.15 & \textbf{0.00} & 0.70 & 0.15 & 0.03 & 1.25 & 10.00 & 22.50 & 147.50 \\
+Bandit & Qwen14B & sent\_mislead & 15.00 & \textbf{0.00} & 75.00 & 0.15 & \textbf{0.00} & 0.78 & 0.20 & 0.12 & 1.43 & 15.00 & 12.50 & 157.50 \\
+\hline
+Bandit & Qwen32B & alphanumeric & 15.00 & 5.00 & 110.00 & 0.15 & 0.10 & 1.35 & 0.15 & \textbf{0.00} & \textbf{0.80} & 15.00 & \textbf{0.00} & \textbf{85.00} \\
+Bandit & Qwen32B & sem\_rel\_helpful & \textbf{0.00} & \textbf{0.00} & 5.00 & \textbf{0.00} & \textbf{0.00} & \textbf{0.05} & \textbf{0.00} & \textbf{0.00} & 0.90 & \textbf{0.00} & \textbf{0.00} & 100.00 \\
+Bandit & Qwen32B & sem\_rel\_mislead & 50.00 & 50.00 & 500.00 & 0.50 & 0.40 & 4.15 & 0.50 & \textbf{0.00} & 1.90 & 50.00 & \textbf{0.00} & 145.00 \\
+Bandit & Qwen32B & sent\_helpful & 5.00 & 5.00 & 70.00 & 0.10 & \textbf{0.00} & 0.30 & 0.20 & 0.05 & 1.25 & 10.00 & \textbf{0.00} & 105.00 \\
+Bandit & Qwen32B & sent\_mislead & 25.00 & 20.00 & 215.00 & 0.38 & 0.38 & 3.75 & 0.25 & \textbf{0.00} & 1.10 & 15.00 & \textbf{0.00} & \textbf{85.00} \\
+\hline
+\hline
+Farm & Qwen8B & alphanumeric & 22.50 & 7.50 & 140.00 & 0.28 & 0.12 & 1.65 & 0.28 & 0.12 & 1.93 & 25.00 & 12.50 & 192.50 \\
+Farm & Qwen8B & sem\_rel\_helpful & \textbf{0.00} & 2.50 & 120.00 & \textbf{0.00} & \textbf{0.00} & 1.15 & \textbf{0.00} & 0.20 & 1.75 & \textbf{0.00} & 20.00 & 200.00 \\
+Farm & Qwen8B & sem\_rel\_mislead & 50.00 & \textbf{0.00} & 185.00 & 0.50 & 0.03 & 1.75 & 0.50 & 0.25 & 2.12 & 50.00 & 8.33 & 220.83 \\
+Farm & Qwen8B & sent\_helpful & 12.50 & \textbf{0.00} & 140.00 & 0.10 & \textbf{0.00} & 1.45 & 0.10 & 0.23 & 2.15 & 10.00 & \textbf{0.00} & 212.50 \\
+Farm & Qwen8B & sent\_mislead & 25.00 & 10.00 & 167.50 & 0.35 & \textbf{0.00} & 1.88 & 0.30 & 0.07 & 2.08 & 32.50 & 15.00 & 215.00 \\
+\hline
+Farm & Qwen14B & alphanumeric & 15.00 & \textbf{0.00} & 72.50 & 0.15 & 0.10 & 0.85 & 0.15 & 0.12 & 1.85 & 15.00 & 17.50 & 172.50 \\
+Farm & Qwen14B & sem\_rel\_helpful & 2.50 & \textbf{0.00} & 45.00 & 0.05 & \textbf{0.00} & 0.68 & 0.07 & 0.25 & 1.95 & \textbf{0.00} & 7.50 & 187.50 \\
+Farm & Qwen14B & sem\_rel\_mislead & 45.00 & 22.50 & 265.00 & 0.47 & 0.20 & 2.17 & 0.47 & 0.25 & 2.08 & 45.00 & 17.50 & 205.00 \\
+Farm & Qwen14B & sent\_helpful & 12.50 & \textbf{0.00} & 62.50 & 0.15 & \textbf{0.00} & 0.78 & 0.12 & 0.15 & 1.82 & 10.00 & 20.00 & 180.00 \\
+Farm & Qwen14B & sent\_mislead & 25.00 & 5.00 & 115.00 & 0.25 & 0.03 & 0.85 & 0.30 & 0.05 & 1.62 & 25.00 & 10.00 & 180.00 \\
+\hline
+Farm & Qwen32B & alphanumeric & 15.00 & 5.00 & 100.00 & 0.15 & 0.05 & 1.00 & 0.15 & \textbf{0.00} & \textbf{0.90} & 15.00 & \textbf{0.00} & \textbf{80.00} \\
+Farm & Qwen32B & sem\_rel\_helpful & \textbf{0.00} & \textbf{0.00} & \textbf{35.00} & \textbf{0.00} & \textbf{0.00} & \textbf{0.45} & \textbf{0.00} & \textbf{0.00} & 0.95 & \textbf{0.00} & \textbf{0.00} & 90.00 \\
+Farm & Qwen32B & sem\_rel\_mislead & 50.00 & 40.00 & 410.00 & 0.45 & 0.20 & 2.55 & 0.50 & \textbf{0.00} & 1.75 & 50.00 & \textbf{0.00} & 140.00 \\
+Farm & Qwen32B & sent\_helpful & 20.00 & 15.00 & 195.00 & 0.15 & 0.05 & 1.10 & 0.10 & \textbf{0.00} & 1.15 & 15.00 & \textbf{0.00} & 115.00 \\
+Farm & Qwen32B & sent\_mislead & 15.00 & 10.00 & 155.00 & 0.25 & 0.05 & 1.05 & 0.15 & \textbf{0.00} & 1.00 & 15.00 & \textbf{0.00} & \textbf{80.00} \\
+\hline
+\hline
+\hline
+\end{tabular}}
+\caption{Mean regrets for History=Full, Variance=No}
+\label{tab:allmodels_Full_No}
+\end{table}

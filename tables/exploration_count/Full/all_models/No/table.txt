@@ -1,0 +1,53 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|cc|cc|cc|cc|}
+\hline
+\textbf{Domain} & \textbf{Model} & \textbf{Nomenclature} & \multicolumn{2}{c|}{\textbf{high\_scale}} & \multicolumn{2}{c|}{\textbf{low\_scale}} & \multicolumn{2}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{2}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & & Turn 3 & Turn 9 & Turn 3 & Turn 9 & Turn 3 & Turn 9 & Turn 3 & Turn 9 \\
+\hline
+Bandit & Qwen8B & alphanumeric & 2.62 & 2.75 & 2.50 & 2.62 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen8B & sem\_rel\_helpful & 1.00 & 1.12 & 1.88 & 1.88 & 2.43 & \textbf{3.00} & 2.50 & \textbf{3.00} \\
+Bandit & Qwen8B & sem\_rel\_mislead & 1.00 & 1.00 & 1.75 & 2.12 & 2.62 & 2.88 & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen8B & sent\_helpful & 2.38 & 2.38 & 2.50 & 2.50 & 2.75 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen8B & sent\_mislead & 2.12 & 2.38 & 2.62 & 2.62 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+\hline
+Bandit & Qwen14B & alphanumeric & 2.80 & 2.80 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen14B & sem\_rel\_helpful & 1.80 & 1.80 & 1.90 & 1.90 & 2.30 & 2.90 & 2.50 & 2.90 \\
+Bandit & Qwen14B & sem\_rel\_mislead & 1.70 & 1.70 & 2.00 & 2.10 & 2.70 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen14B & sent\_helpful & 2.00 & 2.00 & 2.90 & 2.90 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen14B & sent\_mislead & \textbf{2.90} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+\hline
+Bandit & Qwen32B & alphanumeric & 2.60 & 2.60 & 1.60 & 1.80 & \textbf{3.00} & \textbf{3.00} & 2.80 & \textbf{3.00} \\
+Bandit & Qwen32B & sem\_rel\_helpful & 1.20 & 1.20 & 1.20 & 1.20 & 2.00 & \textbf{3.00} & 2.80 & \textbf{3.00} \\
+Bandit & Qwen32B & sem\_rel\_mislead & 1.00 & 1.00 & 1.40 & 1.40 & 2.00 & \textbf{3.00} & 2.40 & \textbf{3.00} \\
+Bandit & Qwen32B & sent\_helpful & 1.60 & 1.60 & 1.80 & 1.80 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen32B & sent\_mislead & 1.40 & 1.40 & 1.00 & 1.00 & 2.80 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+\hline
+\hline
+Farm & Qwen8B & alphanumeric & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen8B & sem\_rel\_helpful & 2.90 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & 2.70 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen8B & sem\_rel\_mislead & 2.60 & \textbf{3.00} & 2.80 & 2.90 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen8B & sent\_helpful & 2.80 & \textbf{3.00} & 2.80 & \textbf{3.00} & 2.80 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen8B & sent\_mislead & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+\hline
+Farm & Qwen14B & alphanumeric & 2.70 & 2.80 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen14B & sem\_rel\_helpful & 2.10 & 2.30 & 2.50 & 2.80 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen14B & sem\_rel\_mislead & 2.10 & 2.10 & 2.30 & 2.40 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen14B & sent\_helpful & 2.70 & 2.70 & 2.90 & 2.90 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen14B & sent\_mislead & 2.70 & 2.70 & 2.90 & 2.90 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+\hline
+Farm & Qwen32B & alphanumeric & 2.40 & 2.40 & 2.40 & 2.40 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen32B & sem\_rel\_helpful & 1.80 & 1.80 & 2.00 & 2.20 & 2.80 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen32B & sem\_rel\_mislead & 1.40 & 1.40 & 1.80 & 2.00 & 2.60 & \textbf{3.00} & 2.60 & \textbf{3.00} \\
+Farm & Qwen32B & sent\_helpful & 2.20 & 2.20 & 2.60 & 2.60 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen32B & sent\_mislead & 2.40 & 2.60 & 2.40 & 2.60 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+\hline
+\hline
+\hline
+\end{tabular}}
+\caption{Mean exploration count for History=Full, Variance=No}
+\label{tab:explorecount_Full_No}
+\end{table}

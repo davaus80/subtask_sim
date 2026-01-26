@@ -1,0 +1,53 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|cc|cc|cc|cc|}
+\hline
+\textbf{Domain} & \textbf{Model} & \textbf{Nomenclature} & \multicolumn{2}{c|}{\textbf{high\_scale}} & \multicolumn{2}{c|}{\textbf{low\_scale}} & \multicolumn{2}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{2}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & & Turn 3 & Turn 9 & Turn 3 & Turn 9 & Turn 3 & Turn 9 & Turn 3 & Turn 9 \\
+\hline
+Bandit & Qwen8B & alphanumeric & -- & -- & -- & -- & -- & -- & -- & -- \\
+Bandit & Qwen8B & sem\_rel\_helpful & -- & -- & -- & -- & -- & -- & -- & -- \\
+Bandit & Qwen8B & sem\_rel\_mislead & -- & -- & -- & -- & -- & -- & -- & -- \\
+Bandit & Qwen8B & sent\_helpful & -- & -- & -- & -- & -- & -- & -- & -- \\
+Bandit & Qwen8B & sent\_mislead & -- & -- & -- & -- & -- & -- & -- & -- \\
+\hline
+Bandit & Qwen14B & alphanumeric & \textbf{2.20} & \textbf{2.80} & \textbf{2.30} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen14B & sem\_rel\_helpful & 1.20 & 1.30 & 1.70 & 2.30 & 2.50 & \textbf{3.00} & 2.50 & \textbf{3.00} \\
+Bandit & Qwen14B & sem\_rel\_mislead & 1.80 & 2.20 & 2.20 & 2.60 & 2.80 & \textbf{3.00} & 2.80 & \textbf{3.00} \\
+Bandit & Qwen14B & sent\_helpful & 1.40 & 2.60 & 2.10 & 2.90 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Bandit & Qwen14B & sent\_mislead & 1.60 & \textbf{2.80} & 2.00 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+\hline
+Bandit & Qwen32B & alphanumeric & -- & -- & -- & -- & -- & -- & -- & -- \\
+Bandit & Qwen32B & sem\_rel\_helpful & -- & -- & -- & -- & -- & -- & -- & -- \\
+Bandit & Qwen32B & sem\_rel\_mislead & -- & -- & -- & -- & -- & -- & -- & -- \\
+Bandit & Qwen32B & sent\_helpful & -- & -- & -- & -- & -- & -- & -- & -- \\
+Bandit & Qwen32B & sent\_mislead & -- & -- & -- & -- & -- & -- & -- & -- \\
+\hline
+\hline
+Farm & Qwen8B & alphanumeric & -- & -- & -- & -- & -- & -- & -- & -- \\
+Farm & Qwen8B & sem\_rel\_helpful & -- & -- & -- & -- & -- & -- & -- & -- \\
+Farm & Qwen8B & sem\_rel\_mislead & -- & -- & -- & -- & -- & -- & -- & -- \\
+Farm & Qwen8B & sent\_helpful & -- & -- & -- & -- & -- & -- & -- & -- \\
+Farm & Qwen8B & sent\_mislead & -- & -- & -- & -- & -- & -- & -- & -- \\
+\hline
+Farm & Qwen14B & alphanumeric & \textbf{2.60} & \textbf{2.90} & \textbf{2.60} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen14B & sem\_rel\_helpful & 1.50 & 2.30 & 2.20 & 2.60 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen14B & sem\_rel\_mislead & 2.00 & 2.60 & 2.20 & 2.90 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen14B & sent\_helpful & 2.50 & 2.80 & 2.40 & 2.60 & 2.90 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+Farm & Qwen14B & sent\_mislead & 2.20 & 2.80 & 2.30 & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} & \textbf{3.00} \\
+\hline
+Farm & Qwen32B & alphanumeric & -- & -- & -- & -- & -- & -- & -- & -- \\
+Farm & Qwen32B & sem\_rel\_helpful & -- & -- & -- & -- & -- & -- & -- & -- \\
+Farm & Qwen32B & sem\_rel\_mislead & -- & -- & -- & -- & -- & -- & -- & -- \\
+Farm & Qwen32B & sent\_helpful & -- & -- & -- & -- & -- & -- & -- & -- \\
+Farm & Qwen32B & sent\_mislead & -- & -- & -- & -- & -- & -- & -- & -- \\
+\hline
+\hline
+\hline
+\end{tabular}}
+\caption{Mean exploration count for History=Summarized, Variance=Low}
+\label{tab:explorecount_Summarized_Low}
+\end{table}
