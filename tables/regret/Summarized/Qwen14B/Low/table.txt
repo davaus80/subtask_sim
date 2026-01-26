@@ -1,0 +1,27 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|ccc|ccc|ccc|ccc|}
+\hline
+\textbf{Domain} & \textbf{Nomenclature} & \multicolumn{3}{c|}{\textbf{high\_scale}} & \multicolumn{3}{c|}{\textbf{low\_scale}} & \multicolumn{3}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{3}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. \\
+\hline
+Bandit & alphanumeric & 15.53 & 5.25 & 117.60 & 0.14 & 0.00 & 0.72 & 0.17 & \textbf{-0.01} & 0.73 & 14.24 & 2.04 & 72.42 \\
+Bandit & sem\_rel\_helpful & \textbf{7.59} & 1.91 & \textbf{8.36} & \textbf{0.13} & \textbf{-0.02} & \textbf{0.53} & \textbf{0.06} & 0.01 & \textbf{0.69} & \textbf{7.42} & 1.28 & 77.02 \\
+Bandit & sem\_rel\_mislead & 32.38 & 19.47 & 303.65 & 0.34 & 0.10 & 1.97 & 0.36 & 0.11 & 1.54 & 39.64 & 4.57 & 108.11 \\
+Bandit & sent\_helpful & 13.95 & \textbf{0.89} & 127.15 & 0.14 & 0.00 & 0.71 & 0.18 & 0.01 & 0.72 & 13.83 & -0.66 & \textbf{69.53} \\
+Bandit & sent\_mislead & 16.90 & 6.42 & 132.22 & 0.15 & -0.02 & 0.78 & 0.14 & -0.01 & 0.77 & 18.36 & \textbf{-1.05} & 79.30 \\
+\hline
+Farm & alphanumeric & 11.38 & 0.89 & 104.11 & 0.14 & \textbf{-0.01} & 0.79 & 0.14 & \textbf{-0.02} & 0.78 & 12.26 & -0.63 & 69.71 \\
+Farm & sem\_rel\_helpful & \textbf{4.78} & \textbf{-0.36} & \textbf{44.69} & \textbf{0.08} & 0.07 & 0.60 & \textbf{0.05} & 0.01 & \textbf{0.77} & \textbf{7.63} & \textbf{-1.48} & 71.11 \\
+Farm & sem\_rel\_mislead & 38.46 & 9.49 & 211.75 & 0.39 & 0.07 & 1.56 & 0.33 & 0.01 & 0.87 & 42.76 & -0.02 & 76.10 \\
+Farm & sent\_helpful & 16.68 & 2.63 & 68.66 & 0.15 & -0.00 & \textbf{0.59} & 0.17 & 0.04 & 0.80 & 13.12 & -0.77 & \textbf{63.24} \\
+Farm & sent\_mislead & 21.98 & 11.03 & 141.33 & 0.16 & 0.05 & 1.02 & 0.14 & 0.04 & 0.86 & 10.97 & 0.08 & 76.38 \\
+\hline
+\hline
+\end{tabular}}
+\caption{Mean regrets for Model=Qwen14B, History=Summarized, Variance=Low}
+\label{tab:Qwen14B_Summarized_Low}
+\end{table}

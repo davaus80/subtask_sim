@@ -1,0 +1,27 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|ccc|ccc|ccc|ccc|}
+\hline
+\textbf{Domain} & \textbf{Nomenclature} & \multicolumn{3}{c|}{\textbf{high\_scale}} & \multicolumn{3}{c|}{\textbf{low\_scale}} & \multicolumn{3}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{3}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. \\
+\hline
+Bandit & alphanumeric & 15.00 & 5.00 & 110.00 & 0.15 & 0.10 & 1.35 & 0.15 & \textbf{0.00} & \textbf{0.80} & 15.00 & \textbf{0.00} & \textbf{85.00} \\
+Bandit & sem\_rel\_helpful & \textbf{0.00} & \textbf{0.00} & \textbf{5.00} & \textbf{0.00} & \textbf{0.00} & \textbf{0.05} & \textbf{0.00} & \textbf{0.00} & 0.90 & \textbf{0.00} & \textbf{0.00} & 100.00 \\
+Bandit & sem\_rel\_mislead & 50.00 & 50.00 & 500.00 & 0.50 & 0.40 & 4.15 & 0.50 & \textbf{0.00} & 1.90 & 50.00 & \textbf{0.00} & 145.00 \\
+Bandit & sent\_helpful & 5.00 & 5.00 & 70.00 & 0.10 & \textbf{0.00} & 0.30 & 0.20 & 0.05 & 1.25 & 10.00 & \textbf{0.00} & 105.00 \\
+Bandit & sent\_mislead & 25.00 & 20.00 & 215.00 & 0.38 & 0.38 & 3.75 & 0.25 & \textbf{0.00} & 1.10 & 15.00 & \textbf{0.00} & \textbf{85.00} \\
+\hline
+Farm & alphanumeric & 15.00 & 5.00 & 100.00 & 0.15 & 0.05 & 1.00 & 0.15 & \textbf{0.00} & \textbf{0.90} & 15.00 & \textbf{0.00} & \textbf{80.00} \\
+Farm & sem\_rel\_helpful & \textbf{0.00} & \textbf{0.00} & \textbf{35.00} & \textbf{0.00} & \textbf{0.00} & \textbf{0.45} & \textbf{0.00} & \textbf{0.00} & 0.95 & \textbf{0.00} & \textbf{0.00} & 90.00 \\
+Farm & sem\_rel\_mislead & 50.00 & 40.00 & 410.00 & 0.45 & 0.20 & 2.55 & 0.50 & \textbf{0.00} & 1.75 & 50.00 & \textbf{0.00} & 140.00 \\
+Farm & sent\_helpful & 20.00 & 15.00 & 195.00 & 0.15 & 0.05 & 1.10 & 0.10 & \textbf{0.00} & 1.15 & 15.00 & \textbf{0.00} & 115.00 \\
+Farm & sent\_mislead & 15.00 & 10.00 & 155.00 & 0.25 & 0.05 & 1.05 & 0.15 & \textbf{0.00} & 1.00 & 15.00 & \textbf{0.00} & \textbf{80.00} \\
+\hline
+\hline
+\end{tabular}}
+\caption{Mean regrets for Model=Qwen32B, History=Full, Variance=No}
+\label{tab:Qwen32B_Full_No}
+\end{table}

@@ -1,0 +1,27 @@
+\begin{table}[ht]
+\centering
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|ccc|ccc|ccc|ccc|}
+\hline
+\textbf{Domain} & \textbf{Nomenclature} & \multicolumn{3}{c|}{\textbf{high\_scale}} & \multicolumn{3}{c|}{\textbf{low\_scale}} & \multicolumn{3}{c|}{\textbf{low\_neg\_scale}} & \multicolumn{3}{c|}{\textbf{high\_neg\_scale}} \\
+\hline
+  & & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. & regret@1 & regret@10 & Cum. \\
+\hline
+Bandit & alphanumeric & 15.00 & 5.00 & 115.00 & 0.15 & \textbf{0.00} & 0.75 & 0.15 & \textbf{0.00} & 1.35 & 15.00 & \textbf{7.50} & 142.50 \\
+Bandit & sem\_rel\_helpful & 17.50 & \textbf{0.00} & \textbf{20.00} & \textbf{0.12} & \textbf{0.00} & \textbf{0.23} & \textbf{0.10} & 0.17 & \textbf{1.15} & \textbf{2.50} & \textbf{7.50} & \textbf{122.50} \\
+Bandit & sem\_rel\_mislead & 40.00 & 32.50 & 342.50 & 0.40 & 0.38 & 3.05 & 0.30 & 0.23 & 2.65 & 30.00 & 27.50 & 220.00 \\
+Bandit & sent\_helpful & \textbf{12.50} & 2.50 & 62.50 & 0.15 & \textbf{0.00} & 0.70 & 0.15 & 0.03 & 1.25 & 10.00 & 22.50 & 147.50 \\
+Bandit & sent\_mislead & 15.00 & \textbf{0.00} & 75.00 & 0.15 & \textbf{0.00} & 0.78 & 0.20 & 0.12 & 1.43 & 15.00 & 12.50 & 157.50 \\
+\hline
+Farm & alphanumeric & 15.00 & \textbf{0.00} & 72.50 & 0.15 & 0.10 & 0.85 & 0.15 & 0.12 & 1.85 & 15.00 & 17.50 & \textbf{172.50} \\
+Farm & sem\_rel\_helpful & \textbf{2.50} & \textbf{0.00} & \textbf{45.00} & \textbf{0.05} & \textbf{0.00} & \textbf{0.68} & \textbf{0.07} & 0.25 & 1.95 & \textbf{0.00} & \textbf{7.50} & 187.50 \\
+Farm & sem\_rel\_mislead & 45.00 & 22.50 & 265.00 & 0.47 & 0.20 & 2.17 & 0.47 & 0.25 & 2.08 & 45.00 & 17.50 & 205.00 \\
+Farm & sent\_helpful & 12.50 & \textbf{0.00} & 62.50 & 0.15 & \textbf{0.00} & 0.78 & 0.12 & 0.15 & 1.82 & 10.00 & 20.00 & 180.00 \\
+Farm & sent\_mislead & 25.00 & 5.00 & 115.00 & 0.25 & 0.03 & 0.85 & 0.30 & \textbf{0.05} & \textbf{1.62} & 25.00 & 10.00 & 180.00 \\
+\hline
+\hline
+\end{tabular}}
+\caption{Mean regrets for Model=Qwen14B, History=Full, Variance=No}
+\label{tab:Qwen14B_Full_No}
+\end{table}
