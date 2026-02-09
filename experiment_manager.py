@@ -77,7 +77,19 @@ if __name__ == "__main__":
 
             logging.info("Running config: %s", config_path)
             driver.reset(config_path, exp_folder=output_dir)
-            driver.play()
+            # Check if the result already exists - if so, skip it while ensuring the random number impact is the same (so I guess reset without playing)
+            # TODO: A better solution after infilling would be to create a set of random seeds for each replicate.
+            has_jsonl_with_10_lines = False
+
+            if os.path.isdir(output_dir):
+                for fname in os.listdir(output_dir):
+                    if fname.endswith(".jsonl"):
+                        path = os.path.join(output_dir, fname)
+                        with open(path, "r", encoding="utf-8") as f:
+                            if sum(1 for _ in f) == 10:
+                                driver.play()
+                                break
+            
     else:
         raise ValueError("Please specify the --config_path or --config_folder argument. config_folder will run all configs in subdirectories (but not in main directory) so it handles shuffle subdirs")
 
