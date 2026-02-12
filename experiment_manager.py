@@ -44,7 +44,7 @@ def get_args(args):
     parser = ArgumentParser()
     parser.add_argument("--config_path", default=None) 
     parser.add_argument("--config_dir", default=None) 
-    parser.add_argument("--n_runs", default=5) 
+    parser.add_argument("--n_runs", default=10) 
     return parser.parse_args(args)
 
 if __name__ == "__main__":
@@ -87,8 +87,10 @@ if __name__ == "__main__":
                         path = os.path.join(output_dir, fname)
                         with open(path, "r", encoding="utf-8") as f:
                             if sum(1 for _ in f) == 10:
-                                driver.play()
+                                has_jsonl_with_10_lines = True
                                 break
+            if not has_jsonl_with_10_lines:
+                driver.play()
             
     else:
         raise ValueError("Please specify the --config_path or --config_folder argument. config_folder will run all configs in subdirectories (but not in main directory) so it handles shuffle subdirs")
