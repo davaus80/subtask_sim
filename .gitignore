@@ -3,6 +3,9 @@ slurm_outputs/
 figures/
 figures_png/
 
+# Let's ignore the many .log files which are huge and serve more as debugging
+*.log
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
