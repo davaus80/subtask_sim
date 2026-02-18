@@ -44,31 +44,40 @@ find "$EXPERIMENT_GROUP_PATH" -type d -name "shuffles" | while read -r SHUFFLE_D
   # Ensure the path to jsonl files is correct
   for SHUFFLE_SUBDIR in "$SHUFFLE_DIR"/*; do
     if [ -d "$SHUFFLE_SUBDIR" ]; then
-      JSONL_FILE=$(find "$SHUFFLE_SUBDIR" -type f -name "run_*.jsonl" | head -n 1)
-    #   echo "Checking for JSONL file: $JSONL_FILE" >&2
-      if [ -n "$JSONL_FILE" ]; then
-        ROW_COUNT=$(wc -l < "$JSONL_FILE")
-        if [ "$ROW_COUNT" -ge "$EXPECTED_ROW_COUNT" ]; then
-          COMPLETE_COUNT=$((COMPLETE_COUNT + 1))
+      SHUFFLE_COMPLETE=0
+      # Check every jsonl file in the shuffle subdirectory. If any file has
+      # at least EXPECTED_ROW_COUNT rows, consider this shuffle complete.
+      while IFS= read -r JSONL_FILE; do
+        # If file is zero bytes or missing, remove it
+        if [ ! -s "$JSONL_FILE" ]; then
+          echo "Deleting empty file $JSONL_FILE" >&2
+          rm -f "$JSONL_FILE"
+          continue
         fi
+        ROW_COUNT=$(wc -l < "$JSONL_FILE")
+        if [ "$ROW_COUNT" -eq 0 ]; then
+          echo "Deleting zero-line file $JSONL_FILE" >&2
+          rm -f "$JSONL_FILE"
+          continue
+        fi
+        if [ "$ROW_COUNT" -ge "$EXPECTED_ROW_COUNT" ]; then
+          SHUFFLE_COMPLETE=1
+          break
+        fi
+      done < <(find "$SHUFFLE_SUBDIR" -type f -name "*.jsonl")
+
+      if [ "$SHUFFLE_COMPLETE" -eq 1 ]; then
+        COMPLETE_COUNT=$((COMPLETE_COUNT + 1))
       fi
     fi
   done
 
-  # Debugging output to count all jsonl files in the shuffle folder
-  TOTAL_JSONL_COUNT=$(find "$SHUFFLE_DIR" -type f -name "results.jsonl" | wc -l)
+# Debugging output to count all jsonl files in the shuffle folder
+  TOTAL_JSONL_COUNT=$(find "$SHUFFLE_DIR" -type f -name "*.jsonl" | wc -l)
 #   echo "Task variation: $TASK_VARIATION_DIR, TOTAL_JSONL_COUNT=$TOTAL_JSONL_COUNT, COMPLETE_COUNT=$COMPLETE_COUNT, EXPECTED_SHUFFLE_COUNT=$EXPECTED_SHUFFLE_COUNT" >&2
 
-  # Debugging output to verify row count and shuffle completeness
-  for JSONL_FILE in "$SHUFFLE_DIR"/shuffle_*; do
-    if [ -f "$JSONL_FILE" ]; then
-      ROW_COUNT=$(wc -l < "$JSONL_FILE")
-    #   echo "Checking $JSONL_FILE: ROW_COUNT=$ROW_COUNT, EXPECTED_ROW_COUNT=$EXPECTED_ROW_COUNT" >&2
-    fi
-  done
-
   # Debugging output to verify task variation completeness
-  echo "Task variation: $TASK_VARIATION_DIR, COMPLETE_COUNT=$COMPLETE_COUNT, EXPECTED_SHUFFLE_COUNT=$EXPECTED_SHUFFLE_COUNT" >&2
+  echo "Task variation: $TASK_VARIATION_DIR, COMPLETE_COUNT=$COMPLETE_COUNT, EXPECTED_SHUFFLE_COUNT=$EXPECTED_SHUFFLE_COUNT, TOTAL_JSONL_COUNT=$TOTAL_JSONL_COUNT" >&2
 
   # Count the number of missing shuffle folders
   MISSING_SHUFFLES=$((EXPECTED_SHUFFLE_COUNT - COMPLETE_COUNT))
@@ -85,4 +94,47 @@ if [ -s "$OUTPUT_FILE" ]; then
   echo "Missing runs logged to $OUTPUT_FILE"
 else
   echo "All runs are complete. No missing runs found."
+fi
+
+# Additionally, include any task-variation folders that do not have a `shuffles/`
+# subdirectory at all. We identify task-variation folders by looking for
+# `config.yaml` files and taking their parent directory. If a task-variation
+# folder lacks `shuffles/` then it is missing all expected shuffles.
+while IFS= read -r TASK_DIR; do
+  # Skip the experiment group root itself (don't log the top-level folder)
+  if command -v realpath >/dev/null 2>&1; then
+    if [ "$(realpath -s "$TASK_DIR")" = "$(realpath -s "$EXPERIMENT_GROUP_PATH")" ]; then
+      continue
+    fi
+  else
+    if [ "$TASK_DIR" = "$EXPERIMENT_GROUP_PATH" ]; then
+      continue
+    fi
+  fi
+
+  # Skip if the task variation already got logged
+  if grep -qF "${TASK_DIR}," "$OUTPUT_FILE"; then
+    continue
+  fi
+
+  if [ ! -d "$TASK_DIR/shuffles" ]; then
+    PARAM_CONFIG=$(basename $(dirname "$TASK_DIR"))
+    MODEL_SIZE=""
+    if [[ "$PARAM_CONFIG" == *"8B"* ]]; then
+      MODEL_SIZE="8B"
+    elif [[ "$PARAM_CONFIG" == *"14B"* ]]; then
+      MODEL_SIZE="14B"
+    elif [[ "$PARAM_CONFIG" == *"32B"* ]]; then
+      MODEL_SIZE="32B"
+    fi
+
+    MISSING_SHUFFLES=$EXPECTED_SHUFFLE_COUNT
+    echo "${TASK_DIR},${MISSING_SHUFFLES},${MODEL_SIZE}" >> "$OUTPUT_FILE"
+    echo "Logged missing shuffles for $TASK_DIR (no shuffles/ directory)" >&2
+  fi
+done < <(find "$EXPERIMENT_GROUP_PATH" -type f -name "config.yaml" -printf '%h\n' | sort -u)
+
+# Re-notify the user if we appended any new missing entries
+if [ -s "$OUTPUT_FILE" ]; then
+  echo "Missing runs logged to $OUTPUT_FILE"
 fi
