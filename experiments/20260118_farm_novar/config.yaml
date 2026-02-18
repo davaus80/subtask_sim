@@ -8,6 +8,7 @@ actions:
 agent:
   max_new_tokens: 200
   model_name: Qwen/Qwen3-8B
+  temperature: 1.0
   thinking_budget: 150
   type: mono_llm
 experiment:
