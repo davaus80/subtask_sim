@@ -24,10 +24,10 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     # Determine the coefficients based on model size
     case "$model_size" in
         "32B")
-            a=5
+            a=6
             ;;
         "14B")
-            a=3
+            a=4
             ;;
         "8B")
             a=2
@@ -38,7 +38,7 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
             ;;
     esac
 
-    b=5
+    b=4
 
     # Calculate the time in minutes
     time_minutes=$((a * shuffles_missing + b))
