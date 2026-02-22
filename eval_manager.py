@@ -164,7 +164,8 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
         subname = os.path.basename(subpath)
 
         # Let's parse to get the scale and nomenclature
-        nomenclatures = ['alphanumeric', 'sem_rel_helpful', 'sem_rel_mislead', 'sent_helpful', 'sent_mislead']
+        nomenclatures = ['alphanumeric', 'sem_rel_helpful', 'sem_rel_mislead', 'sent_helpful', 'sent_mislead', 
+                         'ordinal_helpful', 'ordinal_mislead', 'world_helpful', 'world_mislead']
         scales = ['high_scale', 'low_scale', 'low_neg_scale', 'high_neg_scale']
 
         nom_match = get_unique_substring_match(subname, nomenclatures)
