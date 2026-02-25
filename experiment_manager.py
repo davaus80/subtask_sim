@@ -66,6 +66,8 @@ if __name__ == "__main__":
         # Get the config
         root_abs = os.path.abspath(args.config_dir)
         config_path = os.path.join(root_abs, "config.yaml")
+        with open(config_path, "r") as config_file:
+            config = yaml.safe_load(config_file)
 
         driver = GameDriver(config_path)
 
@@ -89,7 +91,12 @@ if __name__ == "__main__":
                             if sum(1 for _ in f) == 10:
                                 has_jsonl_with_10_lines = True
                                 break
-            if not has_jsonl_with_10_lines:
+            ## Only run if there is not already a complete experiment in this folder 
+            if not has_jsonl_with_10_lines: 
+                if config.get('experiment', {}).get('scalesweep', False):
+                    print("Scalesweep is enabled. Executing scalesweep logic...")
+                    driver.play_scalesweep()
+
                 driver.play()
             
     else:

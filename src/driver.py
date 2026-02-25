@@ -150,6 +150,57 @@ class GameDriver:
         print("Final Reward:", total_reward)
 
 
+    def play_scalesweep(self):
+        # This will be a list of dicts. Each list element corresponds to a time step.
+        # Each dict will contain "state", "action", "reward"
+        history = []
+        actions_taken = set()
+
+        # Main game loop
+        for turn_num in range (0, self.world.time_horizon):
+            # Get state info from world - this is for the recording (agent doesn't see it)
+            state = self.world.get_state()
+
+            # Get prompt from world
+            prompt = self.world.get_prompt(history)
+            self.logger.info(prompt)
+
+            # Get action from agent (until it matches a valid choice)
+            # For now, let's just have the world check validity and choose a random action
+            # if its invalid. Eventually, it'd be nice to give a few tries.
+            action_dict = self.agent.get_action(prompt)
+            action_selected_name = action_dict['action']
+            full_content = action_dict['content']
+            self.logger.info(f"GENERATED CONTENT: {full_content} \n PARSED ACTION: {action_selected_name}")
+
+            # Pass action to world (receive reward)
+            # For now action is a single string. Once we get to subtasks, it should be a tuple or list of strings
+            action_taken_name, action_taken_id, new_state, reward = self.world.take_action(action_selected_name)
+
+            history_chunk = {
+                "state": new_state,
+                "action_taken": action_taken_name,
+                "reward": reward
+            }
+
+            # Log relevant info (state, action, reward)
+            logging_dict = {
+                "state": new_state,
+                "full_action_content": full_content,
+                "action_selected_name": action_selected_name,
+                "action_taken_name": action_taken_name,
+                "action_taken_id": action_taken_id,
+                "reward": reward
+            }
+            self.json_logger.write(logging_dict)
+            history.append(history_chunk)
+
+            if action_taken_name in actions_taken:
+                break
+            else:
+                actions_taken.add(action_taken_name)
+
+
 
 
 
