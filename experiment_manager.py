@@ -71,16 +71,21 @@ if __name__ == "__main__":
 
         driver = GameDriver(config_path)
 
+        n_runs = config.get('experiment', {}).get('replicates', 10)
+
+        # Generate seeds for each run
+        seeds = [random.randint(0, 2**32 - 1) for _ in range(n_runs)]
+
         # Set up the replicate folders and run N replicates
-        n_runs = args.n_runs
         for run_num in range(n_runs):
+            # Reset the random seed for this run
+            random.seed(seeds[run_num])
+
             output_dir = os.path.join(root_abs, f"shuffles/shuffle_{run_num}")
             os.makedirs(output_dir, exist_ok=True)
 
             logging.info("Running config: %s", config_path)
             driver.reset(config_path, exp_folder=output_dir)
-            # Check if the result already exists - if so, skip it while ensuring the random number impact is the same (so I guess reset without playing)
-            # TODO: A better solution after infilling would be to create a set of random seeds for each replicate.
             has_jsonl_with_10_lines = False
 
             if os.path.isdir(output_dir):
