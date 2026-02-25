@@ -195,10 +195,13 @@ class GameDriver:
             self.json_logger.write(logging_dict)
             history.append(history_chunk)
 
-            if action_taken_name in actions_taken:
-                break
-            else:
-                actions_taken.add(action_taken_name)
+            import pdb; pdb.set_trace()
+
+            if not(action_taken_name in actions_taken):
+                if len(actions_taken) == 0:
+                    actions_taken.add(action_taken_name)
+                else:
+                    break
 
 
 
