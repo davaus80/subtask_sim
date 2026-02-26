@@ -199,7 +199,7 @@ class World():
         return self.state_dict
 
     '''
-        Return the set of actions as a dictionary indexed by ID with a dictinoary as values
+        Return the set of actions as a dictionary indexed by ID with a dictionary as values
         {
             0: {'name': xyz, 'mean': 100, 'std': 10}, 
         }
