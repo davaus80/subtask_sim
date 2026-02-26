@@ -12,6 +12,8 @@ agent:
   thinking_budget: 150
   type: mono_llm
 experiment:
+  replicates: 20
+  scalesweep: true
   time_horizon: 20
 paths:
   eval_results_master_path: experiments/20260225_ab_scalesweep_novar/eval_results.csv
