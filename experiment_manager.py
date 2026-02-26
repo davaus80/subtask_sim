@@ -101,8 +101,8 @@ if __name__ == "__main__":
                 if config.get('experiment', {}).get('scalesweep', False):
                     print("Scalesweep is enabled. Executing scalesweep logic...")
                     driver.play_scalesweep()
-
-                driver.play()
+                else:
+                    driver.play()
             
     else:
         raise ValueError("Please specify the --config_path or --config_folder argument. config_folder will run all configs in subdirectories (but not in main directory) so it handles shuffle subdirs")

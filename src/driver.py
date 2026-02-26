@@ -156,8 +156,33 @@ class GameDriver:
         history = []
         actions_taken = set()
 
+        # We initialize with the semantically favoured action as the first observation.
+        # Since we just want to know exploration probabilities in tthis case - otherwise
+        # we end up having "wasted" rurns where a differernt action is selected first
+        # due to ordering bias.
+
+        # Get action statistics and find the action with the highest mean reward
+        action_stats = self.world.get_action_statistics()
+        highest_reward_action = max(action_stats.items(), key=lambda x: x[1]['mean'])
+        highest_action_id = highest_reward_action[0]
+        highest_action_name = highest_reward_action[1]['name']
+
+        # Add the highest reward action to the history
+        action_taken_name, action_taken_id, new_state, reward = self.world.take_action(highest_action_name)
+        history_chunk = {
+            "state": new_state,
+            "action_taken": action_taken_name,
+            "reward": reward
+        }
+        history.append(history_chunk)
+        actions_taken.add(action_taken_name)
+
+        # Get favoured action
+
+        # Initialize history
+
         # Main game loop
-        for turn_num in range (0, self.world.time_horizon):
+        for turn_num in range (1, self.world.time_horizon):
             # Get state info from world - this is for the recording (agent doesn't see it)
             state = self.world.get_state()
 
@@ -194,8 +219,6 @@ class GameDriver:
             }
             self.json_logger.write(logging_dict)
             history.append(history_chunk)
-
-            import pdb; pdb.set_trace()
 
             if not(action_taken_name in actions_taken):
                 if len(actions_taken) == 0:

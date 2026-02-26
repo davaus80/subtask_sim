@@ -197,3 +197,58 @@ class World():
 
     def get_state(self):
         return self.state_dict
+
+    '''
+        Return the set of actions as a dictionary indexed by ID with a dictinoary as values
+        {
+            0: {'name': xyz, 'mean': 100, 'std': 10}, 
+        }
+    '''
+
+    def get_action_statistics(self):
+        """
+        Copies the list of actions and calculates the mean reward and std for each action
+        based on the relevant subtasks.
+        Returns:
+            action_stats: dict mapping action_id to {'name': str, 'mean': float, 'std': float}
+        """
+        # Copy the list of actions
+        action_stats = {}
+
+        for action_id, action in self.actions.items():
+            # Get the relevant subtasks for this action
+            relevant_task_ids = action['subtasks']
+
+            # Initialize variables for mean and std calculation
+            total_mean = 0.0
+            total_std = 0.0
+            task_count = 0
+
+            # Iterate over relevant subtasks
+            for task_id in relevant_task_ids:
+                task = self.subtasks.get(task_id)
+                if task:
+                    # Assume the task has 'mean' and 'std' attributes
+                    task_mean = task.get('mean', 0.0)
+                    task_std = task.get('std', 0.0)
+
+                    total_mean += task_mean
+                    total_std += task_std
+                    task_count += 1
+
+            # Calculate the average mean and std for the action
+            if task_count > 0:
+                avg_mean = total_mean / task_count
+                avg_std = total_std / task_count
+            else:
+                avg_mean = 0.0
+                avg_std = 0.0
+
+            # Store the statistics for this action
+            action_stats[action_id] = {
+                'name': action['name'],
+                'mean': avg_mean,
+                'std': avg_std
+            }
+
+        return action_stats
