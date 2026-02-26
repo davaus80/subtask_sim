@@ -227,10 +227,11 @@ class World():
             # Iterate over relevant subtasks
             for task_id in relevant_task_ids:
                 task = self.subtasks.get(task_id)
+                action_payoff = task.actions.get(action_id, {})
                 if task:
                     # Assume the task has 'mean' and 'std' attributes
-                    task_mean = task.get('mean', 0.0)
-                    task_std = task.get('std', 0.0)
+                    task_mean = action_payoff.get('mean', 0.0)
+                    task_std = action_payoff.get('std', 0.0)
 
                     total_mean += task_mean
                     total_std += task_std

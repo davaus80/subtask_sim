@@ -7,7 +7,7 @@ import numpy as np
 class BanditTask(Task):
     '''
     We initialize the bandit task assuming the following types
-    - actions: List[Dict] 
+    - actions: List[Dict] <- I think it's actually a dict of dicts...
         Each entry in the list corresponds to an arm. We expect the keys:
             - "description": a str providing context for the arm
             - "mean": float
