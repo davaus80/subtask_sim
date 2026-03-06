@@ -107,8 +107,8 @@ if __name__ == "__main__":
                                 has_jsonl_with_20_lines = True
                                 break
             ## Only run if there is not already a complete experiment in this folder 
-            if has_jsonl_with_20_lines or not has_jsonl_with_varied_actions: 
-                if config.get('experiment', {}).get('scalesweep', False):
+            if config.get('experiment', {}).get('scalesweep', False):
+                if has_jsonl_with_20_lines or not has_jsonl_with_varied_actions: 
                     print("Scalesweep is enabled. Executing scalesweep logic...")
                     driver.play_scalesweep()
             if not has_jsonl_with_10_lines:

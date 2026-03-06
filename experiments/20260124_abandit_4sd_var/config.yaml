@@ -34,7 +34,7 @@ subtasks:
   type: bandit
 world:
   action_suffix: Arm
-  prompt_template_path: src/templates/v1_w_hist.jinja2
+  prompt_template_path: src/templates/budget_summhist_v1.jinja2
   task_prompt: You are faced with a 3-armed bandit problem.  Each action corresponds
     to pulling a specific arm. Each arm is associated with a Gaussian distribution
     with a fixed but unknown mean. At each time step, you will select a field and
