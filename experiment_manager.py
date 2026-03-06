@@ -5,6 +5,7 @@ import os
 import logging
 import yaml
 import glob
+import json
 import random
 
 
@@ -87,22 +88,31 @@ if __name__ == "__main__":
             logging.info("Running config: %s", config_path)
             driver.reset(config_path, exp_folder=output_dir)
             has_jsonl_with_10_lines = False
+            has_jsonl_with_varied_actions = False
+            has_jsonl_with_20_lines = False
 
             if os.path.isdir(output_dir):
                 for fname in os.listdir(output_dir):
                     if fname.endswith(".jsonl"):
                         path = os.path.join(output_dir, fname)
                         with open(path, "r", encoding="utf-8") as f:
-                            if sum(1 for _ in f) == 10:
+                            lines = f.readlines()
+                            action_names = {json.loads(line).get("action_selected_name") for line in lines}
+                            if len(action_names) > 1:
+                                has_jsonl_with_varied_actions = True
+                            if sum(1 for _ in lines) == 10:
                                 has_jsonl_with_10_lines = True
                                 break
+                            if sum(1 for _ in lines) == 20:
+                                has_jsonl_with_20_lines = True
+                                break
             ## Only run if there is not already a complete experiment in this folder 
-            if not has_jsonl_with_10_lines: 
+            if has_jsonl_with_20_lines or not has_jsonl_with_varied_actions: 
                 if config.get('experiment', {}).get('scalesweep', False):
                     print("Scalesweep is enabled. Executing scalesweep logic...")
                     driver.play_scalesweep()
-                else:
-                    driver.play()
+            if not has_jsonl_with_10_lines:
+                driver.play()
             
     else:
         raise ValueError("Please specify the --config_path or --config_folder argument. config_folder will run all configs in subdirectories (but not in main directory) so it handles shuffle subdirs")

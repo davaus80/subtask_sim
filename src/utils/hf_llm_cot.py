@@ -50,7 +50,8 @@ class HFLLM_COT(HuggingFaceLLM):
             # Append explicit Chain-of-Thought instructions to the user prompt.
             cot_instructions = (
                 "\n\nPlease think step-by-step and show your chain-of-thought wrapped between <think> and </think>."
-                " After your reasoning, output ONLY the chosen action wrapped in <action>...</action>."
+                " After your reasoning, output only the exact name of the chosen action wrapped in <action>...</action>."
+                " If you include additional text inside the action tags, it will result in a failure. Don't forget to close the action tags with </action>"
             )
             user_prompt = prompt + cot_instructions
 
@@ -69,6 +70,8 @@ class HFLLM_COT(HuggingFaceLLM):
             )
             output = self.tokenizer.decode(generated_ids[0][len(model_inputs.input_ids[0]):], skip_special_tokens=True).strip()
 
+            import pdb; pdb.set_trace()
+            
             # If model already produced an <action>, handle three cases:
             # 1) both <action> and </action> present -> return normally
             # 2) <action> present but </action> missing -> continue generation to complete it
@@ -104,6 +107,7 @@ class HFLLM_COT(HuggingFaceLLM):
 
                 follow_messages = [
                     {"role": "system", "content": "You are a helpful assistant"},
+                    {"role": "user", "content": prompt},
                     {"role": "assistant", "content": completion_instruction}
                 ]
                 text2 = self.tokenizer.apply_chat_template(
@@ -159,6 +163,7 @@ class HFLLM_COT(HuggingFaceLLM):
             # Ask the model to output the action now.
             follow_messages = [
                 {"role": "system", "content": "You are a helpful assistant"},
+                {"role": "user", "content": prompt},
                 {"role": "assistant", "content": prior_content + "\n\n<action>"}
             ]
             text2 = self.tokenizer.apply_chat_template(
