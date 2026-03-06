@@ -1,20 +1,28 @@
 from src.agents.agent import Agent
 from src.utils.hf_llm import HuggingFaceLLM
 from src.utils.hf_llm_thinking_budget import HFLLM_Thinking_Budget
+from src.utils.hf_llm_cot import HFLLM_COT
 import logging
 
 from typing import Dict, Any
 import re
 
+
+
 '''
-This file defines a human agent
+This file defines an LLM agent
 '''
 @Agent._register("mono_llm")
 class MonoLLMAgent(Agent):
 
     def __init__(self, config):
         if config.get('agent', None) and config.get('agent', {}).get('thinking_budget', None):
-            self.llm = HFLLM_Thinking_Budget(config)
+            # For Qwen models, use thinking mode. For Llama, use CoT
+            model_name = config.get("agent", None).get("model_name", "")
+            if "qwen3" in model_name.lower():
+                self.llm = HFLLM_Thinking_Budget(config)
+            elif "llama" in model_name.lower():
+                self.llm = HFLLM_COT(config)
         else:
             self.llm = HuggingFaceLLM(config)
         self.logger = logging.getLogger(__name__)

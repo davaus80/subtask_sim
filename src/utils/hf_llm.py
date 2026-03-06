@@ -20,7 +20,7 @@ class HuggingFaceLLM:
         model_name = config["agent"]["model_name"]
         self.model_name = model_name
 
-        self.temperature = config["agent"].get("temperature", 1.0)
+        # self.temperature = config["agent"].get("temperature", 1.0)
 
         ########## Detect available device: prefer CUDA, then MPS (Apple), else CPU ###########
         cuda_available = torch.cuda.is_available()
