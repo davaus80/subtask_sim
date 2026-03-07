@@ -69,8 +69,6 @@ class HFLLM_COT(HuggingFaceLLM):
                 max_new_tokens=int(self.thinking_budget)
             )
             output = self.tokenizer.decode(generated_ids[0][len(model_inputs.input_ids[0]):], skip_special_tokens=True).strip()
-
-            import pdb; pdb.set_trace()
             
             # If model already produced an <action>, handle three cases:
             # 1) both <action> and </action> present -> return normally
