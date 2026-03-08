@@ -1,13 +1,16 @@
 actions:
 - id: 0
   name: Field_1
+  names_path: base_configs/action_name_lists/ordinal/ordinal_good.json
 - id: 1
   name: Field_2
+  names_path: base_configs/action_name_lists/ordinal/ordinal_neutral.json
 - id: 2
   name: Field_3
+  names_path: base_configs/action_name_lists/ordinal/ordinal_bad.json
 agent:
   max_new_tokens: 200
-  model_name: Qwen/Qwen3-8B
+  model_name: meta-llama/Llama-2-13b-chat-hf
   temperature: 1.0
   thinking_budget: 150
   type: mono_llm
@@ -15,22 +18,22 @@ experiment:
   replicates: 10
   time_horizon: 10
 paths:
-  eval_results_master_path: experiments/20260124_abandit_2sd_var/eval_results.csv
-  experiment_dir: experiments/20260124_abandit_2sd_var
+  experiment_dir: base_configs/farming_basic
+  log_file: experiments/20260124_abandit_2sd_var/model_name_Llama2-13B/ordinal_helpful_high_scale/output.log
 subtasks:
 - id: 0
   name: DeterministicAbstractBandit
   params:
     actions:
     - id: 0
-      mean: 100
-      std_dev: 0
+      mean: 75
+      std_dev: 12.5
     - id: 1
       mean: 50
-      std_dev: 0
+      std_dev: 12.5
     - id: 2
-      mean: 200
-      std_dev: 0
+      mean: 25
+      std_dev: 12.5
   type: bandit
 world:
   action_suffix: Arm
