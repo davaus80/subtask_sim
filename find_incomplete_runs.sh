@@ -35,6 +35,8 @@ find "$EXPERIMENT_GROUP_PATH" -type d -name "shuffles" | while read -r SHUFFLE_D
     MODEL_SIZE="8B"
   elif [[ "$PARAM_CONFIG" == *"14B"* ]]; then
     MODEL_SIZE="14B"
+  elif [[ "$PARAM_CONFIG" == *"13B"* ]]; then
+    MODEL_SIZE="13B"
   elif [[ "$PARAM_CONFIG" == *"32B"* ]]; then
     MODEL_SIZE="32B"
   fi
@@ -122,6 +124,8 @@ while IFS= read -r TASK_DIR; do
     MODEL_SIZE=""
     if [[ "$PARAM_CONFIG" == *"8B"* ]]; then
       MODEL_SIZE="8B"
+    elif [[ "$PARAM_CONFIG" == *"13B"* ]]; then
+      MODEL_SIZE="13B"
     elif [[ "$PARAM_CONFIG" == *"14B"* ]]; then
       MODEL_SIZE="14B"
     elif [[ "$PARAM_CONFIG" == *"32B"* ]]; then
