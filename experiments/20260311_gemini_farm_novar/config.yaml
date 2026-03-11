@@ -6,7 +6,7 @@ actions:
 - id: 2
   name: Field_3
 agent:
-  model_name: gemini-3.1-flash-preview
+  model_name: gemini-3.1-flash-lite-preview
   temperature: 1.0
   type: mono_llm
 experiment:
