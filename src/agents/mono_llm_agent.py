@@ -2,6 +2,7 @@ from src.agents.agent import Agent
 from src.utils.hf_llm import HuggingFaceLLM
 from src.utils.hf_llm_thinking_budget import HFLLM_Thinking_Budget
 from src.utils.hf_llm_cot import HFLLM_COT
+from src.utils.gemini_llm import GeminiLLM
 import logging
 
 from typing import Dict, Any
@@ -16,9 +17,11 @@ This file defines an LLM agent
 class MonoLLMAgent(Agent):
 
     def __init__(self, config):
-        if config.get('agent', None) and config.get('agent', {}).get('thinking_budget', None):
+        model_name = config.get("agent", {}).get("model_name", "")
+        if "gemini" in model_name.lower():
+            self.llm = GeminiLLM(config)
+        elif config.get('agent', None) and config.get('agent', {}).get('thinking_budget', None):
             # For Qwen models, use thinking mode. For Llama, use CoT
-            model_name = config.get("agent", None).get("model_name", "")
             if "qwen3" in model_name.lower():
                 self.llm = HFLLM_Thinking_Budget(config)
             elif "llama" in model_name.lower():
