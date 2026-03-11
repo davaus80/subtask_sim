@@ -2,8 +2,21 @@ from typing import Any, Dict, Optional
 import logging
 from src.utils.hf_llm import HuggingFaceLLM
 
-from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM
+from transformers import pipeline, AutoTokenizer, AutoModelForCausalLM, StoppingCriteria, StoppingCriteriaList
 import torch
+
+
+class _ActionTagStopper(StoppingCriteria):
+    """Stop generation as soon as '</action>' appears in the newly generated text."""
+
+    def __init__(self, tokenizer, input_len: int):
+        self.tokenizer = tokenizer
+        self.input_len = input_len
+
+    def __call__(self, input_ids, scores, **kwargs) -> bool:
+        new_tokens = input_ids[0][self.input_len:]
+        decoded = self.tokenizer.decode(new_tokens, skip_special_tokens=True)
+        return "</action>" in decoded
 
 logger = logging.getLogger(__name__)
 
@@ -33,6 +46,7 @@ class HFLLM_COT(HuggingFaceLLM):
             self.thinking_budget = config['agent']['thinking_budget']
         else:
             self.thinking_budget = 100.0
+        self.action_token_budget = config.get("agent", {}).get("action_token_budget", 150)
         assert self.max_new_tokens > self.thinking_budget, f"thinking budget must be smaller than maximum new tokens. Given {self.max_new_tokens=} and {self.thinking_budget=}"
 
 
@@ -96,13 +110,6 @@ class HFLLM_COT(HuggingFaceLLM):
                     " Please finish the action so it is properly closed with </action> and output only the remaining text needed to complete the </action> tag."
                 )
 
-                prior_tokens_len = len(self.tokenizer.encode(completion_instruction, add_special_tokens=False))
-                remaining_tokens = int(self.max_new_tokens) - prior_tokens_len
-                assert remaining_tokens > 0, (
-                    f"remaining tokens must be positive. Given {remaining_tokens=}. "
-                    "Increase the max_new_tokens or lower the thinking_budget."
-                )
-
                 follow_messages = [
                     {"role": "system", "content": "You are a helpful assistant"},
                     {"role": "user", "content": prompt},
@@ -115,9 +122,11 @@ class HFLLM_COT(HuggingFaceLLM):
                     enable_thinking=False
                 )
                 model_inputs2 = self.tokenizer([text2], return_tensors="pt").to(self.model.device)
+                stopper2 = _ActionTagStopper(self.tokenizer, len(model_inputs2.input_ids[0]))
                 generated_ids2 = self.model.generate(
                     **model_inputs2,
-                    max_new_tokens=remaining_tokens
+                    max_new_tokens=self.action_token_budget,
+                    stopping_criteria=StoppingCriteriaList([stopper2])
                 )
                 output2 = self.tokenizer.decode(generated_ids2[0][len(model_inputs2.input_ids[0]):], skip_special_tokens=True).strip()
 
@@ -151,13 +160,6 @@ class HFLLM_COT(HuggingFaceLLM):
                 " enclosed in <action> tags. Do not include additional explanation."
             )
 
-            prior_tokens_len = len(self.tokenizer.encode(prior_content, add_special_tokens=False))
-            remaining_tokens = int(self.max_new_tokens) - prior_tokens_len
-            assert remaining_tokens > 0, (
-                f"remaining tokens must be positive. Given {remaining_tokens=}. "
-                "Increase the max_new_tokens or lower the thinking_budget."
-            )
-
             # Ask the model to output the action now.
             follow_messages = [
                 {"role": "system", "content": "You are a helpful assistant"},
@@ -171,9 +173,11 @@ class HFLLM_COT(HuggingFaceLLM):
                 enable_thinking=False
             )
             model_inputs2 = self.tokenizer([text2], return_tensors="pt").to(self.model.device)
+            stopper2 = _ActionTagStopper(self.tokenizer, len(model_inputs2.input_ids[0]))
             generated_ids2 = self.model.generate(
                 **model_inputs2,
-                max_new_tokens=remaining_tokens
+                max_new_tokens=self.action_token_budget,
+                stopping_criteria=StoppingCriteriaList([stopper2])
             )
             output2 = self.tokenizer.decode(generated_ids2[0][len(model_inputs2.input_ids[0]):], skip_special_tokens=True).strip()
 
