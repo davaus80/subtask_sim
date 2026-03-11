@@ -9,8 +9,10 @@ actions:
   name: Field_3
   names_path: base_configs/action_name_lists/ordinal/ordinal_bad.json
 agent:
+  max_new_tokens: 200
   model_name: gemini-3.1-flash-lite-preview
   temperature: 1.0
+  thinking_budget: 150
   type: mono_llm
 experiment:
   replicates: 10

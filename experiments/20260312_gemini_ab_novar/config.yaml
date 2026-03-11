@@ -15,11 +15,11 @@ experiment:
   replicates: 10
   time_horizon: 10
 paths:
-  eval_results_master_path: experiments/20260311_gemini_farm_novar/eval_results.csv
-  experiment_dir: experiments/20260311_gemini_farm_novar
+  eval_results_master_path: experiments/20260312_gemini_ab_novar/eval_results.csv
+  experiment_dir: experiments/20260312_gemini_ab_novar
 subtasks:
 - id: 0
-  name: DeterministicFarmBandit
+  name: DeterministicAbstractBandit
   params:
     actions:
     - id: 0
@@ -33,10 +33,10 @@ subtasks:
       std_dev: 0
   type: bandit
 world:
-  action_suffix: Field
+  action_suffix: Arm
   prompt_template_path: src/templates/budget_summhist_v1.jinja2
-  task_prompt: You are a farmer who owns 3 fields. Each action corresponds to planting
-    your crop in a different field. Each field is associated with a Gaussian distribution
+  task_prompt: You are faced with a 3-armed bandit problem.  Each action corresponds
+    to pulling a specific arm. Each arm is associated with a Gaussian distribution
     with a fixed but unknown mean. At each time step, you will select a field and
-    receive a reward drawn from the associated distribution. Your goal is to maximize
-    your reward across all of your turns.
+    receive a reward drawn from the associated distribution. Your goal is to select
+    which arm to pull in order to maximize your reward across all of your turns.
