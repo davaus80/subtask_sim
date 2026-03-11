@@ -24,8 +24,9 @@ class GeminiLLM:
         self.client = genai.Client(api_key=api_key)
         self.model_name = config["agent"]["model_name"]
         self.thinking_budget = config.get("agent", {}).get("thinking_budget", None)
+        self.max_output_tokens = config.get("agent", {}).get("max_new_tokens", None)
 
-        logger.info(f"GeminiLLM initialized with model={self.model_name}, thinking_budget={self.thinking_budget}")
+        logger.info(f"GeminiLLM initialized with model={self.model_name}, thinking_budget={self.thinking_budget}, max_output_tokens={self.max_output_tokens}")
 
     def generate(self, prompt: str, **kwargs) -> Dict[str, Any]:
         thinking_config = None
@@ -37,6 +38,7 @@ class GeminiLLM:
             contents=prompt,
             config=types.GenerateContentConfig(
                 thinking_config=thinking_config,
+                max_output_tokens=self.max_output_tokens,
             ),
         )
 
