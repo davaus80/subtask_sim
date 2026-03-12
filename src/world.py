@@ -33,16 +33,32 @@ class World():
         # actions maps from action ID to the name of the task and a list of subtask IDs
         self.actions = {}
 
-        # Load in the list of actions and randomly shuffle the order 
+        # Check for contextual names (world nomenclature for contextual bandit)
+        # If set, sample (item_type, climate) and assign all arm names from the nested JSON.
+        self.context = {}
+        contextual_names_path = config.get("world", {}).get("contextual_names_path", None)
+        if contextual_names_path:
+            with open(contextual_names_path, 'r') as f:
+                contextual_names = json.load(f)
+            item_type = random.choice(list(contextual_names.keys()))
+            climate = random.choice(["warm", "cold"])
+            arm_name_map = contextual_names[item_type][climate]  # {"0": name, "1": name, "2": name}
+            self.context = {"Item Type": item_type, "Customer Climate": climate}
+
+        # Load in the list of actions and randomly shuffle the order
         action_list = config['actions']
         random.shuffle(action_list)
 
         for action in action_list:
 
+            # If contextual names are loaded, assign name by arm ID from the sampled context
+            if contextual_names_path:
+                action['name'] = arm_name_map[str(action['id'])]
+
             # If the action has a names_path field, then load it in and randomly sample a name until you get one that doesn't
-            # match one of the existing actions. 
-            names_path = action.get("names_path", None)
-            if names_path:
+            # match one of the existing actions.
+            elif action.get("names_path", None):
+                names_path = action["names_path"]
                 # Load the list of strings from a JSON file
                 with open(names_path, 'r') as f: # TODO: Add exception handling for bad path? I think better to raise the error than fail silently for now
                     string_list = json.load(f)
@@ -60,7 +76,6 @@ class World():
                 else:
                     # If we exit the loop without breaking, no unique name was found
                     raise ValueError("No unique action name available in names_path.")
-            
 
             self.actions[action['id']] = {
                 'name': action['name'],
@@ -81,14 +96,23 @@ class World():
 
         self.time_horizon = config.get("experiment", {}).get("time_horizon", 0)
 
+        # Add context to world state so it appears in the prompt
+        if self.context:
+            self.state_dict.update(self.context)
+
         for subtask_cfg in config.get("subtasks", []):
             # expected subtask_cfg format: {"type": "xyz", "params": {...}}
             task_type = subtask_cfg.get("type")
             if task_type is None:
                 raise KeyError("subtask entry missing 'type'")
-            
+
             subtask_id = subtask_cfg['id']
-            
+
+            # Inject the sampled climate into contextual bandit configs
+            if task_type == "contextual_bandit" and self.context:
+                subtask_cfg = dict(subtask_cfg)
+                subtask_cfg['_context'] = self.context["Customer Climate"]
+
             TaskClass = Task.get_class(task_type)
             task = TaskClass.from_config(subtask_cfg)
             self.subtasks[subtask_id] = task
