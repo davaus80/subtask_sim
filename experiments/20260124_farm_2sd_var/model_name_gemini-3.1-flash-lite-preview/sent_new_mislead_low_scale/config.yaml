@@ -1,13 +1,16 @@
 actions:
 - id: 0
   name: Field_1
+  names_path: base_configs/action_name_lists/sentiment/negative.json
 - id: 1
   name: Field_2
+  names_path: base_configs/action_name_lists/sentiment/neutral.json
 - id: 2
   name: Field_3
+  names_path: base_configs/action_name_lists/sentiment/positive.json
 agent:
   max_new_tokens: 200
-  model_name: Qwen/Qwen3-8B
+  model_name: gemini-3.1-flash-lite-preview
   temperature: 1.0
   thinking_budget: 150
   type: mono_llm
@@ -15,22 +18,22 @@ experiment:
   replicates: 10
   time_horizon: 10
 paths:
-  eval_results_master_path: experiments/20260118_farm_novar/eval_results.csv
-  experiment_dir: experiments/20260118_farm_novar
+  experiment_dir: base_configs/farming_basic
+  log_file: experiments/20260124_farm_2sd_var/model_name_gemini-3.1-flash-lite-preview/sent_new_mislead_low_scale/output.log
 subtasks:
 - id: 0
   name: DeterministicFarmBandit
   params:
     actions:
     - id: 0
-      mean: 100
-      std_dev: 0
+      mean: 0.75
+      std_dev: 0.125
     - id: 1
-      mean: 50
-      std_dev: 0
+      mean: 0.5
+      std_dev: 0.125
     - id: 2
-      mean: 200
-      std_dev: 0
+      mean: 0.25
+      std_dev: 0.125
   type: bandit
 world:
   action_suffix: Field
