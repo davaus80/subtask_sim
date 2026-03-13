@@ -208,6 +208,7 @@ class World():
         return self.prompt_template.render(
             task_prompt=self.config.get("world", {}).get("task_prompt", ""),
             state=self.state_dict,
+            context=self.context,
             actions=list(self.action_name_to_id_map.keys()),
             action_suffix=self.config.get("world", {}).get("action_suffix", ""),
             history=history,

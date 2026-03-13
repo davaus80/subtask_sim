@@ -6,10 +6,10 @@ Task Assignment:
 ---
 {{ task_prompt }}
 ---
-{% if state %}
+{% if context %}
 Current Context:
 ---
-{% for key, value in state.items() %}
+{% for key, value in context.items() %}
 - {{ key }}: {{ value }}
 {% endfor %}
 ---
