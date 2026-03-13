@@ -112,7 +112,6 @@ class GameDriver:
             state = self.world.get_state()
 
             # Get prompt from world
-            import pdb; pdb.set_trace()
             prompt = self.world.get_prompt(history)
             self.logger.info(prompt)
 

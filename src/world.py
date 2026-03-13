@@ -205,7 +205,7 @@ class World():
             
 
         # Render the template with the current state, actions, and history
-        return self.prompt_template.render(
+        return_prompt = self.prompt_template.render(
             task_prompt=self.config.get("world", {}).get("task_prompt", ""),
             state=self.state_dict,
             context=self.context,
@@ -219,6 +219,8 @@ class World():
             per_action_history=per_action_history,
             per_action_summarized_history=per_action_summarized_history
         )
+        return return_prompt
+        
 
     def get_state(self):
         return self.state_dict
