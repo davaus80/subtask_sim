@@ -3,7 +3,7 @@
 #SBATCH --job-name=sky
 #SBATCH --output=slurm_outputs/%x_%j.out
 #SBATCH --error=slurm_outputs/%x_%j.err
-#SBATCH --gres=gpu:rtx8000:4
+#SBATCH --gres=gpu:rtx8000:2
 #SBATCH --time=0:20:00
 #SBATCH --mem=30G
 

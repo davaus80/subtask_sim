@@ -24,16 +24,16 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     # Determine the coefficients based on model size
     case "$model_size" in
         "32B")
-            a=6
+            a=5
             ;;
         "14B")
             a=4
             ;;
         "13B")
-            a=3
+            a=4
         ;;  
         "8B")
-            a=2
+            a=3
             ;;
         *)
             echo "Unknown model size: $model_size. Skipping."
@@ -53,6 +53,19 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
 
     echo "Submitting job for $folder_path with time $time_formatted"
 
+    # Determine GPU count based on model size
+    case "$model_size" in
+        "32B")
+            gpu_gres="gpu:rtx8000:4"
+            ;;
+        "13B"|"14B")
+            gpu_gres="gpu:rtx8000:2"
+            ;;
+        "8B")
+            gpu_gres="gpu:rtx8000:1"
+            ;;
+    esac
+
     # Submit the job
-    sbatch --time=$time_formatted ./run_slurm_on_folder.sh "$folder_path"
+    sbatch --time=$time_formatted --gres=$gpu_gres ./run_slurm_on_folder.sh "$folder_path"
 done < "$MISSING_RUNS_FILE"
