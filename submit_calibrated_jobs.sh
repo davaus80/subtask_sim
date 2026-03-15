@@ -22,6 +22,7 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     fi
 
     if [[ "$MISSING_RUNS_FILE" == *"gemini"* ]]; then
+        continue ### REMOVE THIS WHEN YOU WANT TO RUN GEMINI JOBS AGAIN
         time_formatted="00:15:00"
         echo "Submitting gemini job for $folder_path with time $time_formatted"
         sbatch --time=$time_formatted ./run_slurm_gemini.sh "$folder_path"
