@@ -39,6 +39,8 @@ find "$EXPERIMENT_GROUP_PATH" -type d -name "shuffles" | while read -r SHUFFLE_D
     MODEL_SIZE="13B"
   elif [[ "$PARAM_CONFIG" == *"32B"* ]]; then
     MODEL_SIZE="32B"
+  elif [[ "${PARAM_CONFIG,,}" == *"gemini"* ]]; then
+    MODEL_SIZE="gemini"
   fi
 
   COMPLETE_COUNT=0
@@ -130,6 +132,8 @@ while IFS= read -r TASK_DIR; do
       MODEL_SIZE="14B"
     elif [[ "$PARAM_CONFIG" == *"32B"* ]]; then
       MODEL_SIZE="32B"
+    elif [[ "${PARAM_CONFIG,,}" == *"gemini"* ]]; then
+      MODEL_SIZE="gemini"
     fi
 
     MISSING_SHUFFLES=$EXPECTED_SHUFFLE_COUNT

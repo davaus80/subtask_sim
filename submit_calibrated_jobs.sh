@@ -21,6 +21,13 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
         continue
     fi
 
+    if [[ "$MISSING_RUNS_FILE" == *"gemini"* ]]; then
+        time_formatted="00:15:00"
+        echo "Submitting gemini job for $folder_path with time $time_formatted"
+        sbatch --time=$time_formatted ./run_slurm_gemini.sh "$folder_path"
+        continue
+    fi
+
     # Determine the coefficients based on model size
     case "$model_size" in
         "32B")
@@ -51,8 +58,6 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     minutes=$((time_minutes % 60))
     time_formatted=$(printf "%02d:%02d:00" $hours $minutes)
 
-    echo "Submitting job for $folder_path with time $time_formatted"
-
     # Determine GPU count based on model size
     case "$model_size" in
         "32B")
@@ -65,6 +70,8 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
             gpu_gres="gpu:rtx8000:1"
             ;;
     esac
+
+    echo "Submitting job for $folder_path with time $time_formatted, GPUs: $gpu_gres"
 
     # Submit the job
     sbatch --time=$time_formatted --gres=$gpu_gres ./run_slurm_on_folder.sh "$folder_path"
