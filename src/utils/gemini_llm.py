@@ -1,4 +1,6 @@
 import os
+import re
+import time
 import logging
 from typing import Any, Dict
 
@@ -30,15 +32,31 @@ class GeminiLLM:
 
     def generate(self, prompt: str, **kwargs) -> Dict[str, Any]:
         thinking_config = None
+        max_retries = 6
+        base_delay = 60  # fallback delay in seconds
 
-        response = self.client.models.generate_content(
-            model=self.model_name,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                thinking_config=thinking_config,
-                max_output_tokens=self.max_output_tokens,
-            ),
-        )
+        for attempt in range(max_retries):
+            try:
+                response = self.client.models.generate_content(
+                    model=self.model_name,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        thinking_config=thinking_config,
+                        max_output_tokens=self.max_output_tokens,
+                    ),
+                )
+                break
+            except Exception as e:
+                error_str = str(e)
+                is_rate_limit = "429" in error_str or "RESOURCE_EXHAUSTED" in error_str
+                if is_rate_limit and attempt < max_retries - 1:
+                    # Parse API-provided retry delay (e.g. 'retryDelay': '54s')
+                    match = re.search(r"retryDelay['\"]:\s*['\"](\d+)s", error_str)
+                    delay = int(match.group(1)) + 5 if match else base_delay * (2 ** attempt)
+                    logger.warning(f"Rate limited (429). Retrying in {delay}s (attempt {attempt + 1}/{max_retries})")
+                    time.sleep(delay)
+                else:
+                    raise
 
         thinking_content = ""
         content = ""
