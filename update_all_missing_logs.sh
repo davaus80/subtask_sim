@@ -11,6 +11,8 @@ folders=(
     "experiments/20260312_rec_novar"
     "experiments/20260312_rec_4sd_var"
     "experiments/20260312_rec_2sd_var"
+    "experiments/20260311_gemini_farm_novar"
+    "experiments/20260312_gemini_ab_novar"
     # "experiments/20260225_ab_scalesweep_novar"
     # "experiments/20260225_farm_scalesweep_novar"
 )
