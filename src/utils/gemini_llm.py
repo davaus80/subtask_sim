@@ -30,8 +30,6 @@ class GeminiLLM:
 
     def generate(self, prompt: str, **kwargs) -> Dict[str, Any]:
         thinking_config = None
-        if self.thinking_budget is not None:
-            thinking_config = types.ThinkingConfig(budget_tokens=int(self.thinking_budget))
 
         response = self.client.models.generate_content(
             model=self.model_name,

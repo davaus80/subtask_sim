@@ -21,8 +21,7 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
         continue
     fi
 
-    if [[ "$MISSING_RUNS_FILE" == *"gemini"* ]]; then
-        continue ### REMOVE THIS WHEN YOU WANT TO RUN GEMINI JOBS AGAIN
+    if [[ "$MISSING_RUNS_FILE" == *"gemini"* ]] || [[ "$model_size" == "gemini" ]]; then
         time_formatted="00:15:00"
         echo "Submitting gemini job for $folder_path with time $time_formatted"
         sbatch --time=$time_formatted ./run_slurm_gemini.sh "$folder_path"
@@ -32,7 +31,7 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     # Determine the coefficients based on model size
     case "$model_size" in
         "32B")
-            a=5
+            a=6
             ;;
         "14B")
             a=4
@@ -62,7 +61,7 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     # Determine GPU count based on model size
     case "$model_size" in
         "32B")
-            gpu_gres="gpu:rtx8000:4"
+            gpu_gres="gpu:rtx8000:2"
             ;;
         "13B"|"14B")
             gpu_gres="gpu:rtx8000:2"
