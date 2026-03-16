@@ -7,7 +7,7 @@ actions:
   name: Field_3
 agent:
   max_new_tokens: 200
-  model_name: Qwen/Qwen3-8B
+  model_name: gemini-3.1-flash-lite-preview
   temperature: 1.0
   thinking_budget: 150
   type: mono_llm

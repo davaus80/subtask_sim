@@ -256,7 +256,7 @@ def eval_loop(super_folder_path: str, min_rows: int = 10, output_filename: str =
                     if actions_cfg:
                         # actions_cfg items have 'id' and 'mean'
                         best = max(actions_cfg, key=lambda a: float(a.get('mean', float('-inf'))))
-                        worst = max(actions_cfg, key=lambda a: float(a.get('mean', float('-inf'))))
+                        worst = min(actions_cfg, key=lambda a: float(a.get('mean', float('-inf'))))
                         optimal_mean = float(best.get('mean'))
                         optimal_id = best.get('id')
                     if "mislead" in nom_match:
