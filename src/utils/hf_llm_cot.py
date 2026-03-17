@@ -57,8 +57,8 @@ class HFLLM_COT(HuggingFaceLLM):
             {"role": "user", "content": prompt}
         ]
 
-        # Detect whether we should use explicit CoT append (Llama) or rely on tokenizer's thinking mode.
-        use_llama_cot = 'llama' in self.model_name.lower()
+        # Detect whether we should use explicit CoT append (Llama, OLMo) or rely on tokenizer's thinking mode.
+        use_llama_cot = 'llama' in self.model_name.lower() or 'olmo' in self.model_name.lower()
 
         if use_llama_cot:
             # Append explicit Chain-of-Thought instructions to the user prompt.

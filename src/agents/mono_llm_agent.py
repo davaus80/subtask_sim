@@ -21,11 +21,14 @@ class MonoLLMAgent(Agent):
         if "gemini" in model_name.lower():
             self.llm = GeminiLLM(config)
         elif config.get('agent', None) and config.get('agent', {}).get('thinking_budget', None):
-            # For Qwen models, use thinking mode. For Llama, use CoT
+            # For Qwen models, use thinking mode. For Llama/OLMo, use CoT
             if "qwen3" in model_name.lower():
                 self.llm = HFLLM_Thinking_Budget(config)
-            elif "llama" in model_name.lower():
+            elif "llama" in model_name.lower() or "olmo" in model_name.lower():
                 self.llm = HFLLM_COT(config)
+        elif "olmo" in model_name.lower():
+            # OLMo has no native thinking mode; always use explicit CoT
+            self.llm = HFLLM_COT(config)
         else:
             self.llm = HuggingFaceLLM(config)
         self.logger = logging.getLogger(__name__)
