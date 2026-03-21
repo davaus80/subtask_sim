@@ -15,7 +15,7 @@ agent:
   thinking_budget: 150
   type: mono_llm
 experiment:
-  replicates: 10
+  replicates: 20
   scalesweep: true
   time_horizon: 30
 paths:
