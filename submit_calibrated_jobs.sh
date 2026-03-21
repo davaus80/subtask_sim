@@ -14,6 +14,9 @@ if [ ! -f "$MISSING_RUNS_FILE" ]; then
     exit 1
 fi
 
+gemini_count=0
+gemini_delay=0
+
 # Read the CSV file and process each line
 while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_path" ]; do
     # Skip the header line
@@ -21,12 +24,13 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
         continue
     fi
 
-    if [[ "$MISSING_RUNS_FILE" == *"gemini"* ]] || [[ "$model_size" == "gemini" ]]; then
-        continue ### REMOVE THIS
-        time_formatted="00:15:00"
-        echo "Submitting gemini job for $folder_path with time $time_formatted"
-        sbatch --time=$time_formatted ./run_slurm_gemini.sh "$folder_path"
-        sleep 10
+    if [[ "$model_size" == "gemini" ]]; then
+        if (( gemini_count > 0 && gemini_count % 10 == 0 )); then
+            gemini_delay=$(( gemini_delay + 20 ))
+        fi
+        echo "Submitting gemini job for $folder_path (begin=now+${gemini_delay}min)"
+        sbatch --time=00:15:00 --begin=now+${gemini_delay}minutes ./run_slurm_gemini.sh "$folder_path"
+        gemini_count=$(( gemini_count + 1 ))
         continue
     fi
 
