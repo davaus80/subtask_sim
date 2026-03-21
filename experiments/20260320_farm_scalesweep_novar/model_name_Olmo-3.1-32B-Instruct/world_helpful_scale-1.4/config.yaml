@@ -1,0 +1,45 @@
+actions:
+- id: 0
+  name: Field_1
+- id: 1
+  name: Field_2
+- id: 2
+  name: Field_3
+agent:
+  max_new_tokens: 200
+  model_name: allenai/Olmo-3.1-32B-Instruct
+  temperature: 1.0
+  thinking_budget: 150
+  type: mono_llm
+experiment:
+  replicates: 10
+  scalesweep: true
+  time_horizon: 30
+paths:
+  experiment_dir: base_configs/farming_basic
+  log_file: experiments/20260320_farm_scalesweep_novar/model_name_Olmo-3.1-32B-Instruct/world_helpful_scale-1.4/output.log
+subtasks:
+- id: 0
+  name: DeterministicFarmBandit
+  params:
+    actions:
+    - id: 0
+      mean: -1.4
+      std_dev: 0
+    - id: 1
+      mean: -0.0
+      std_dev: 0
+    - id: 2
+      mean: -0.0
+      std_dev: 0
+  type: bandit
+world:
+  action_suffix: Field
+  contextual_names_path: base_configs/action_name_lists/world/clothing/world_clothing_helpful.json
+  prompt_template_path: src/templates/budget_summhist_v1.jinja2
+  task_prompt: You are a clothing recommendation assistant. A customer's clothing
+    request and local climate are shown below. Each item is associated with a Gaussian
+    distribution with a fixed but unknown expected customer satisfaction score. At
+    each time step, you will recommend an item and receive a reward drawn from the
+    associated distribution. Your goal is to maximize your reward across all of your
+    turns.

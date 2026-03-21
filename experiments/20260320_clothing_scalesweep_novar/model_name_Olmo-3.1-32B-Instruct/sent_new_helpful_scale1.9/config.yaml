@@ -1,0 +1,48 @@
+actions:
+- id: 0
+  name: Option_1
+  names_path: base_configs/action_name_lists/sentiment/positive.json
+- id: 1
+  name: Option_2
+  names_path: base_configs/action_name_lists/sentiment/neutral.json
+- id: 2
+  name: Option_3
+  names_path: base_configs/action_name_lists/sentiment/negative.json
+agent:
+  max_new_tokens: 200
+  model_name: allenai/Olmo-3.1-32B-Instruct
+  temperature: 1.0
+  thinking_budget: 150
+  type: mono_llm
+experiment:
+  replicates: 10
+  scalesweep: true
+  time_horizon: 30
+paths:
+  experiment_dir: base_configs/clothing
+  log_file: experiments/20260320_clothing_scalesweep_novar/model_name_Olmo-3.1-32B-Instruct/sent_new_helpful_scale1.9/output.log
+subtasks:
+- id: 0
+  name: ClothingBandit
+  params:
+    actions:
+    - id: 0
+      mean: 1.9
+      std_dev: 0
+    - id: 1
+      mean: 0.0
+      std_dev: 0
+    - id: 2
+      mean: 0.0
+      std_dev: 0
+  type: bandit
+world:
+  action_suffix: ''
+  prompt_template_path: src/templates/budget_summhist_v1.jinja2
+  task_prompt: You are recommendation engine that chooses clothing items to display
+    to users when they visit your webpage. You will be presented with 3 items and
+    a user context. Selecting an item corresponds to recommending it to the user.
+    Each item is associated with a Gaussian distribution with a fixed but unknown
+    mean. At each time step, you will select an item and receive a reward drawn from
+    the associated distribution. Your goal is to maximize your reward across all of
+    your turns.
