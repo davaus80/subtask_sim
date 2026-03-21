@@ -101,6 +101,8 @@ if __name__ == "__main__":
                 if len(lines) == 0:
                     continue  # failed run
                 if is_scalesweep:
+                    # A scale sweep run has sufficient results if it has more than one unique action_names,
+                    # Since those runs
                     action_names = {json.loads(line).get("action_selected_name") for line in lines}
                     if len(lines) >= time_horizon or len(action_names) > 1:
                         has_sufficient_result = True
