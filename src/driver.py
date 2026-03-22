@@ -161,14 +161,12 @@ class GameDriver:
         # we end up having "wasted" rurns where a differernt action is selected first
         # due to ordering bias.
 
-        # Get action statistics and find the action with the highest mean reward
+        # Get action statistics and find the action with id 0
         action_stats = self.world.get_action_statistics()
-        highest_reward_action = max(action_stats.items(), key=lambda x: x[1]['mean'])
-        highest_action_id = highest_reward_action[0]
-        highest_action_name = highest_reward_action[1]['name']
+        first_action_name = action_stats[0]['name']
 
-        # Add the highest reward action to the history
-        action_taken_name, action_taken_id, new_state, reward = self.world.take_action(highest_action_name)
+        # Perform the forced first action and add it to history and log
+        action_taken_name, action_taken_id, new_state, reward = self.world.take_action(first_action_name)
         history_chunk = {
             "state": new_state,
             "action_taken": action_taken_name,
@@ -176,6 +174,17 @@ class GameDriver:
         }
         history.append(history_chunk)
         actions_taken.add(action_taken_name)
+        
+        # Log forced first action info (state, action, reward)
+        logging_dict = {
+            "state": new_state,
+            "full_action_content": "Forced first action",
+            "action_selected_name": first_action_name,
+            "action_taken_name": action_taken_name,
+            "action_taken_id": action_taken_id,
+            "reward": reward
+        }
+        self.json_logger.write(logging_dict)
 
         # Get favoured action
 
