@@ -58,15 +58,15 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     # Base coefficient (min/shuffle) per model size
     case "$model_size" in
         "32B")
-            a=15
+            a=4
             gpu_gres="gpu:rtx8000:2"
             ;;
         "14B")
-            a=18
+            a=3
             gpu_gres="gpu:rtx8000:2"
             ;;
         "8B")
-            a=10
+            a=5
             gpu_gres="gpu:rtx8000:1"
             ;;
         *)
