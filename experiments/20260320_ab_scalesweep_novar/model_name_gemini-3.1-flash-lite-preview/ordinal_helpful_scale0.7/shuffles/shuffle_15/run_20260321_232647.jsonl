@@ -1,0 +1,2 @@
+{"state": {}, "full_action_content": "Forced first action", "action_selected_name": "Highest Reward", "action_taken_name": "Highest Reward", "action_taken_id": 0, "reward": 0.7}
+{"state": {}, "full_action_content": "To maximize the total reward, I need to explore the arms that haven't been tested yet (Lowest Reward and Intermediate Reward) before deciding which arm to exploit, given that I only have one data point so far.\n\n<action> Lowest Reward </action>", "action_selected_name": "Lowest Reward", "action_taken_name": "Lowest Reward", "action_taken_id": 2, "reward": 0.0}
