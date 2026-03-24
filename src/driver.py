@@ -191,7 +191,9 @@ class GameDriver:
         # Initialize history
 
         # Main game loop
-        for turn_num in range (1, self.world.time_horizon):
+        ### I AM HARD CODING THIS TO 12 FOR NOW - IF YOU NEED 30 LATER, ADD SUPPORT FOR LOADING AND CONTINUING
+        # for turn_num in range (1, self.world.time_horizon):
+        for turn_num in range (1, 12):
             # Get state info from world - this is for the recording (agent doesn't see it)
             state = self.world.get_state()
 
