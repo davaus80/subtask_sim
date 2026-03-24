@@ -10,7 +10,7 @@
 #     alphanumeric + pos scale:  x0.5
 #     other (helpful/mislead, pos scale): x1.0
 
-SHUFFLES_PER_JOB=5
+SHUFFLES_PER_JOB=10
 gemini_count=0
 gemini_delay=0
 
@@ -58,7 +58,7 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     # Base coefficient (min/shuffle) per model size
     case "$model_size" in
         "32B")
-            a=7
+            a=9
             gpu_gres="gpu:rtx8000:2"
             ;;
         "14B")
@@ -84,7 +84,7 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     if $is_negative; then
         time_minutes=$(( (a * 4 * SHUFFLES_PER_JOB) / 10 + b ))
     elif $is_alphanumeric; then
-        time_minutes=$(( (a * 5 * SHUFFLES_PER_JOB) / 10 + b ))
+        time_minutes=$(( (a * 7 * SHUFFLES_PER_JOB) / 10 + b ))
     else
         time_minutes=$(( a * SHUFFLES_PER_JOB + b ))
     fi
