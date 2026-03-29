@@ -1,0 +1,497 @@
+
+\documentclass{article} % For LaTeX2e
+\usepackage[submission]{colm2026_conference}
+
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{booktabs}
+
+% TODO Confirm this is allowed in colm style
+\usepackage{graphicx}
+
+% NOTE: including geometry package
+% The geometery package modifies some page properties when used. This can dramatically change the page margins, leading to severe template violation, and potential desk rejection. If the package is required, it can be used with the "pass" flag to skip the default page modifications, as in the following line:
+% \usepackage[pass]{geometry}
+
+\usepackage{lineno}
+
+\definecolor{darkblue}{rgb}{0, 0, 0.5}
+\hypersetup{colorlinks=true, citecolor=darkblue, linkcolor=darkblue, urlcolor=darkblue}
+
+
+\title{In-Context Exploration-Exploitation is Biased by Semantic Priors}
+
+% Authors must not appear in the submitted version. This should be be taken care of automatically as long as you are using the "submission" option for the colm2026_conference package. But it's on the authors to verify. Non-anonymous submissions will be rejected without review.
+
+\author{Antiquus S.~Hippocampus, Natalia Cerebro \& Amelie P. Amygdale \thanks{ Use footnote for providing further information
+about author (webpage, alternative address)---\emph{not} for acknowledging
+funding agencies.  Funding acknowledgements go at the end of the paper.} \\
+Department of Computer Science\\
+Cranberry-Lemon University\\
+Pittsburgh, PA 15213, USA \\
+\texttt{\{hippo,brain,jen\}@cs.cranberry-lemon.edu} \\
+\And
+Ji Q. Ren \& Yevgeny LeNet \\
+Department of Computational Neuroscience \\
+University of the Witwatersrand \\
+Joburg, South Africa \\
+\texttt{\{robot,net\}@wits.ac.za} \\
+\AND
+Coauthor \\
+Affiliation \\
+Address \\
+\texttt{email}
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\begin{document}
+
+\ifcolmsubmission
+\linenumbers
+\fi
+
+\maketitle
+
+% LLM priors about actions and reward can cause significant, unexpected impacts on exploration behaviour in in-context multi-armed bandit tasks
+
+\begin{abstract}
+Large language models (LLMs) are increasingly deployed as decision-making agents
+in settings that require balancing exploration and exploitation. Unlike classical
+solvers, LLM agents engage with tasks through natural language, exposing them to
+semantic information with no formal counterpart in the task structure. We introduce
+the \textit{semantic bandit}, an extension of the multi-armed bandit that
+explicitly parametrizes the textual labels assigned to actions and the thematic
+context of the problem, and use it to study how \textit{semantic priors} --- 
+inductive biases arising from associations between language and expected reward
+learned during pre-training, shape LLM exploration behaviour. We find that action
+nomenclature significantly influences exploration: semantically informative labels
+reduce exploration in favour of exploitation, improving performance when aligned
+with the reward structure and severely degrading it when misaligned. We further
+find that negative rewards trigger substantially more exploration than equivalent positive rewards, consistent with an expected-scale bias induced by reward conventions common in pre-training data. These results demonstrate that LLM behaviour in exploration-exploitation tasks is not invariant to semantic details that have no bearing on the formal task, with implications for the reliability and robustness of LLM agents in real-world decision-making settings.
+\end{abstract}
+
+\section{Introduction}
+Large language models (LLMs) are seeing widespread deployment as decision-making agents in multi-turn environments, in which they must act on incomplete information and adapt based on feedback. A fundamental capability for any such agent is managing the tradeoff between exploring new actions to gather information and exploiting past actions known to yield high reward. Yet prior work has shown that LLMs struggle to balance this tradeoff consistently \citep{krishna_icl}, often ceasing to explore prematurely or failing to adapt despite clear feedback signals.
+
+Prior explanations for these failures have focused on prompt structure and interaction format \citep{krishna_icl}. In this work, we investigate a complementary hypothesis: that LLM exploration behaviour is shaped by semantic priors — inductive biases arising from associations between language and expected reward learned during pre-training. Because LLM agents engage with decision tasks through natural language rather than abstract symbolic representations, they are exposed to information with no formal counterpart in the task specification. The names assigned to actions, the framing of reward values, and the thematic context of a problem are all semantically meaningful to a language model in ways they are not to a classical solver. We ask whether these dimensions of meaning systematically influence exploration.
+We investigate this question through the semantic multi-armed bandit (semantic MAB), a novel extension of the canonical bandit problem that explicitly parameterises action nomenclature and thematic context alongside the standard reward distributions. This formulation allows us to vary semantic properties of a task independently of its formal reward structure, enabling controlled measurement of semantic bias.
+
+We report three primary findings. First, action nomenclatures - the textual labels assigned to bandit arms - significantly influence exploration behaviour. When nomenclature is aligned with the underlying reward structure (e.g., positive-valence labels assigned to high-reward arms), models exploit semantic priors to achieve low regret with little exploration. When nomenclature is misaligned, the same priors misdirect the model toward low-reward actions, dramatically increasing cumulative regret. Second, reward sign acts as a strong contextual cue: negative reward values consistently trigger substantially more exploration than equivalent positive values, suggesting that LLMs interpret reward not as an abstract numerical signal but relative to an expected scale. We also find that the relation between reward magnitude and exploration behaviour is highly variant and non-monotonic. Third, when exploration does occur, it is characteristically bursty: models tend to explore in two consecutive turns rather than distributing exploratory actions across the episode, suggesting that exploration is triggered episodically rather than maintained as an ongoing strategy.
+
+% Together, these results are consistent with an expected scale bias, where the model's interpretation of a reward value is conditioned on its pre-training exposure to common reward conventions such as [0, 1] and [-1, 1]
+
+These findings indicate that LLM behaviour in exploration-exploitation tasks is not invariant to semantic details that have no bearing on the formal task structure. As LLMs are increasingly deployed in real-world decision settings like recommendation systems and autonomous agents, understanding when semantic context aids adaptation and when it induces systematic errors is critical for safe and reliable deployment.
+
+\section{Problem Definition}
+
+\subsection{LLMs as Decision-Making Agents}
+
+Classical decision-making agents operate on symbolic representations of the world.
+These representations are deliberately minimal: they preserve the formal structure of
+the task (states, actions, rewards) and discard everything else. As a result,
+symbolic solvers are invariant to surface details like variable names, problem theming,
+or the phrasing of instructions. Two problems that are formally identical will produce
+identical behaviour, regardless of how they are described.
+
+LLM-based agents are fundamentally different in this respect. They operate on natural
+language, which carries meaning beyond formal task structure. The name
+assigned to an action, the magnitude and sign of a reward, and the domain in which a
+problem is situated are all semantically meaningful to a language model in ways they
+are not to a classical solver. This additional information can reflect
+genuine regularities in the world, encoded in word co-occurrence statistics during
+pre-training. We refer to the inductive biases that arise from these learned associations
+as \textit{semantic priors}.
+
+We formalize this distinction as follows. We define an environment as the tuple
+$\{S, A, R\}$, where $S$ is the state space, $A$ is the action set, and
+$R : A \rightarrow \Delta(\mathbb{R})$ is the reward function.\footnote{$\Delta$ denotes
+the probability simplex.} A classical agent operates on a symbolic rendering
+$\rho_{\Sigma} : S \rightarrow \Sigma$, where $\Sigma$ is an abstract representation
+space designed to preserve only the formal structure of $\{S, A, R\}$. Its policy
+$\pi_{\Sigma} : \Sigma \rightarrow A$ is invariant to everything outside this structure.
+
+An LLM agent instead operates on a textual rendering $\rho_{V^*} : S \rightarrow V^*$,
+where $V^*$ is the space of all token sequences. Its policy $\pi_M : V^* \rightarrow V^*$
+maps a linguistic problem description to a linguistic action, with a parsing function
+$\phi : V^* \rightarrow A$ converting the output to a concrete action. Crucially,
+$\rho_{V^*}$ encodes information with no correlate in $\{S, A, R\}$ --- such as the
+semantic associations between action labels and real-world outcomes. This information
+is legible to $M$ because it is learned from language, not from the task. Symbolic
+solvers are blind to it by construction; LLM agents are not.
+
+\subsection{Multi-Armed Bandits}
+
+We investigate semantic priors in the context of the multi-armed bandit (MAB), a
+canonical sequential decision-making problem that isolates exploration--exploitation
+in its purest form. A MAB instance is defined by a set of $k$ arms
+$A = [a_1, \ldots, a_k]$, each associated with a Gaussian reward distribution
+$r_i \sim \mathcal{N}(\mu_i, \sigma^2)$ with unknown mean $\mu_i$ and shared variance
+$\sigma^2$. Over $T$ turns, the agent selects an arm and observes the resulting reward,
+aiming to maximise cumulative reward. Since the distributions are unknown, the agent
+must balance exploration of the distributions with exploitation of arms identified as promising.
+
+The MAB is well-suited to our purposes because it is formally simple: the only
+information relevant to an optimal policy is the history of (action, reward) pairs.
+Any influence of semantic details on behaviour therefore constitutes a deviation from
+normative reward-driven decision-making.
+
+\subsection{The Semantic Bandit}
+
+While a classical solver engages only with the formal MAB instance, an LLM agent
+engages with a natural language description of it. This means the problem is no longer
+fully specified by $T$ and the reward distributions $[r_1, \ldots, r_k]$ alone. We
+introduce the \textit{semantic bandit} as an extension of the MAB that makes this
+additional structure explicit. A semantic bandit instance is defined by the standard
+MAB tuple together with two semantic components: an \textit{action nomenclature} and
+a \textit{scenario context}.
+
+\subsubsection{Action Nomenclature}
+
+The action nomenclature is the set of textual labels $[l_1, \ldots, l_k]$ assigned to
+arms $[a_1, \ldots, a_k]$. These labels have no bearing on the formal reward structure,
+but carry semantic associations that may predispose an LLM toward or away from
+particular arms. We consider four classes of nomenclature. The \textit{alphanumeric}
+nomenclature uses random six-character strings (e.g., \texttt{f4tjo5}), serving as a
+control with minimal semantic content. The \textit{sentiment} nomenclature assigns
+adjectives of positive, neutral, and negative valence to the high-, medium-, and
+low-reward arms respectively, designed to leverage known LLM positivity
+bias~\citep{TODO:positivity_bias}; adjectives are sampled from
+\citet{TODO:sentiment_lexicon}. The \textit{ordinal} nomenclature uses explicit rank
+labels (\textit{Highest}, \textit{Intermediate}, \textit{Lowest}), inducing a direct
+semantic ordering. The \textit{world knowledge} nomenclature uses domain-specific
+labels whose relative value can be inferred from pre-training (e.g.,
+\textit{Productive Grassland} $>$ \textit{Rocky Hills} $>$ \textit{Arid Desert} in a
+farming context).
+
+To disentangle the effect of nomenclature from the effect of reward feedback, we
+evaluate each nomenclature in both a \textit{helpful} configuration --- where the
+highest-valence label is assigned to the highest-reward arm --- and a
+\textit{misleading} configuration, where the highest- and lowest-valence labels are
+swapped.
+
+Scenario context --- the domain framing of the prompt (e.g., bandit algorithm, crop
+yield optimisation, clothing recommendation) --- is held as a background variable
+across experiments. We evaluate three scenarios to assess the robustness of our
+findings across different thematic settings, but do not treat context as an
+experimental variable in its own right.
+
+\section{Experimental Design}
+
+\subsection{Semantic Bandit Specification}
+\label{sec:semantic_bandit}
+We focus on MAB instances with $k=3$ arms, which we call $A = [a_{H}, a_{M}, a_{L}]$, denoting the high, medium, and low reward actions respectively. Each of these actions has an associated label $l_H,l_M,l_L$ and an associated mean reward $\mu_H,\mu_M,\mu_L$. All distributions share the same variance $\sigma^2$. Finally, the instances have a scenario context $c \in C$ which grounds the abstract instance in a problem domain. We evaluate the model in three scenarios, framing the agent as either (i)  solving a bandit algorithm, (ii) maximizing crop yield across farm fields, or (iii) recommending clothing items to users based on climate. See the Appendix for the prompts for each.
+
+We design our experiments to answer two research questions about LLM-based agents
+deployed on semantic bandit problems:
+
+\begin{itemize}
+    \item \textbf{RQ1}: How does action nomenclature impact exploration behaviour and
+    cumulative regret?
+    \item \textbf{RQ2}: How does the observed reward value impact exploration behaviour,
+    and are there threshold effects consistent with an expected-scale bias?
+\end{itemize}
+
+\subsection{Experimental Conditions}
+
+\begin{table*}[ht]
+\centering
+\resizebox{\linewidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+\textbf{Reward} & \textbf{World Knowledge} & \textbf{Ordinal} & \textbf{Sentiment} & \textbf{Alphanumeric} \\
+\hline
+$c^H$ & Productive Grassland & Highest & Phenomenal & f4tjo5 \\
+$c^M$ & Rocky Hills & Intermediate & Typical & 88pdak \\
+$c^L$ & Arid Desert & Lowest & Repulsive & 4y11s9 \\
+\hline
+\end{tabular}}
+\caption{Action nomenclature examples. In the misleading case, the labels for $c^H$ and $c^L$ are swapped. Note that the labels for sentiment and alphanumeric are examples - we randomly sample these labels from a set at the start of each run to reduce the bias from a single label.}
+\label{tab:nomenclatures}
+\end{table*}
+
+\subsubsection{Action Nomenclature (RQ1)}
+\label{sec:nomenclature}
+
+We evaluate four action nomenclatures, each designed to engage a different
+type of semantic prior. Table~\ref{tab:nomenclatures} shows examples of each for the
+farming scenario. The \textit{alphanumeric} nomenclature uses randomly sampled
+six-character strings (e.g., \texttt{f4tjo5}) and serves as a control condition with
+minimal semantic content. The \textit{sentiment} nomenclature assigns adjectives of
+positive, neutral, and negative valence to the high-, medium-, and low-reward arms
+respectively, targeting the positivity bias documented in LLMs~\citep{TODO:positivity_bias};
+labels are sampled at the start of each run from \citet{TODO:sentiment_lexicon}. The
+\textit{ordinal} nomenclature uses explicit rank labels (\textit{Highest},
+\textit{Intermediate}, \textit{Lowest}), inducing a direct semantic ordering. The
+\textit{world knowledge} nomenclature uses domain-specific labels whose relative value
+can be inferred from pre-training knowledge.
+
+Each nomenclature, besides alphanumeric, is evaluated in both the \textit{helpful} and \textit{misleading}
+configurations defined in Section~\ref{sec:semantic_bandit}, allowing us to
+disentangle the contribution of semantic priors from that of reward feedback.
+To reduce variance from any single label choice, sentiment and alphanumeric labels are
+resampled at the start of each replicate, and arm order in the prompt is shuffled.
+
+\subsubsection{Reward Scale (RQ2)}
+\label{sec:reward_scale}
+
+To investigate how observed reward values influence exploration, we contrast two reward
+conditions: \textit{positive}, with mean rewards $(\mu_H, \mu_M, \mu_L) = (75, 50, 25)$,
+and \textit{negative}, with $(\mu_H, \mu_M, \mu_L) = (-25, -50, -75)$. Both conditions
+use same-sign rewards to test model exploration behaviour when all
+observed rewards are favourable (positive case) or unfavourable (negative
+case). Note that the two conditions are not symmetric in absolute magnitude; they are
+designed to isolate reward sign rather than control for magnitude. The relationship
+between reward magnitude and exploration is addressed directly by the scale sweep
+(Section~\ref{sec:scale_sweep}).
+
+We use a shared variance $\sigma^2$ across all arms. We evaluate three levels ---
+$\sigma \in \{12.5, 6.25, 0\}$, referred to as high, low, and no variance --- as a
+robustness check. Results are stable across variance conditions; main paper figures
+show the no-variance condition and full variance results are reported in
+Appendix~\ref{app:variance}.
+
+\subsubsection{Scale Sweep (RQ2)}
+
+The main reward experiment conflates sign and magnitude. To isolate their effects, we
+run a scale sweep that varies a single observed reward value $r \in [-2, 2]$ in
+increments of $0.1$ and measures exploration behaviour as a function of $r$ alone.
+The protocol is as follows: the model's first action is forced to the semantically
+favoured arm, which returns the specified reward $r$. We then record the number of
+subsequent turns until the model selects a different arm. This is repeated for each
+value of $r$, allowing us to characterise both the sign threshold (is the model more likely to explore after observing negative values?) and magnitude effects (are there
+non-monotonic threshold effects at particular reward values?). We average results across
+20 runs per reward value to reduce stochastic variation.
+
+\subsection{Scenarios}
+\label{sec:scenarios}
+
+We evaluate all conditions across three scenarios that vary the thematic framing of
+the prompt: (i) a \textit{bandit} scenario, in which the agent is explicitly told it
+is solving a multi-armed bandit problem; (ii) a \textit{farming} scenario, in which
+the agent selects between agricultural fields to maximise crop yield; and (iii) a
+\textit{clothing recommendation} scenario, in which the agent recommends clothing
+items to users. The three scenarios are not independent of task difficulty. In the
+clothing scenario, stable contextual information --- describing user preferences and
+climate conditions --- is provided at the start of each replicate. This context is
+fixed within a replicate but varies across replicates, making the clothing scenario
+a stable contextual bandit: the context shifts the prior the model brings to the task
+but the optimal arm is fixed within each episode. This makes the clothing scenario
+modestly harder than the others, and we treat the three scenarios as a robustness
+check on the generality of our findings rather than as a primary experimental
+variable.
+
+\subsection{Models and Baselines}
+\label{sec:models}
+
+We evaluate three LLMs: (i)~OLMo-3.1-32B-Instruct, (ii)~Qwen3-32B, and
+(iii)~Gemini~3.1 Flash Lite Preview. To reduce computational overhead, we limit
+thinking tokens to 150 for OLMo and Qwen; for Gemini, thinking tokens are
+unrestricted. All other hyperparameters are set to default HuggingFace values for
+open-source models and Gemini standards for Gemini. We run 10 replicates per condition, resampling action labels and
+shuffling arm order at the start of each replicate. We adapt our prompt structure from
+the best-performing prompt identified by \citet{krishnamurthy2024llms}; the full
+prompt is provided in Appendix~\ref{app:prompts}.
+
+We compare LLM agents against two standard MAB baselines: UCB1 \citep{auer_ucb_2002} and Thompson Sampling (TS) \citep{thompson_sampling_1933}. TS uses a Normal-Normal conjugate model with a vague prior ($\mu_0 = 0$, $\sigma_0 = 100$) and known shared noise variance $\sigma^2$; at each step it draws one sample per posterior and selects the highest. Both baselines are label-agnostic — they observe only scalar rewards, not arm names — and no parameter tuning was performed. We ran 10,000 replicates per condition, with arm-to-mean assignments shuffled independently at the start of each replicate. 
+
+\subsection{Metrics}
+\label{sec:metrics}
+
+\paragraph{Cumulative Regret}
+We report normalized cumulative regret, defined as the cumulative difference between
+the reward of the optimal arm and the reward received, normalized to $[0, 1]$. Lower
+regret indicates more effective exploration--exploitation behaviour.
+
+\paragraph{Exploration Count}
+We track the number of distinct arms selected across the episode. Since $k = 3$, this
+value ranges from 1 (no exploration) to 3 (full exploration). We report exploration
+count per turn to characterize the trajectory of exploration behaviour over the
+episode rather than just its aggregate.
+
+\section{Results}
+
+%%%%%%%%%% Gemini and OLMO nom exploration
+\begin{figure*}[ht]
+  \begin{center}
+    \centerline{\includegraphics[width=\linewidth]{figures/3model_nom.png}}
+  \end{center}
+  \caption{
+      Exploration count per turn for different nomenclatures. Note how alphanumeric tends to result in full exploration, while other nomenclatures do not. Top row is OLMO, middle is Qwen, bottom is gemini. Need an exploration count @10 table in the appendix to show results are consistent}
+    \label{fig:nom_explore}
+\end{figure*}
+%%%%%%%%%% END
+
+\subsection{RQ1 - How does action nomenclature impact performance and exploration behaviour?}
+\textbf{Action nomenclatures can significantly bias the model away from normative reward-driven behaviour}. Figure \ref{fig:nom_explore} shows the number of actions explored per turn when the nomenclatures are helpful and the reward scale is high with no variance. 
+
+Using Qwen32B, we consistently see full exploration with alphanumeric, partial exploration with sentiment and world, and minimal exploration with ordinal. Using OLMo, we see the same relative ordering in the bandit task, but minimal exploration on the other two tasks. This indicates that the model struggles to explore without being explicitly informed that the task is a bandit task requiring balancing exploration-exploitation (matching results from Krishnamurthy I think). In contrast, Gemini explores quickly for all nomenclatures and tasks except the world nomenclature on the clothing task. Since this is the only contextual bandit task-nomenclature pair, this may indicate that the other task-nomenclature pairs are too easy for the Gemini model and it may rely on semantic priors as task complexity increases.
+
+\textbf{Implications for performance depend on whether the nomenclature is helpful or misleading.} Table \ref{tab:label_channel_bias_No} shows the final cumulative regret in the helpful and misleading cases for each nomenclature. In general, models which outperform alphanumeric in the helpful case will have much higher cumulative regret in the misleading case. The best-performing nomenclature in the helpful case is always the worst-performing in the misleading case. This is most apparent with the ordinal and world nomenclatures with Qwen32B and OLMo-3.1 32B, where the helpful nomenclature achieves near-zero cumulative regret and the misleading case is near 1.0. In contrast, models which follow reward-normative behaviour are closely match UCB1 in both cases. This highlights that the impact of reduced exploration depends on the alignment between the label-channel priors and the underlying problem structure.
+
+% Interestingly, we find that the model is more likely to explore when the nomenclature is misleading, despite the only difference being the observed reward value of the semantically favoured arm (75 for helpful, 25 for misleading). We think this is due to the scale effect, discussed in the following section. 
+
+\begin{table}[ht]
+\centering
+\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lr|rr|rr|rr}
+\toprule
+ &  & \multicolumn{2}{c}{Bandit} & \multicolumn{2}{c}{Farm} & \multicolumn{2}{c}{Clothing} \\
+\cmidrule(lr){3-4} \cmidrule(lr){5-6} \cmidrule(lr){7-8}
+Model & Nomenclature & Helpful & Misleading & Helpful & Misleading & Helpful & Misleading \\
+\midrule
+Qwen3-32B & Ordinal & \textbf{0.00} & \textbf{0.79} & \textbf{0.03} & \textbf{0.71} & \textbf{0.01} & \textbf{0.90} \\
+ & World & -- & -- & 0.10 & 0.28 & 0.04 & 0.86 \\
+ & Sentiment & 0.09 & 0.29 & 0.14 & 0.29 & 0.10 & 0.34 \\
+ & Alphanumeric & 0.16 & -- & 0.15 & -- & 0.16 & -- \\
+\midrule
+OLMo-3.1 32B & Ordinal & \textbf{0.04} & \textbf{0.79} & 0.03 & 0.91 & \textbf{0.00} & \textbf{1.00} \\
+ & World & -- & -- & \textbf{0.01} & \textbf{0.97} & 0.07 & 0.91 \\
+ & Sentiment & 0.28 & 0.51 & 0.43 & 0.55 & 0.10 & 0.90 \\
+ & Alphanumeric & 0.29 & -- & 0.47 & -- & 0.47 & -- \\
+\midrule
+Gemini 3.1 Flash Lite & Ordinal & \textbf{0.13} & \textbf{0.27} & \textbf{0.15} & \textbf{0.17} & 0.15 & 0.22 \\
+ & World & -- & -- & \textbf{0.15} & 0.15 & \textbf{0.07} & \textbf{0.56} \\
+ & Sentiment & 0.15 & 0.15 & \textbf{0.15} & 0.15 & 0.15 & 0.15 \\
+ & Alphanumeric & 0.15 & -- & \textbf{0.15} & -- & 0.15 & -- \\
+\midrule
+UCB1 &  & 0.15 & -- & 0.15 & -- & 0.15 & -- \\
+\midrule
+TS &  & 0.21 & -- & 0.21 & -- & 0.21 & -- \\
+\bottomrule
+\end{tabular}%
+}
+\caption{Normalized cumulative regret at the final turn, by model and nomenclature type with high reward scale and no variance. 0 indicates that the optimal arm was selected at every turn. 1 indicates that the worst arm was selected at every turn. We bold the lowest cumulative regret for each model in the helpful case and the highest in the misleading case. These always occur from the same nomenclature.}
+\label{tab:label_channel_bias_No}
+\end{table}
+
+
+
+%%%%%%%%%% Olmo and Gemini Scale Exploration
+\begin{figure*}[ht]
+  \begin{center}
+    \centerline{\includegraphics[width=\linewidth]{figures/reward_channel_bias.png}}
+  \end{center}
+  \caption{
+      Average number of states explored at each time step. When the reward is negative (blue lines), the LLM is more likely to explore. This results in behaviour which matches the reward normative behaviour of UCB.
+    \label{fig:scale_explore}
+    }
+\end{figure*}
+%%%%%%%%%% END
+
+%%%%%%%%%% Scale Sweep
+\begin{figure*}[ht]
+  \begin{center}
+    \centerline{\includegraphics[width=\linewidth]{figures/scalesweep_py0.png}}
+  \end{center}
+  \caption{
+      Probability of exploring immediately based on the observed reward value, averaged across 20 runs (see \ref{sec:scale_sweep}). A darker tile indicates a higher likelihood of immediate exploration. While all models are more likely to explore positive values than negative values, the effect is particularly sudden in Olmo and Qwen.}
+    \label{fig:scalesweep_y0}
+\end{figure*}
+
+% \begin{figure*}[ht]
+%   \begin{center}
+%     \centerline{\includegraphics[width=\linewidth]{figures/scalesweep_gt0.png}}
+%   \end{center}
+%   \caption{
+%       Expected number of turns before exploration, given that the model did not explore immediately. Probably best to just say "no clear trend" and make a qualitative observation that behaviour was non-monotonic, particularly around 1.0. }
+%     \label{fig:scalesweep_ygt0}
+% \end{figure*}
+%%%%%%%%%% END
+
+\label{sec:scale_sweep}
+
+\subsection{RQ2 - How does the observed reward value impact exploration behaviour, and are 
+there threshold effects consistent with an expected-scale bias?}
+Observed reward value is a major factor in determining model exploration behaviour, but the impact is appears to be non-monotonic. Figure \ref{fig:scale_explore} shows the impact of the reward scale on exploration with different nomenclatures, with high positive in brown and high negative in blue. We find that the negative reward scale leads to significantly more exploration than the positive reward scale, except when the positive reward scale has already saturated the task and reached full exploration. 
+
+To disentangle the impact of scale sign from scale magnitude, we performed scale sweep experiments (Section \ref{sec:scale_sweep}). The results of our scale sweep support the idea of a threshold effect at zero and non-monotonic effects, but we did not observe significant evidence for a threshold effect at 1.0. Figure \ref{fig:scalesweep_y0} shows the probability of a model exploring immediately given an observed reward value. We see a decrease in immediate exploration probability as we increase the observed reward past 0. This effect is sudden and large for Qwen3 and Olmo, but slower and subtler for Gemini. This is strong evidence of a threshold effect at zero. We see some qualitative evidence for other threshold effects around 1.0, but it is weak and inconsistent.
+
+Discuss stability of results across different variances (see Table in Appendix)
+
+\subsection{Impact of Model and Domain}
+The choice of model and domain impacts model exploration behaviour. 
+
+The models seem to have different biases towards exploration. Olmo tends to explore less than the other models, possibly due to limited reasoning ability. In contrast, Gemini tends to explore fully, with the exception of high positive contextual bandit (a more complicated task).
+
+The world nomenclature for the clothing recommendation task consistently shows less exploration than the farm and bandit tasks. Some mention of contextual bandit? Idk
+
+
+\section{Discussion}
+Semantic priors influence exploration behaviour. 
+
+The most surprising result is how reward interpreted as more than just an absolute value - it is understood in context.
+
+Suggests that model reasoning behaviour is not invariant to changes in the domain which do not effect traditional solvers. Suggest satisficing behaviour in decision-making.
+
+No guarantees of LLM behaviour on decision-making tasks requiring EE management. Highlights the fragility of model algorithmic behaviour to adversarial attacks based on LLM inductive biases.
+
+These biases can be helpful and harmful. It's important to understand.
+
+Discuss "task difficulty" interaction with model scale. Olmo struggles with exploration in general, Gemini matches reward normative behaviour except in Clothing Recomendation, the contextual bandit. Clothing rec is still a pretty simple task compared to many other agent deployments.
+
+Future work - testing differences in reward form e.g. number of decimals
+
+\section{Related Work}
+\subsection{LLM Decision-Making}
+This is a bit zoomed out, but basically introduce research on LLM reasoning and decision-making. 
+
+Prior work has found LLM results to be sensitive to seemingly innocuous changes to the input.  e.g. small changes to prompt can massively change behaviour. Could also reference work like https://owls.baulab.info/
+
+\subsection{ICRL Bandits}
+\citet{krishna_icl} were the first to characterize LLM bandit behaviour and identified "suffix failure" - when the model ceased to explore after a few turns. 
+
+\citet{monea_bandit} demonstrate that pretrained LLMs can adapt predictions using interaction history and scalar rewards alone.
+
+
+Despite these advances, existing work does not systematically study how semantic misalignment or reward scale affects in-context bandit learning. Our work directly addresses this gap by varying label semantics and reward magnitudes independently.
+
+\subsection{LLM Cognitive Bias}
+A growing literature \citep{echterhoff-etal-2024-cognitive, Casper2023OpenPA} documents cognitive biases in LLM behavior, including primacy bias, anchoring, and sycophancy. 
+
+These biases are often attributed to pre-training - i.e. biases learned from human language data. 
+
+We extend this line of work by examining how such biases manifest in sequential decision-making tasks with explicit reward feedback.
+
+
+
+
+\section{Conclusion}
+Semantic priors influence model exploration-exploitation behaviour. This has impacts for the transferability and stability of model evaluation results on reasoning tasks across semantically varied environments.
+
+
+
+\section*{Author Contributions}
+If you'd like to, you may include  a section for author contributions as is done
+in many journals. This is optional and at the discretion of the authors.
+
+\section*{Acknowledgments}
+Use unnumbered first level headings for the acknowledgments. All
+acknowledgments, including those to funding agencies, go at the end of the paper.
+
+\section*{Ethics Statement}
+Authors can add an optional ethics statement to the paper. 
+For papers that touch on ethical issues, this section will be evaluated as part of the review process. The ethics statement should come at the end of the paper. It does not count toward the page limit, but should not be more than 1 page. 
+
+
+
+\bibliography{colm2026_conference}
+\bibliographystyle{colm2026_conference}
+
+\appendix
+\section{Appendix}
+You may include other additional sections here.
+
+\end{document}

@@ -1,0 +1,16 @@
+# .overleaf_figures — figures to push to Overleaf
+#
+# Each non-comment, non-blank line is a path relative to this repo root.
+# Glob patterns are supported. Use ** for recursive matching.
+# Path mirroring: the first directory component is stripped, then the rest
+# is placed under <overleaf>/figures/.
+#   figures/main/foo.pdf      → <overleaf>/figures/main/foo.pdf
+#   figures_png/regret/x.png  → <overleaf>/figures/regret/x.png
+
+# ── Selected PDFs from figures/main/ ─────────────────────────────────────────
+figures/main/scalesweep_py0.pdf
+figures/main/scale_impact_on_exp.pdf
+figures/main/nom_impact_on_exp.pdf
+
+# ── All PNGs from figures_png/ ────────────────────────────────────────────────
+figures_png/**/*.png
