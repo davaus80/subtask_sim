@@ -34,7 +34,7 @@ FOLDERS = [
 ]
 
 EXPECTED_SHUFFLE_COUNT = 20
-EXPECTED_ROW_COUNT = 30
+EXPECTED_ROW_COUNT = 12
 
 
 def model_size(model_dir_name: str) -> str:

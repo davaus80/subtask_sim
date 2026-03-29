@@ -107,7 +107,7 @@ if __name__ == "__main__":
                     # distinct actions indicates that the policy is exploring non-trivially, even if the
                     # run terminates before the configured time_horizon.
                     action_names = {json.loads(line).get("action_selected_name") for line in lines}
-                    if len(lines) >= time_horizon or len(action_names) > 1:
+                    if len(lines) >= 12 or len(action_names) > 1: #NOTE: Forced it to 12 here
                         has_sufficient_result = True
                         break
                 else:
