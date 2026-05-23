@@ -9,8 +9,58 @@
 
 # ── Selected PDFs from figures/main/ ─────────────────────────────────────────
 figures/main/scalesweep_py0.pdf
-figures/main/scale_impact_on_exp.pdf
+figures/main/scale_impact_on_exp_high.pdf
+figures/main/scale_impact_on_exp_low.pdf
 figures/main/nom_impact_on_exp.pdf
+figures/main/scalesweep_gemini_clothing.pdf
+figures/main/COLM2026_Main_Diagram.pdf
+figures/main/COLM2026_Main_Diagram_v2.pdf
+figures/main/COLM2026_Main_Diagram_v3.pdf
+
+figures/main/appendix_prompts.tex
 
 # ── All PNGs from figures_png/ ────────────────────────────────────────────────
-figures_png/**/*.png
+# figures_png/**/*.png
+
+# Tables
+# figures/tables/exploration_count_table_gemini-3.1-flash-lite-preview_high_neg_scale.tex
+# figures/tables/exploration_count_table_gemini-3.1-flash-lite-preview_high_scale.tex
+figures/tables/exploration_count_table_gemini-3.1-flash-lite-preview_varHigh.tex
+figures/tables/exploration_count_table_gemini-3.1-flash-lite-preview_varLow.tex
+figures/tables/exploration_count_table_gemini-3.1-flash-lite-preview_varNo.tex
+# figures/tables/exploration_count_table_Olmo-3.1-32B-Instruct_high_neg_scale.tex
+# figures/tables/exploration_count_table_Olmo-3.1-32B-Instruct_high_scale.tex
+figures/tables/exploration_count_table_Olmo-3.1-32B-Instruct_varHigh.tex
+figures/tables/exploration_count_table_Olmo-3.1-32B-Instruct_varLow.tex
+figures/tables/exploration_count_table_Olmo-3.1-32B-Instruct_varNo.tex
+# figures/tables/exploration_count_table_Qwen3-32B_high_neg_scale.tex
+# figures/tables/exploration_count_table_Qwen3-32B_high_scale.tex
+figures/tables/exploration_count_table_Qwen3-32B_varHigh.tex
+figures/tables/exploration_count_table_Qwen3-32B_varLow.tex
+figures/tables/exploration_count_table_Qwen3-32B_varNo.tex
+# figures/tables/regret_table_gemini-3.1-flash-lite-preview_high_neg_scale.tex
+# figures/tables/regret_table_gemini-3.1-flash-lite-preview_high_scale.tex
+figures/tables/regret_table_gemini-3.1-flash-lite-preview_varHigh.tex
+figures/tables/regret_table_gemini-3.1-flash-lite-preview_varLow.tex
+figures/tables/regret_table_gemini-3.1-flash-lite-preview_varNo.tex
+# figures/tables/regret_table_Olmo-3.1-32B-Instruct_high_neg_scale.tex
+# figures/tables/regret_table_Olmo-3.1-32B-Instruct_high_scale.tex
+figures/tables/regret_table_Olmo-3.1-32B-Instruct_varHigh.tex
+figures/tables/regret_table_Olmo-3.1-32B-Instruct_varLow.tex
+figures/tables/regret_table_Olmo-3.1-32B-Instruct_varNo.tex
+# figures/tables/regret_table_Qwen3-32B_high_neg_scale.tex
+# figures/tables/regret_table_Qwen3-32B_high_scale.tex
+figures/tables/regret_table_Qwen3-32B_varHigh.tex
+figures/tables/regret_table_Qwen3-32B_varLow.tex
+figures/tables/regret_table_Qwen3-32B_varNo.tex
+
+
+figures/tables/full_exploration_table_gemini-3.1-flash-lite-preview_varHigh.tex
+figures/tables/full_exploration_table_gemini-3.1-flash-lite-preview_varLow.tex
+figures/tables/full_exploration_table_gemini-3.1-flash-lite-preview_varNo.tex
+figures/tables/full_exploration_table_Olmo-3.1-32B-Instruct_varHigh.tex
+figures/tables/full_exploration_table_Olmo-3.1-32B-Instruct_varLow.tex
+figures/tables/full_exploration_table_Olmo-3.1-32B-Instruct_varNo.tex
+figures/tables/full_exploration_table_Qwen3-32B_varHigh.tex
+figures/tables/full_exploration_table_Qwen3-32B_varLow.tex
+figures/tables/full_exploration_table_Qwen3-32B_varNo.tex
