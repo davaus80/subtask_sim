@@ -11,6 +11,13 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{multirow}
 
 % NOTE: including geometry package
 % The geometery package modifies some page properties when used. This can dramatically change the page margins, leading to severe template violation, and potential desk rejection. If the package is required, it can be used with the "pass" flag to skip the default page modifications, as in the following line:
@@ -75,7 +82,7 @@ in settings that require sophisticated environmental exploration. However, exist
 \section{Introduction}
 Large language models (LLMs) exhibit sophisticated capabilities on a wide variety of tasks \citep{bubeck2023sparks, srivastava2023beyond}. This has led to widespread deployment of LLM-based decision-making agents in in-context reinforcement learning (ICRL) tasks, which require acting on incomplete information and adapting across sequential turns based on feedback \citep{reflexion, zhouWebArenaRealisticWeb2023, drouinWorkArenaHowCapable2024}. Any such decision-making agent must balance between exploring new actions to gather information and exploiting past actions known to yield high reward \citep{suttonReinforcementLearningIntroduction2020}.  
 
-While prior work \citep{krishna_icl, monea_bandit} evaluates ICRL using frameworks from classical reinforcement learning (RL), we argue that these frameworks are incomplete. Classical decision-making agents operate on symbolic problem representations. These representations are deliberately minimal: they preserve the formal structure of the task (states, actions, rewards) and discard everything else. In contrast, LLMs capture additional semantic information beyond the formal task structure. The name assigned to an action \citep{monea_bandit, min2022rethinkingroledemonstrationsmakes}, the magnitude and sign of numeric values \citep{mirzadeh2025gsmsymbolic}, and the domain in which a problem is situated \citep{kambhampatiPositionLLMsCant2024} are all semantically meaningful to a language model in ways they are not to a classical agent. This additional information can reflect genuine regularities in the world, learned as word co-occurrence statistics during pre-training. We refer to the inductive biases that arise from these learned associations as \textit{semantic priors}. These biases have no formal counterpart in classical RL.
+While prior work \citep{krishna_icl, monea_bandit} evaluates ICRL using frameworks from classical reinforcement learning (RL), we argue that these frameworks are incomplete. Classical decision-making agents operate on symbolic problem representations. These representations are deliberately minimal: they preserve the formal structure of the task (states, actions, rewards) and discard everything else. In contrast, LLMs capture additional semantic information beyond the formal task structure. The name assigned to an action \citep{monea_bandit, min2022rethinkingroledemonstrationsmakes}, the magnitude and sign of numeric values \citep{mirzadeh2025gsmsymbolic}, and the domain in which a problem is situated \citep{kambhampatiPositionLLMsCant2024} are all semantically meaningful to a language model in ways they are not to a classical agent. This additional information may reflect genuine regularities in the world or it may consist of inscrutable associations that are not human-interpretable, learned as word co-occurrence statistics during pre-training. We refer to the inductive biases that arise from these learned associations as \textit{semantic priors}. These biases have no formal counterpart in classical RL.
 
 Due to this fundamental difference, evaluating ICRL using frameworks from classical RL leaves out crucial explanatory variables. To address this shortcoming, we introduce the semantic multi-armed bandit (Figure \ref{fig:main_fig}), a novel extension of the canonical bandit problem that explicitly parametrizes key aspects of the textual representation alongside the standard reward distributions, and use it to demonstrate how ICRL exploration is biased by semantic priors.
 
@@ -101,7 +108,7 @@ We report three primary findings:
     \item These biases interact --- when the reward is negative, models are much less likely to exploit biases from action nomenclature (Figure \ref{fig:main_fig}).
 \end{itemize}  
 
-While the impact of semantic priors on classification and question answering tasks has been established \citep{jiang-etal-2024-peek, mirzadeh2025gsmsymbolic, cheng-etal-2025-stochastic, shojaee2025the}, we believe we are the first to characterize how they manifest in decision-making tasks. We argue that the use of language as a representation space in ICRL tasks introduces semantic priors that are not derived from formal problem structure, leading to helpful or harmful effects depending on the alignment between the prior and the true reward distribution. 
+While the impact of semantic priors on classification and question answering tasks has been established \citep{jiang-etal-2024-peek, mirzadeh2025gsmsymbolic, cheng-etal-2025-stochastic, shojaee2025the}, to our knowledge we are the first to characterize how they manifest in decision-making tasks. We argue that the use of language as a representation space in ICRL tasks introduces semantic priors that are not derived from formal problem structure, leading to helpful or harmful effects depending on the alignment between the prior and the true reward distribution. 
 
 Our most surprising finding is that the influence of these semantic priors is strong enough to nullify principled exploration behaviour in one of the simplest decision-making problems that can be constructed. As LLMs are increasingly deployed in real-world decision settings like recommendation systems and autonomous agents, understanding when semantic context aids adaptation and when it induces systematic errors is critical for safe and reliable deployment.
 
@@ -116,21 +123,19 @@ We focus on in-context reinforcement learning (ICRL), a special class of in-cont
 Abstract reasoning is foundational to intelligent decision-making systems \citep{chollet2019measureintelligence, herbsimon}. LLMs have demonstrated impressive performance on reasoning benchmarks, prompting claims of generalized abstract reasoning capabilities \citep{bubeck2023sparks, weiemergent}. However, performance on logical and mathematical reasoning tasks remains highly sensitive to structure-preserving linguistic perturbations \citep{Shi2023LargeLM, jiang-etal-2024-peek, mirzadeh2025gsmsymbolic, tang2023large, cheng2025can}. Many researchers \citep{kambhampatiPositionLLMsCant2024, jiang-etal-2024-peek, mirzadeh2025gsmsymbolic, zhang2023paradox} point to these failures as evidence of probabilistic pattern-matching from immense, closed-source training corpora, rather than principled reasoning. \citet{tang2023large} argue that LLM reasoning is fundamentally semantic, unlike in human reasoning, which is related to but distinct from language \citep{mahowaldDissociatingLanguageThought2024a}. Most prior work has focused on classification and question answering task. We extend this by exploring how these effects manifest in ICRL settings.
 
 \section{Problem definition}
-In this section, we posit that due to fundamental differences in representations between LLMs and symbolic agents, they necessitate different evaluation approaches. 
-
 \paragraph{Classical reinforcement learning} 
-We define an environment as the tuple $\{S, A, R\}$, where $S$ is the state space, $A$ is the action set, and $R : A \rightarrow \Delta(\mathbb{R})$ is the reward function.\footnote{$\Delta$ denotes the probability simplex.} A classical agent operates on a symbolic rendering generated by $\rho_{\Sigma} : S \rightarrow \Sigma$, where $\Sigma$ is an abstract representation space designed to preserve only the formal structure of $\{S, A, R\}$. Its policy $\pi_{\Sigma} : \Sigma \rightarrow A$ is invariant to everything outside this structure.
+We define an environment \footnote{As the MAB is single-state, we simplify the Markov decision process formulation by removing the state transition function and discount factor.} as the tuple $\{S, A, R, T, C\}$, where $S$ is the state space, $A$ is the action set, $R : A \rightarrow \Delta(\mathbb{R})$ is the reward function, $T$ is the episode length, and $C$ is the scenario context.\footnote{$\Delta$ denotes the probability simplex.} A classical agent operates on a symbolic rendering generated by $\rho_{\Sigma} : S \times A \times T \times C \rightarrow \Sigma$, where $\Sigma$ is an abstract representation space designed to preserve only formal structure. Its policy $\pi_{\Sigma} : \Sigma \rightarrow A$ is invariant to everything outside this structure.
 
 \paragraph{Classical multi-armed bandit (MAB)}
 The canonical problem for measuring exploration is the multi-armed bandit (MAB). A MAB instance has a single state and is fully defined by a set of $k$ arms $A = [a_1, \ldots, a_k]$, each associated with an unknown reward distribution $r_i$.  Over $T$ turns, the agent selects an arm and observes the resulting reward, aiming to maximize cumulative reward. Since the distributions are unknown, the agent must balance exploration of the distributions with exploitation of promising arms.
 
 \paragraph{LLMs as decision-making agents}
-Unlike the symbolic agent, an LLM-based agent $M$ operates on a \textit{textual} rendering generated by $\rho_{V^*} : S \rightarrow V^*$, where $V^*$ is the space of all token sequences. Its policy $\pi_M : V^* \rightarrow V^*$ maps a linguistic problem description to a linguistic action \footnote{Typically, there is also a parsing function $\phi : V^* \rightarrow A$ to convert the linguistic output to a concrete action, but we formulate that as part of $M$.}. Crucially, $\rho_{V^*}$ encodes information that is not derived from $\{S, A, R\}$, such as the semantic associations between action labels and real-world outcomes. This information is legible to $M$ as semantic priors. Symbolic agents are blind to it by construction; LLM agents are not. This offers a potential advantage for LLM agents when the semantic prior aligns with the true task structure.
+Unlike the symbolic agent, an LLM-based agent $M$ operates on a \textit{textual} rendering generated by $\rho_{V^*} : S \times A \times T \times C \rightarrow V^*$, where $V^*$ is the space of all token sequences. Its policy $\pi_M : V^* \rightarrow V^*$ maps a linguistic problem description to a linguistic action \footnote{Typically, there is also a parsing function $\phi : V^* \rightarrow A$ to convert the linguistic output to a concrete action, but we formulate that as part of $M$.}. Crucially, $\rho_{V^*}$ and $\pi_M$ encode information that is not derived from $\{S, A, R,T,C\}$, such as the semantic associations between action labels and real-world outcomes. This information is legible to $M$ as semantic priors. Symbolic agents are blind to it by construction; LLM agents are not. This offers a potential advantage for LLM agents when the semantic prior aligns with the true task structure.
 
 \paragraph{The semantic bandit}
 \label{sec:sem_bandit_def}
 
-While a classical agent engages only with the formal MAB instance, an LLM agent engages with a natural language description of it. This means the problem is no longer fully specified by $T$ and the reward distributions $[r_1, \ldots, r_k]$ alone. We introduce the \textit{semantic bandit} as an extension of the MAB that makes this additional structure explicit. A semantic bandit instance is defined by the standard MAB tuple and an \textit{action nomenclature}. The action nomenclature is the set of textual labels $L = [l_1, \ldots, l_k]$ assigned to arms $[a_1, \ldots, a_k]$. These labels have no bearing on the formal reward structure, but carry semantic associations that may predispose an LLM toward or away from particular arms.
+While a classical agent engages only with the formal MAB instance, an LLM agent engages with a natural language description of it. This means the problem is no longer fully specified the reward distributions $[r_1, \ldots, r_k]$ and $T$. We introduce the \textit{semantic bandit} as an extension of the MAB that makes this additional structure explicit. A semantic bandit instance is defined by the standard MAB tuple and an \textit{action nomenclature}. The action nomenclature is the set of textual labels $L = [l_1, \ldots, l_k] \subset V^*$ assigned to arms $[a_1, \ldots, a_k]$. These labels have no bearing on the formal reward structure, but carry semantic associations that may predispose an LLM toward or away from particular arms.
 
 In the classical MAB, the only information relevant to an optimal policy is the history of $(action, reward)$ pairs. Any influence of semantic details on behaviour therefore constitutes a deviation from normative reward-driven decision-making.
 
@@ -155,7 +160,7 @@ We design our experiments to answer two research questions about LLM-based agent
 \label{sec:nomenclature}
 
 We evaluate four action nomenclatures, each designed to engage a different
-type of semantic prior. Table~\ref{tab:nomenclatures} shows examples of each for the farming scenario. The \textit{alphanumeric} nomenclature uses randomly sampled six-character strings (e.g., \texttt{f4tjo5}) and serves as a control condition with minimal semantic content. The \textit{sentiment} nomenclature assigns adjectives of positive, neutral, and negative valence to the high-, medium-, and low-reward arms respectively, targeting the positivity bias documented in LLMs \citep{sharma2024towards}; labels are sampled at the start of each run from \citet{taboada-etal-2011-lexicon}. The \textit{ordinal} nomenclature uses explicit rank labels (\textit{Highest}, \textit{Intermediate}, \textit{Lowest}), inducing a direct semantic ordering. The \textit{world knowledge} nomenclature uses domain-specific labels whose relative value can be inferred from pre-training knowledge. We do not include a world nomenclature for the bandit scenario.
+type of semantic prior. Table~\ref{tab:nomenclatures} shows examples of each for the farming scenario. The \textit{alphanumeric} nomenclature uses randomly sampled six-character strings (e.g., \texttt{f4tjo5}) and serves as a control condition with minimal semantic content. The \textit{sentiment} nomenclature assigns adjectives of positive, neutral, and negative valence to the high-, medium-, and low-reward arms respectively, targeting the positivity bias documented in LLMs \citep{sharma2024towards}; labels are sampled at the start of each run from \citet{taboada-etal-2011-lexicon}. The \textit{ordinal} nomenclature uses explicit rank labels (\textit{Highest}, \textit{Intermediate}, \textit{Lowest}), inducing a direct semantic ordering. The \textit{world knowledge} nomenclature uses domain-specific labels whose relative value can be inferred from pre-training knowledge. We do not include a world nomenclature for the bandit scenario (see Section \ref{sec:scenarios}).
 
 To disentangle the effect of nomenclature from the effect of reward feedback, we evaluate each nomenclature (besides alphanumeric) in both a \textit{helpful} configuration --- where the semantically favoured label is assigned to the highest-reward arm --- and a \textit{misleading} configuration, where the labels for the highest- and lowest-reward actions are swapped .
 
@@ -179,9 +184,7 @@ To disentangle the effect of nomenclature from the effect of reward feedback, we
 
 \subsubsection{Reward scale (RQ2.1)}
 \label{sec:reward_scale}
-To investigate the influence of observed reward values on exploration, our main experiments contrast two reward conditions: \textit{positive}, with mean rewards $(\mu_H, \mu_M, \mu_L) = (75, 50, 25)$, and \textit{negative}, with $(\mu_H, \mu_M, \mu_L) = (-25, -50, -75)$. We use a shared variance $\sigma^2$ across all arms. We evaluate three levels ---
-$\sigma \in \{12.5, 6.25, 0\}$, referred to as high, low, and no variance --- as a
-robustness check. 
+To investigate the influence of observed reward values on exploration, our main experiments contrast two reward conditions: \textit{High+}, with mean rewards $(\mu_H, \mu_M, \mu_L) = (75, 50, 25)$, and \textit{High-}, with $(\mu_H, \mu_M, \mu_L) = (-25, -50, -75)$. We also evaluated a \textit{Low+} and \textit{Low-} nomenclature, where all values are scaled down by a factor of 100. For space, we move these results to Appendix \ref{app:results}. We use a shared variance $\sigma^2$ across all arms. We evaluate three levels of variance, $\sigma \in \{12.5, 6.25, 0\}$, referred to as high, low, and no variance, as a robustness check. 
 
 \subsubsection{Reward scale sweep (RQ2.2)}
 \label{sec:scalesweep_def}
@@ -201,8 +204,8 @@ clothing scenario, stable contextual information --- describing user preferences
 \subsection{Models and baselines}
 \label{sec:models}
 
-We evaluate three LLMs: (i)~OLMo-3.1-32B-Instruct, (ii)~Qwen3-32B, and
-(iii)~Gemini~3.1 Flash Lite Preview. To reduce computational overhead, we limit
+We evaluate three instruction-tuned LLMs: (i)~OLMo-3.1-32B-Instruct, (ii)~Qwen3-32B, and
+(iii)~Gemini~3.1 Flash Lite Preview. Qwen3 and Gemini offerr native support for thinking mode, while we use CoT prompting for OLMo. To reduce computational overhead, we limit
 thinking tokens to 150 for OLMo and Qwen; for Gemini, thinking tokens are
 unrestricted. This allows us to contrast standard open-source models with closed-source frontier reasoning models. All other hyperparameters are set to default HuggingFace values for open-source models and Gemini standards for Gemini. We run 10 replicates per condition, resampling action labels and shuffling arm order at the start of each replicate. We adapt our prompt structure from the best-performing prompt identified by \citet{krishna_icl}, with the interaction history summarized as the observed mean reward. The full prompt is provided in Appendix~\ref{app:prompts}.
 
@@ -216,10 +219,9 @@ We compare LLM agents against a classical MAB solver: UCB1 \citep{auer_ucb_2002}
 \paragraph{Cumulative regret}
 We report normalized cumulative regret, defined as the cumulative difference between
 the reward of the optimal arm and the reward received, normalized to $[0, 1]$. Lower
-regret indicates more effective exploration--exploitation behaviour. Let $a_t$ denote the action chosen by the agent at timestep $t$, and let $a^* = \arg\max_{a \in A} r(a)$ denote the optimal action with the highest expected reward. The instantaneous regret at timestep $t$ is defined as $\ell_t = r(a^*) - r(a_t)$. The cumulative regret over a horizon of $T$ timesteps is then:
-\[R_T = \sum_{t=1}^{T} \ell_t = \sum_{t=1}^{T} \bigl(r(a^H) - r(a_t)\bigr)\]
+regret indicates more effective exploration--exploitation behaviour. Let $a_t$ denote the action chosen by the agent at timestep $t$, and let $a^* = \arg\max_{a \in A} r(a)$ denote the optimal action with the highest expected reward. The instantaneous regret at timestep $t$ is defined as $\ell_t = r(a^*) - r(a_t)$. The cumulative regret over a horizon of $T$ timesteps is then $R_T = \sum_{t=1}^{T} \ell_t = \sum_{t=1}^{T} \bigl(r(a^H) - r(a_t)\bigr)$
 We normalize by the maximum possible regret to get the normalized cumulative regret:
-\[\hat{R}_T = \frac{R_T}{\sum_{t=1}^{T} \bigl(r(a^H) - r(a^L)\bigr)}\]
+$\hat{R}_T = \frac{R_T}{\sum_{t=1}^{T} \bigl(r(a^H) - r(a^L)\bigr)}$.
 
 
 \paragraph{Exploration count}
@@ -281,7 +283,7 @@ UCB1 &  & 0.15 & -- & 0.15 & -- & 0.15 & -- \\
 \subsection{RQ1 - How does action nomenclature impact performance and exploration behaviour?}
 \textbf{Action nomenclatures can significantly bias the model away from normative reward-driven behaviour}. The alphanumeric nomenclature tends to result in exploration behaviour that closely matches the UCB symbolic baseline (Figure \ref{fig:nom_impacts_exploration}). In contrast, the LLM tends to exploit semantic biases when the nomenclature is semantically meaningful. Exploiting helpful semantic biases can lead to much lower regret than symbolic methods (Table \ref{tab:label_channel_bias_No}). However, this behaviour can lead to dismal performance if the semantic prior is not aligned with the underlying reward structure.
 
-The model has a strong bias in cases where the arms are explicitly ordered (\textit{ordinal} in Figure \ref{fig:nom_impacts_exploration}). There is a weaker but still impactful bias towards words with positive sentiment. The bias from world knowledge is strong in the clothing recommendation task, but closer to sentiment in the farm task. 
+The model has a strong bias in cases where the arms are explicitly ordered (\textit{ordinal} in Figure \ref{fig:nom_impacts_exploration}). There is a weaker but still impactful bias towards words with positive sentiment. The bias from world knowledge varies is stronger in the clothing recommendation task, than the farm task. 
 
 Each LLM displayed distinct exploration behaviour (Figure \ref{fig:nom_impacts_exploration}). OLMo struggled to explore at all, except when explicitly informed that the task was a MAB. Qwen3 displayed both consistent exploration in the alphanumeric case and pure exploitation in the ordinal case. Gemini tended to explore quickly, matching reward-normative behaviour on most tasks. The notable exception was the world-knowledge nomenclature on the clothing recommendation task. This task was slightly more complex than the rest, since it required additional contextual knowledge in the prompt. This may indicate that the other task-nomenclature pairs are too easy for the Gemini model and it may increasingly rely on semantic priors as task complexity increases. This indicates that semantic priors may be reduced in large frontier reasoning models, but they are still present.
 
@@ -295,7 +297,7 @@ Each LLM displayed distinct exploration behaviour (Figure \ref{fig:nom_impacts_e
 %%%%%%%%%% Olmo and Gemini Scale Exploration
 \begin{figure*}[ht]
   \begin{center}
-    \centerline{\includegraphics[width=\linewidth]{figures/main/scale_impact_on_exp.pdf}}
+    \centerline{\includegraphics[width=\linewidth]{figures/main/scale_impact_on_exp_high.pdf}}
   \end{center}
   \caption{
       \textbf{Impact of Reward Scale on Exploration Count} We observe far more exploration when reward is negative (blue) than positive (brown). These results are with no variance. See Appendix \ref{app:results} for full results.
@@ -313,9 +315,7 @@ Observed reward polarity is a major factor in determining model exploration beha
 To disentangle the impact of reward sign from reward magnitude, we performed scale sweep experiments to evaluate the probability of immediate exploration given an observed reward value (Figure \ref{fig:scalesweep_y0}). We find a strong bias from reward sign - the probability of exploring is much higher for values less than zero. This effect is larger and more sudden for Qwen3 and Olmo than for Gemini. The impact of reward magnitude is unclear and highly non-monotonic. There was weak evidence for other threshold effects, but it was inconsistent across models and domains.  
 
 \subsection{Other findings}
-Results are stable across variance conditions. The main paper figures
-show the no-variance condition and full variance results are reported in
-Appendix~\ref{app:results}. We also ran our main experiments with lower magnitude reward scales, which we present in the Appendix as "low" reward scale. We ran initial evaluations of Llama-3.1-8B-Instruct, Qwen3-8B, and Qwen3-14B. We found that the 8B models did not display sufficient exploration behaviour, while Qwen3-14B performed similarly to Qwen3-32B. We dropped these models in favour of the larger models due to known performance gains at scale \citep{monea_bandit}.
+Results are stable across variance conditions. The main paper figures show the no-variance condition and full variance results are reported in Appendix~\ref{app:results}. We ran initial evaluations of Llama-3.1-8B-Instruct, Qwen3-8B, and Qwen3-14B. We found that the 8B models did not display sufficient exploration behaviour, while Qwen3-14B performed similarly to Qwen3-32B. We dropped these models in favour of the larger models due to known performance gains at scale \citep{monea_bandit}.
 
 \begin{figure*}[ht]
   \begin{center}
@@ -399,8 +399,7 @@ These tables show the average exploration count at turn 3 (the earliest step tha
 \section{Prompts}
 \label{app:prompts}
 
+\input{figures/main/appendix_prompts}
 
-\section{Nomenclatures}
-\label{app:nomenclatures}
 
 \end{document}

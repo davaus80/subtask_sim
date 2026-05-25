@@ -15,6 +15,7 @@ NOTEBOOKS=(
     src/viz/appendix_tables.ipynb
     src/viz/label_channel_bias.ipynb
     src/viz/reward_channel_bias.ipynb
+    src/viz/explicit_debiasing.ipynb
     src/viz/scale_sweep.ipynb
 )
 
