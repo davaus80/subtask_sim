@@ -25,11 +25,11 @@ while IFS=, read -r folder_path shuffles_missing model_size || [ -n "$folder_pat
     fi
 
     if [[ "$model_size" == "gemini" ]]; then
-        if (( gemini_count > 0 && gemini_count % 10 == 0 )); then
-            gemini_delay=$(( gemini_delay + 20 ))
+        if (( gemini_count > 0 && gemini_count % 5 == 0 )); then
+            gemini_delay=$(( gemini_delay + 5 ))
         fi
         echo "Submitting gemini job for $folder_path (begin=now+${gemini_delay}min)"
-        sbatch --time=00:15:00 --begin=now+${gemini_delay}minutes ./run_slurm_gemini.sh "$folder_path"
+        sbatch --time=00:10:00 --begin=now+${gemini_delay}minutes ./run_slurm_gemini.sh "$folder_path"
         gemini_count=$(( gemini_count + 1 ))
         continue
     fi

@@ -16,9 +16,12 @@ folders=(
     # "experiments/20260320_ab_scalesweep_novar"
     # "experiments/20260320_farm_scalesweep_novar"
     # "experiments/20260320_clothing_scalesweep_novar"
-    "experiments/20260523_farm_warn_novar"
-    "experiments/20260523_ab_warn_novar"
-    "experiments/20260523_rec_warn_novar"
+    # "experiments/20260523_farm_warn_novar"
+    # "experiments/20260523_ab_warn_novar"
+    # "experiments/20260523_rec_warn_novar"
+    "experiments/20260524_farm_warn_noexp_novar"
+    "experiments/20260524_ab_warn_noexp_novar"
+    "experiments/20260524_rec_warn_noexp_novar"
 )
 
 # Loop through each folder and execute the script

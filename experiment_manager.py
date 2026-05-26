@@ -122,7 +122,10 @@ if __name__ == "__main__":
                 else:
                     try:
                         driver.play()
-                    except:
+                    except Exception as e:
+                        import traceback
+                        traceback.print_exc()
+                        print(f"Run {run_num} failed: {e}")
                         continue
             
     else:

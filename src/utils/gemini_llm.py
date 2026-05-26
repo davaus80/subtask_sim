@@ -23,8 +23,13 @@ class GeminiLLM:
         if not api_key:
             raise EnvironmentError("GEMINI_API_KEY environment variable is not set.")
 
+        _MODEL_ALIASES = {
+            "gemini-3.1-flash-lite-preview": "gemini-3.1-flash-lite",
+        }
+
         self.client = genai.Client(api_key=api_key)
-        self.model_name = config["agent"]["model_name"]
+        raw_model = config["agent"]["model_name"]
+        self.model_name = _MODEL_ALIASES.get(raw_model, raw_model)
         self.thinking_budget = config.get("agent", {}).get("thinking_budget", None)
         self.max_output_tokens = config.get("agent", {}).get("max_new_tokens", None)
 
