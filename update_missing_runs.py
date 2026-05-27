@@ -28,9 +28,10 @@ FOLDERS = [
     # "experiments/20260312_rec_2sd_var",
     # "experiments/20260311_gemini_farm_novar",
     # "experiments/20260312_gemini_ab_novar",
-    "experiments/20260320_ab_scalesweep_novar",
-    "experiments/20260320_farm_scalesweep_novar",
-    "experiments/20260320_clothing_scalesweep_novar",
+    # "experiments/20260320_ab_scalesweep_novar",
+    # "experiments/20260320_farm_scalesweep_novar",
+    # "experiments/20260320_clothing_scalesweep_novar",
+    "experiments/20260526_ab_5arm",
 ]
 
 EXPECTED_SHUFFLE_COUNT = 20
