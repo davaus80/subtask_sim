@@ -15,6 +15,9 @@ toplevel_dirs=(
     "/Users/david/Documents/01_Projects/Skyfall/subtask_sim/experiments/20260523_ab_warn_novar"
     "/Users/david/Documents/01_Projects/Skyfall/subtask_sim/experiments/20260523_farm_warn_novar"
     "/Users/david/Documents/01_Projects/Skyfall/subtask_sim/experiments/20260523_rec_warn_novar"
+    "/Users/david/Documents/01_Projects/Skyfall/subtask_sim/experiments/20260524_ab_warn_noexp_novar"
+    "/Users/david/Documents/01_Projects/Skyfall/subtask_sim/experiments/20260524_farm_warn_noexp_novar"
+    "/Users/david/Documents/01_Projects/Skyfall/subtask_sim/experiments/20260524_rec_warn_noexp_novar"
 )
 
 for toplevel in $toplevel_dirs; do
